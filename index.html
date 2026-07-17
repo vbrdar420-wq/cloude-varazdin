@@ -1,17 +1,83 @@
 <!DOCTYPE html>
+<!-- TODO (produkcija): Tailwind CDN (<script src="https://cdn.tailwindcss.com">) zamijeniti statičkim
+     Tailwind buildom (Tailwind CLI / PostCSS) radi performansi. Namjerno nepromijenjeno sada da se ne
+     naruši postojeći vizual. -->
 <html lang="hr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lola Acoustix | Premium Architectural Solutions</title>
+    <title>Lola Acoustix | Akustični paneli od PET felta po mjeri</title>
+    <meta name="description" content="Dizajniramo i proizvodimo akustične panele od PET felta koji suzbijaju buku i jeku. Rješenja po mjeri za urede, ugostiteljstvo i privatne prostore.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lolaacoustix.com/">
+    <link rel="icon" href="favicon.ico"> <!-- TODO: zamijeniti finalnim favicon-om -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lola Acoustix">
+    <meta property="og:locale" content="hr_HR">
+    <meta property="og:url" content="https://lolaacoustix.com/">
+    <meta property="og:title" content="Akustični paneli i zidne obloge od PET felta | Lola Acoustix">
+    <meta property="og:description" content="Akustične zidne obloge, stropni baflesi i pregrade prostora od recikliranog PET felta, dizajnirani i izrađeni po mjeri.">
+    <meta property="og:image" content="images/og-image.jpg"> <!-- TODO: zamijeniti finalnom OG slikom -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Akustični paneli i zidne obloge od PET felta | Lola Acoustix">
+    <meta name="twitter:description" content="Akustične zidne obloge, stropni baflesi i pregrade prostora od recikliranog PET felta, dizajnirani i izrađeni po mjeri.">
+    <meta name="twitter:image" content="images/og-image.jpg"> <!-- TODO: zamijeniti finalnom OG slikom -->
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="products-data.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lola Acoustix",
+        "alternateName": "Cloud d.o.o.",
+        "url": "https://lolaacoustix.com/",
+        "logo": "https://lolaacoustix.com/wp-content/uploads/2024/10/lolaacoustix-logo.png",
+        "email": "info@lolaacoustix.com",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61559754041193",
+            "https://www.instagram.com/lola_acoustix/",
+            "https://www.linkedin.com/company/lola-acoustix/posts/?feedView=all"
+        ],
+        "department": [
+            {
+                "@type": "LocalBusiness",
+                "name": "Lola Acoustix — Sjedište, Varaždin",
+                "telephone": "+385993209494",
+                "email": "info@lolaacoustix.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Ulica Dragutina Rakovca 3",
+                    "postalCode": "42000",
+                    "addressLocality": "Varaždin",
+                    "addressCountry": "HR"
+                }
+            },
+            {
+                "@type": "LocalBusiness",
+                "name": "Lola Acoustix — Showroom, Zagreb",
+                "telephone": "+385953778982",
+                "email": "info@lolaacoustix.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Buzinski krči 5",
+                    "postalCode": "10000",
+                    "addressLocality": "Zagreb",
+                    "addressCountry": "HR"
+                }
+            }
+        ]
+    }
+    </script>
 
     <script>
         tailwind.config = {
@@ -80,84 +146,123 @@
             transform: scale(1.05);
         }
 
-        /* Projects carousel */
-        .proj-track {
-            display: flex;
-            gap: 20px;
-            padding-left: 1.5rem;
-            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: transform;
+        /* Hero crossfade slideshow */
+        /* Modeli — horizontal product category carousel */
+        .modeli-row-wrap {
+            position: relative;
+            padding: 0 60px;
         }
 
-        @media (min-width: 768px) {
-            .proj-track {
-                padding-left: 3rem;
+        @media (max-width: 767px) {
+            .modeli-row-wrap {
+                padding: 0 20px;
             }
         }
 
-        .proj-item {
-            flex-shrink: 0;
-            width: 300px;
+        .modeli-row {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 4px;
+        }
+
+        .modeli-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .modeli-card {
+            flex: 0 0 auto;
+            width: 320px;
+            scroll-snap-align: start;
+        }
+
+        .modeli-card img {
+            -webkit-user-drag: none;
+            user-select: none;
         }
 
         @media (min-width: 768px) {
-            .proj-item {
-                width: 320px;
+            .modeli-card {
+                width: 380px;
             }
         }
 
         @media (min-width: 1024px) {
-            .proj-item {
-                width: 360px;
+            .modeli-card {
+                width: calc((100% - 48px) / 3);
             }
         }
 
-        .proj-card {
-            min-height: 27rem;
+        @media (max-width: 767px) {
+            .modeli-card {
+                width: 86%;
+            }
         }
 
-        .proj-item img {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        @media (max-width: 767px) {
+            #modeli-cards.reveal,
+            #modeli-cards .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
         }
 
-        .proj-item a:hover img {
-            transform: scale(1.05);
+        .modeli-arrow {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 1px solid rgba(26, 26, 26, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
         }
 
-        .proj-dot {
-            background: rgba(26, 26, 26, 0.2);
-            transition: background 0.3s;
-        }
-
-        .proj-dot.active {
+        .modeli-arrow:hover {
             background: #1a1a1a;
+            color: #ffffff;
         }
 
-        #proj-prev:disabled,
-        #proj-next:disabled {
-            opacity: 0.25;
-            cursor: not-allowed;
+        .modeli-arrow-left {
+            left: 0;
+        }
+
+        .modeli-arrow-right {
+            right: 0;
+        }
+
+        .modeli-arrow:disabled {
+            opacity: 0.3;
             pointer-events: none;
         }
 
-        /* Hero crossfade slideshow */
-        @keyframes kenBurns {
-            from { transform: scale(1.08); }
-            to   { transform: scale(1); }
+        @media (max-width: 767px) {
+            .modeli-arrow {
+                display: none;
+            }
         }
 
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0.9s ease-in-out;
-            animation: kenBurns 18s ease-in-out infinite alternate;
+        .modeli-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 9999px;
+            background: rgba(26, 26, 26, 0.2);
+            transition: background 0.3s ease, width 0.3s ease;
         }
 
-        .hero-slide.active {
-            opacity: 1;
+        .modeli-dot.active {
+            background: #1a1a1a;
+            width: 18px;
         }
 
         /* Image accordion — Završeni projekti */
@@ -353,27 +458,25 @@
                     class="h-7 brightness-0 invert" id="nav-logo">
             </a>
 
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#proizvodnja" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+            <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
                 <a href="#modeli" class="hover:opacity-70 transition-opacity">Proizvodi</a>
-                <a href="#pet-filc" class="hover:opacity-70 transition-opacity">PET filc</a>
+                <a href="#pet-filc" class="hover:opacity-70 transition-opacity">PET felt</a>
                 <a href="#boje" class="hover:opacity-70 transition-opacity">Boje</a>
                 <a href="#galerija-projekata" class="hover:opacity-70 transition-opacity">Galerija radova</a>
                 <a href="#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
                     <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
                     Certifikati
                 </a>
-                <a href="#o-nama" class="hover:opacity-70 transition-opacity">O nama</a>
             </div>
 
-            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium">
                 <a href="#kontakt"
                     class="border border-current px-5 py-2 rounded-full hover:bg-white hover:text-autex-dark transition-colors duration-300">
                     Pošalji Upit
                 </a>
             </div>
 
-            <button id="menu-toggle" class="md:hidden z-50 relative focus:outline-none">
+            <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Otvori navigacijski izbornik" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
@@ -386,16 +489,14 @@
     <div id="mobile-menu"
         class="fixed inset-0 z-40 bg-autex-dark text-white flex-col justify-center items-center hidden">
         <div class="flex flex-col space-y-8 text-center text-2xl font-light">
-            <a href="#proizvodnja" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
             <a href="#modeli" class="mobile-link hover:opacity-70 transition-opacity">Proizvodi</a>
-            <a href="#pet-filc" class="mobile-link hover:opacity-70 transition-opacity">PET filc</a>
+            <a href="#pet-filc" class="mobile-link hover:opacity-70 transition-opacity">PET felt</a>
             <a href="#boje" class="mobile-link hover:opacity-70 transition-opacity">Boje</a>
             <a href="#galerija-projekata" class="mobile-link hover:opacity-70 transition-opacity">Galerija radova</a>
             <a href="#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
                 <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
                 Certifikati
             </a>
-            <a href="#o-nama" class="mobile-link hover:opacity-70 transition-opacity">O nama</a>
             <a href="#kontakt"
                 class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
                 Upit</a>
@@ -405,23 +506,18 @@
     <!-- Hero Section with Video -->
     <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 bg-autex-dark">
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2025/02/669A3793-scaled.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2024/10/KOSI22cm_WALL_FINAL_WEB-1-scaled.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2024/11/VORONOI-WEB-scaled.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2025/02/669A3822-scaled.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2024/11/samba_lamp-1-scaled.jpg')"></div>
-            <div class="hero-slide" style="background-image:url('https://lolaacoustix.com/wp-content/uploads/2025/02/669A4105-scaled.jpg')"></div>
+            <video class="w-full h-full object-cover" src="hero.mp4" autoplay muted loop playsinline></video>
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-            <h1
+            <div
                 class="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight mb-6 reveal">
                 Oblikujemo<br>vašu tišinu.
+            </div>
+            <h1 class="text-white text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90 reveal delay-100">
+                Akustični paneli od PET felta za apsorpciju zvuka — dizajnirani i izrađeni po mjeri vašeg prostora.
             </h1>
-            <p class="text-white text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90 reveal delay-100">
-                Vrhunska akustična rješenja koja suzbijaju buku i jeku u prostoru. Dizajnirana po vašoj mjeri.
-            </p>
             <div class="flex flex-wrap gap-4 justify-center reveal delay-200">
                 <a href="#modeli"
                     class="inline-block bg-white text-autex-dark px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
@@ -461,52 +557,107 @@
         </div>
     </section>
 
-    <!-- Kako radimo Section -->
-    <section id="proizvodnja" class="py-24 md:py-40 px-6 md:px-12 bg-[#111] text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto">
+    <!-- Završeni projekti -->
+    <section id="galerija-projekata" class="py-24 md:py-32 bg-[#111]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
 
-            <div id="kako-header" style="opacity:0;transform:translateY(30px)">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-6">Tijek suradnje</span>
-                <h2 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">Kako radimo</h2>
+            <div class="mb-14 reveal">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">Završeni projekti</h2>
+                    <p class="text-white/35 text-sm leading-relaxed max-w-xs">
+                        Pogledajte neke od naših mnogobrojnih projekata i saznajte zašto firme i privatni klijenti biraju baš nas.
+                    </p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 mt-20 md:mt-28">
+            <div id="proj-accordion">
 
-                <div class="kako-step py-12 md:py-0 md:pr-16 border-b border-white/10 md:border-b-0 md:border-r md:border-white/10" style="opacity:0;transform:translateY(40px)">
-                    <span class="text-[8rem] md:text-[10rem] font-bold leading-none select-none block text-white/[0.04]" aria-hidden="true">01</span>
-                    <div class="h-px w-10 bg-white/20 mb-7 -mt-3"></div>
-                    <h3 class="text-lg md:text-xl font-semibold mb-4 tracking-tight">Analiza i mjerenje</h3>
-                    <p class="text-white/45 text-sm leading-relaxed max-w-xs">
-                        Dolazimo k vama ili analiziramo tlocrte vašeg prostora. Mjerimo dimenzije i ocjenjujemo akustičke potrebe kako bismo predložili optimalno rješenje.
-                    </p>
+                <!-- 01 — Ricoh, Njemačka -->
+                <div class="acc-item active">
+                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/04/IMG-20260213-WA0064-L-1-scaled.jpg" alt="Akustične zidne obloge od PET felta — korporativni ured Ricoh, Njemačka">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-label-v"><span>Ricoh, Njemačka</span></div>
+                    <div class="acc-content">
+                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">01 / 05</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Ricoh,<br>Njemačka</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje korporativnih ureda za Ricoh u Njemačkoj: premium zidne obloge za međunarodnog klijenta.</p>
+                        <a href="projekti.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                            Pogledaj cijeli projekt
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="kako-step py-12 md:py-0 md:px-16 border-b border-white/10 md:border-b-0 md:border-r md:border-white/10" style="opacity:0;transform:translateY(40px)">
-                    <span class="text-[8rem] md:text-[10rem] font-bold leading-none select-none block text-white/[0.04]" aria-hidden="true">02</span>
-                    <div class="h-px w-10 bg-white/20 mb-7 -mt-3"></div>
-                    <h3 class="text-lg md:text-xl font-semibold mb-4 tracking-tight">Custom dizajn</h3>
-                    <p class="text-white/45 text-sm leading-relaxed max-w-xs">
-                        Na temelju izmjera i vaših preferencija kreiramo prilagođeni dizajn. Birate oblik, dimenzije, boje i materijale koji odgovaraju vašem prostoru.
-                    </p>
+                <!-- 02 — Središće, Zagreb -->
+                <div class="acc-item">
+                    <img src="sredisce.jpg" alt="Akustična rješenja za poslovni prostor — projekt Središće, Zagreb">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-label-v"><span>Središće, Zagreb</span></div>
+                    <div class="acc-content">
+                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">02 / 05</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Središće,<br>Zagreb</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustična rješenja za poslovni prostor u Središću, kombinacija vizualnog identiteta i zvučnog komfora.</p>
+                        <a href="projekti.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                            Pogledaj cijeli projekt
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="kako-step py-12 md:py-0 md:pl-16" style="opacity:0;transform:translateY(40px)">
-                    <span class="text-[8rem] md:text-[10rem] font-bold leading-none select-none block text-white/[0.04]" aria-hidden="true">03</span>
-                    <div class="h-px w-10 bg-white/20 mb-7 -mt-3"></div>
-                    <h3 class="text-lg md:text-xl font-semibold mb-4 tracking-tight">Proizvodnja i montaža</h3>
-                    <p class="text-white/45 text-sm leading-relaxed max-w-xs">
-                        Svaki element izrađujemo ručno u našoj radionici od recikliranih PET filc materijala. Dostavljamo i montiramo na licu mjesta.
-                    </p>
+                <!-- 03 — Stuttgart 2 -->
+                <div class="acc-item">
+                    <img src="stuttgart.jpeg" alt="Akustični paneli za uredski prostor — projekt Stuttgart 2, Njemačka">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-label-v"><span>Stuttgart 2, Njemačka</span></div>
+                    <div class="acc-content">
+                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">03 / 05</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Stuttgart 2,<br>Njemačka</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično opremanje uredskog prostora u Stuttgartu, nastavak suradnje s njemačkim tržištem.</p>
+                        <a href="projekti.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                            Pogledaj cijeli projekt
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 04 — City Island, Zagreb -->
+                <div class="acc-item">
+                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/02/IMG-20260127-WA0038-L.jpeg" alt="Akustične zidne obloge i stropni baflesi — projekt City Island, Zagreb">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-label-v"><span>City Island, Zagreb</span></div>
+                    <div class="acc-content">
+                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">04 / 05</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">City Island,<br>Zagreb</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje prostora unutar City Islanda, prostor koji demonstrira sva naša rješenja u realnom okruženju.</p>
+                        <a href="projekti.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                            Pogledaj cijeli projekt
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 05 — Privatna kuća Sračinec -->
+                <div class="acc-item">
+                    <img src="sracinec.jpeg" alt="Akustična obrada doma od PET felta — privatna kuća, Sračinec">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-label-v"><span>Privatna kuća, Sračinec</span></div>
+                    <div class="acc-content">
+                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">05 / 05</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Privatna kuća,<br>Sračinec</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustična obrada privatnog doma, dokaz da naša rješenja savršeno pristaju i rezidencijalnim prostorima.</p>
+                        <a href="projekti.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                            Pogledaj cijeli projekt
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <div id="kako-cta" class="mt-20 md:mt-28" style="opacity:0;transform:translateY(20px)">
-                <a href="#kontakt" class="inline-flex items-center gap-3 text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                    Zatražite ponudu
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
+            <div class="mt-12 reveal">
+                <a href="projekti.html" class="inline-flex items-center gap-3 text-white text-sm font-medium border-b border-white/25 pb-1 hover:border-white transition-colors duration-300">
+                    Pogledaj sve projekte
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
 
@@ -523,75 +674,17 @@
                     za ponudu</a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <div class="group reveal">
-                    <a href="/zidne-obloge" class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4">
-                        <img src="https://lolaacoustix.com/wp-content/uploads/2024/10/KOSI22cm_WALL_FINAL_WEB-scaled.jpg" alt="Zidne obloge" class="w-full h-full object-cover">
-                    </a>
-                    <h4 class="text-lg font-semibold mb-3">Zidne obloge</h4>
-                    <a href="/zidne-obloge" class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full hover:bg-black transition-colors">
-                        Pogledaj modele <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
-                <div class="group reveal delay-100">
-                    <a href="/pregrade-prostora" class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4">
-                        <img src="https://lolaacoustix.com/wp-content/uploads/2024/11/VORONOI-WEB-scaled.jpg" alt="Pregrade prostora" class="w-full h-full object-cover">
-                    </a>
-                    <h4 class="text-lg font-semibold mb-3">Pregrade prostora</h4>
-                    <a href="/pregrade-prostora" class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full hover:bg-black transition-colors">
-                        Pogledaj modele <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
-                <div class="group reveal delay-200">
-                    <a href="/stropni-bafflei" class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4">
-                        <img src="https://lolaacoustix.com/wp-content/uploads/2024/11/buff_240_final-render-scaled.jpg" alt="Stropni bafflei" class="w-full h-full object-cover">
-                    </a>
-                    <h4 class="text-lg font-semibold mb-3">Stropni bafflei</h4>
-                    <a href="/stropni-bafflei" class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full hover:bg-black transition-colors">
-                        Pogledaj modele <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
-                <div class="group reveal">
-                    <a href="/radni-prostor" class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4">
-                        <img src="https://lolaacoustix.com/wp-content/uploads/2024/10/UMHAUSUNG_FIN_web-scaled.jpg" alt="Radni prostor" class="w-full h-full object-cover">
-                    </a>
-                    <h4 class="text-lg font-semibold mb-3">Radni prostor</h4>
-                    <a href="/radni-prostor" class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full hover:bg-black transition-colors">
-                        Pogledaj modele <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
-                <div class="group reveal delay-100">
-                    <a href="/akusticni-kutak" class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4">
-                        <img src="https://lolaacoustix.com/wp-content/uploads/2024/10/ACOUSTIC_CORNERS_NASLOVNA_FINAL_WEB-scaled.jpg" alt="Akustični kutak" class="w-full h-full object-cover">
-                    </a>
-                    <h4 class="text-lg font-semibold mb-3">Akustični kutak</h4>
-                    <a href="/akusticni-kutak" class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full hover:bg-black transition-colors">
-                        Pogledaj modele <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
-                <div class="group reveal delay-200">
-                    <div class="image-zoom-container aspect-[3/4] bg-gray-300 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400"></div>
-                        <div class="relative text-center p-6">
-                            <svg class="w-12 h-12 mx-auto mb-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
-                            <p class="font-semibold text-gray-700">Custom dizajn</p>
-                        </div>
-                    </div>
-                    <h4 class="text-lg font-semibold mb-3">Custom dizajn</h4>
-                    <a href="#kontakt" class="inline-flex items-center gap-2 text-sm font-medium border border-autex-dark text-autex-dark px-4 py-2 rounded-full hover:bg-autex-dark hover:text-white transition-colors">
-                        Zatraži individualnu ponudu <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-
+            <div class="modeli-row-wrap">
+                <button id="modeli-prev" class="modeli-arrow modeli-arrow-left" aria-label="Prethodne kategorije">
+                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="modeli-cards" class="modeli-row"></div>
+                <button id="modeli-next" class="modeli-arrow modeli-arrow-right" aria-label="Sljedeće kategorije">
+                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
             </div>
+
+            <div id="modeli-dots" class="flex md:hidden justify-center items-center gap-2 mt-6"></div>
 
             <div class="mt-10 text-center md:hidden reveal">
                 <a href="#kontakt"
@@ -623,11 +716,186 @@
         </div>
     </section>
 
+    <!-- Boje — paleta PET felta -->
+    <section id="boje" class="py-24 md:py-32 px-6 md:px-12 bg-autex-light relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Paleta boja</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">Boje PET felta</h2>
+                <p class="text-gray-500 text-lg leading-relaxed">
+                    PET felt dolazi u paleti od 51 boje inspirirane bojama prirode — od smirujućih zelenih tonova
+                    šuma do toplih nijansi sunčane zemlje. Ispod je nekoliko primjera iz naše ponude.
+                </p>
+            </div>
+
+            <div id="boje-preview" class="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-9 gap-4 mt-16 reveal delay-100"></div>
+
+            <div class="mt-10 reveal delay-200">
+                <button id="boje-all-btn" type="button"
+                    class="inline-flex items-center gap-2 border border-autex-dark px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-300">
+                    Pogledaj sve boje
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal — sve boje -->
+        <div id="boje-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="boje-modal-title">
+            <div id="boje-modal-backdrop" class="absolute inset-0 bg-autex-dark/60 backdrop-blur-sm"></div>
+            <div class="relative bg-white rounded-2xl w-full max-w-4xl max-h-[85vh] overflow-y-auto p-6 md:p-10">
+                <button id="boje-modal-close" type="button" aria-label="Zatvori"
+                    class="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 rounded-full bg-autex-light flex items-center justify-center hover:bg-gray-200 transition-colors z-10">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+                <h2 id="boje-modal-title" class="text-2xl md:text-3xl font-bold tracking-tight mb-8 pr-10">Sve boje PET felta</h2>
+                <div id="boje-all-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifikati -->
+    <section id="certifikati" class="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Kvaliteta i sigurnost</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">Certifikati</h2>
+                <p class="text-gray-500 text-lg leading-relaxed">
+                    Naši proizvodi zadovoljavaju stroge standarde kvalitete, sigurnosti i akustičnih performansi.
+                    Certifikati u nastavku bit će uskoro nadopunjeni stvarnom dokumentacijom.
+                </p>
+            </div>
+
+            <!-- TODO: zamijeniti placeholder kartice stvarnim certifikatima -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 reveal delay-100">
+                <div class="border border-gray-200 rounded-2xl p-8 text-center">
+                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Protupožarna klasa</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Certifikat o reakciji na požar prema europskoj normi (placeholder).</p>
+                </div>
+                <div class="border border-gray-200 rounded-2xl p-8 text-center">
+                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Akustični atest</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Ispitani koeficijenti zvučne apsorpcije u akreditiranom laboratoriju (placeholder).</p>
+                </div>
+                <div class="border border-gray-200 rounded-2xl p-8 text-center">
+                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">ISO standard</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Sustav upravljanja kvalitetom u skladu s ISO certifikacijom (placeholder).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Naš pristup -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-2xl mx-auto text-center reveal">
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-6">Naš pristup</span>
+            <p class="text-xl md:text-2xl text-gray-500 leading-relaxed">
+                Malom stanu ili velikom uredu pristupamo s jednakom pažnjom. Iza nas su brojni zadovoljni klijenti
+                u Hrvatskoj i Njemačkoj, provjerena kvaliteta izrade i rokovi na koje se možete osloniti. Svaki
+                prostor prvo analiziramo, a zatim dajemo stručnu preporuku rješenja koje odgovara upravo vama.
+            </p>
+            <a href="#kontakt"
+                class="inline-block mt-8 text-sm font-medium border-b border-autex-dark pb-1 hover:text-autex-accent hover:border-autex-accent transition-colors">
+                Zatražite besplatnu stručnu procjenu &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Scene proizvodnje -->
+    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-white/[0.06]"></div>
+        <div class="relative text-center px-6">
+            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-7 h-7 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            </div>
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-4">Naša proizvodnja</span>
+            <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3">Scene proizvodnje</h2>
+            <p class="text-white/40 text-sm max-w-sm mx-auto">Ovo je privremeni placeholder. Video iz naše proizvodne hale bit će uskoro dodan.</p>
+        </div>
+    </section>
+
+    <!-- PET felt — eko nota -->
+    <section id="pet-filc" class="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Naš materijal</span>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">PET felt — eko srce naših proizvoda</h2>
+                <p class="text-gray-500 text-lg leading-relaxed">
+                    Svaki naš akustični element izrađen je od PET felta — materijala koji nastaje recikliranjem plastičnih PET boca. One se usitnjavaju, tope i pretvaraju u vlakna koja se dalje prešaju u guste, čvrste ploče spremne za akustičnu obradu. Tako svaka boca dobiva novi život u vašem prostoru, umjesto da završi kao otpad.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 reveal delay-100 text-center sm:text-left">
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">75% reciklirano</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Izrađeno od recikliranih PET boca, bez novih sirovina.</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Vrhunska akustika</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Odlična zvučna apsorpcija bez kompromisa u kvaliteti.</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Bez štetnih tvari</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Siguran materijal za urede, domove i javne prostore.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 reveal delay-100">
+                <a href="pet-filc-materijal.html"
+                    class="inline-flex items-center gap-2 border border-autex-dark/30 px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-200">
+                    Saznajte više o PET feltu
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PET felt video — full-bleed placeholder -->
+    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-white/[0.06]"></div>
+        <div class="relative text-center px-6">
+            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-6">
+                <svg class="w-7 h-7 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            </div>
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-4">Iza kulisa</span>
+            <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3">Nastajanje PET felta</h2>
+            <p class="text-white/40 text-sm max-w-sm mx-auto">Ovo je privremeni placeholder. Video će biti naknadno dodan.</p>
+        </div>
+    </section>
+
     <!-- Locations Section -->
     <section id="galerija" class="py-24 md:py-32 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 reveal">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-4">Kako do nas</span>
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Kako do nas</span>
                 <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Naše lokacije</h2>
             </div>
 
@@ -640,15 +908,15 @@
                                 d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Sjedište poduzeća</h4>
+                    <h3 class="text-xl font-bold mb-2">Sjedište poduzeća</h3>
                     <p class="text-autex-accent text-sm font-medium mb-4 uppercase tracking-widest">Varaždin</p>
                     <address class="not-italic text-gray-600 leading-relaxed mb-6">
                         Cloud d.o.o.<br>
-                        Ulica Dragutina Rakovca 34<br>
+                        Ulica Dragutina Rakovca 3<br>
                         42000 Varaždin
                     </address>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Ulica+Dragutina+Rakovca+34%2C+42000+Vara%C5%BEdin"
-                        target="_blank"
+                    <a href="https://www.google.com/maps/search/?api=1&query=Ulica+Dragutina+Rakovca+3%2C+42000+Vara%C5%BEdin"
+                        target="_blank" rel="noopener noreferrer"
                         class="inline-block border border-autex-dark/30 px-6 py-2 rounded-full text-sm hover:bg-autex-dark hover:text-white transition-colors">
                         Prikaži na karti &rarr;
                     </a>
@@ -664,7 +932,7 @@
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold mb-2">Showroom</h4>
+                    <h3 class="text-xl font-bold mb-2">Showroom</h3>
                     <p class="text-gray-400 text-sm font-medium mb-4 uppercase tracking-widest">Zagreb</p>
                     <p class="text-gray-300 text-sm leading-relaxed mb-5">Posjetite naš showroom i uvjerite se osobno u kvalitetu i raspon naših akustičnih rješenja. Otvoreni smo za dogovorene posjete.</p>
                     <address class="not-italic text-gray-300 leading-relaxed mb-6">
@@ -674,7 +942,7 @@
                     </address>
                     <div class="flex flex-wrap gap-3">
                         <a href="https://www.google.com/maps/search/?api=1&query=Buzinski+kr%C4%8Di+5%2C+10000+Zagreb"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                             class="inline-block border border-white/30 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-autex-dark transition-colors">
                             Prikaži na karti &rarr;
                         </a>
@@ -688,111 +956,14 @@
         </div>
     </section>
 
-    <!-- Projects Gallery / Accordion -->
-    <section id="galerija-projekata" class="py-24 md:py-32 bg-[#111]">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-
-            <div class="mb-14 reveal">
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">Završeni projekti</h2>
-                    <p class="text-white/35 text-sm leading-relaxed max-w-xs">
-                        Pogledajte neke od naših mnogobrojnih projekata i saznajte zašto firme i privatni klijenti biraju baš nas.
-                    </p>
-                </div>
-            </div>
-
-            <div id="proj-accordion">
-
-                <!-- 01 — Ricoh, Njemačka -->
-                <div class="acc-item active">
-                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/04/IMG-20260213-WA0064-L-1-scaled.jpg" alt="Ricoh, Njemačka">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Ricoh, Njemačka</span></div>
-                    <div class="acc-content">
-                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">01 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Ricoh,<br>Njemačka</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje korporativnih ureda za Ricoh u Njemačkoj: premium zidne obloge za međunarodnog klijenta.</p>
-                        <a href="https://lolaacoustix.com/projekt-ricoh-njemacka/" target="_blank" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                            Pogledaj cijeli projekt
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 02 — Središće, Zagreb -->
-                <div class="acc-item">
-                    <img src="sredisce.jpg" alt="Središće, Zagreb">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Središće, Zagreb</span></div>
-                    <div class="acc-content">
-                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">02 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Središće,<br>Zagreb</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustična rješenja za poslovni prostor u Središću, kombinacija vizualnog identiteta i zvučnog komfora.</p>
-                        <a href="https://lolaacoustix.com/projekt-sredisce-zagreb/" target="_blank" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                            Pogledaj cijeli projekt
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 03 — Stuttgart 2 -->
-                <div class="acc-item">
-                    <img src="stuttgart.jpeg" alt="Stuttgart 2, Njemačka">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Stuttgart 2, Njemačka</span></div>
-                    <div class="acc-content">
-                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">03 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Stuttgart 2,<br>Njemačka</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično opremanje uredskog prostora u Stuttgartu, nastavak suradnje s njemačkim tržištem.</p>
-                        <a href="https://lolaacoustix.com/projekt-stuttgart-2/" target="_blank" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                            Pogledaj cijeli projekt
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 04 — City Island, Zagreb -->
-                <div class="acc-item">
-                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/02/IMG-20260127-WA0038-L.jpeg" alt="City Island, Zagreb">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>City Island, Zagreb</span></div>
-                    <div class="acc-content">
-                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">04 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">City Island,<br>Zagreb</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje prostora unutar City Islanda, prostor koji demonstrira sva naša rješenja u realnom okruženju.</p>
-                        <a href="https://lolaacoustix.com/projekt-u-city-island-zagreb/" target="_blank" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                            Pogledaj cijeli projekt
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 05 — Privatna kuća Sračinec -->
-                <div class="acc-item">
-                    <img src="sracinec.jpeg" alt="Privatna kuća, Sračinec">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Privatna kuća, Sračinec</span></div>
-                    <div class="acc-content">
-                        <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">05 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Privatna kuća,<br>Sračinec</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustična obrada privatnog doma, dokaz da naša rješenja savršeno pristaju i rezidencijalnim prostorima.</p>
-                        <a href="https://lolaacoustix.com/privatna-kuca-sracinec/" target="_blank" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
-                            Pogledaj cijeli projekt
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-12 reveal">
-                <a href="/projekti" class="inline-flex items-center gap-3 text-white text-sm font-medium border-b border-white/25 pb-1 hover:border-white transition-colors duration-300">
-                    Pogledaj sve projekte
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-            </div>
-
-        </div>
+    <!-- Priča o Loli -->
+    <section class="reveal">
+        <img src="lola-mobile.png"
+            alt="This is a story about Lola: small dog with strong bark, happy eyes in the dark, waving tail always in the air, her best friend was every cozy chair. She gave us fun, she gave us laugh, but most of all, she gave us love. — written by Andrijana Mađarić"
+            class="w-full h-auto block md:hidden">
+        <img src="lola.png"
+            alt="This is a story about Lola: small dog with strong bark, happy eyes in the dark, waving tail always in the air, her best friend was every cozy chair. She gave us fun, she gave us laugh, but most of all, she gave us love. — written by Andrijana Mađarić"
+            class="w-full h-auto hidden md:block">
     </section>
 
     <!-- Contact Section -->
@@ -886,21 +1057,21 @@
                 <div>
                     <p class="text-xs uppercase tracking-widest text-autex-accent mb-4">Pratite nas</p>
                     <div class="flex gap-5">
-                        <a href="https://www.facebook.com/profile.php?id=61559754041193" target="_blank"
+                        <a href="https://www.facebook.com/profile.php?id=61559754041193" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
                             class="w-10 h-10 rounded-full bg-autex-dark text-white flex items-center justify-center hover:bg-autex-accent transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/lola_acoustix/" target="_blank"
+                        <a href="https://www.instagram.com/lola_acoustix/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                             class="w-10 h-10 rounded-full bg-autex-dark text-white flex items-center justify-center hover:bg-autex-accent transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/lola-acoustix/posts/?feedView=all" target="_blank"
+                        <a href="https://www.linkedin.com/company/lola-acoustix/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
                             class="w-10 h-10 rounded-full bg-autex-dark text-white flex items-center justify-center hover:bg-autex-accent transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -961,13 +1132,13 @@
                 <div class="space-y-2 text-sm text-gray-400">
                     <p><a href="mailto:info@lolaacoustix.com"
                             class="hover:text-white transition-colors">info@lolaacoustix.com</a></p>
-                    <p>Ulica Dragutina Rakovca 34, 42000 Varaždin</p>
+                    <p>Ulica Dragutina Rakovca 3, 42000 Varaždin</p>
                     <p>Buzinski krči 5, 10000 Zagreb</p>
                 </div>
             </div>
 
             <div>
-                <h5 class="font-semibold mb-4">Modeli</h5>
+                <h3 class="font-semibold mb-4">Modeli</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
                     <li><a href="#modeli" class="hover:text-white transition-colors">Zidne obloge</a></li>
                     <li><a href="#modeli" class="hover:text-white transition-colors">Pregrade prostora</a></li>
@@ -978,9 +1149,8 @@
             </div>
 
             <div>
-                <h5 class="font-semibold mb-4">Tvrtka</h5>
+                <h3 class="font-semibold mb-4">Tvrtka</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="#proizvodnja" class="hover:text-white transition-colors">Naša proizvodnja</a></li>
                     <li><a href="#galerija-projekata" class="hover:text-white transition-colors">Galerija projekata</a>
                     </li>
                     <li><a href="#certifikati" class="hover:text-white transition-colors">Certifikati</a></li>
@@ -993,8 +1163,9 @@
             class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
             <p>&copy; 2026 Lolaacoustix. All Rights Reserved.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition-colors">Impressum</a>
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
             </div>
         </div>
     </footer>
@@ -1025,10 +1196,14 @@
                 menuOpen = !menuOpen;
                 mobileMenu.classList.toggle('hidden', !menuOpen);
                 mobileMenu.classList.toggle('flex', menuOpen);
+                menuToggle.setAttribute('aria-expanded', String(menuOpen));
+                menuToggle.setAttribute('aria-label', menuOpen ? 'Zatvori navigacijski izbornik' : 'Otvori navigacijski izbornik');
             });
             document.querySelectorAll('.mobile-link').forEach(link => {
                 link.addEventListener('click', () => {
                     menuOpen = false;
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Otvori navigacijski izbornik');
                     mobileMenu.classList.add('hidden');
                     mobileMenu.classList.remove('flex');
                 });
@@ -1051,125 +1226,204 @@
                 document.querySelectorAll('header .reveal').forEach(el => el.classList.add('active'));
             }, 100);
 
-            // Hero crossfade slideshow
-            const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
-            let heroIndex = 0;
-            function activateSlide(i) {
-                heroSlides.forEach(s => s.classList.remove('active'));
-                heroSlides[i].classList.add('active');
-            }
-            // no reflow needed — all slides share same continuous animation
-            activateSlide(0);
-            setInterval(() => {
-                heroIndex = (heroIndex + 1) % heroSlides.length;
-                activateSlide(heroIndex);
-            }, 3000);
+            // Modeli — horizontal product category carousel
+            (function () {
+                const cardsWrap = document.getElementById('modeli-cards');
+                const dotsWrap = document.getElementById('modeli-dots');
+                const prevBtn = document.getElementById('modeli-prev');
+                const nextBtn = document.getElementById('modeli-next');
+                if (!cardsWrap || typeof PRODUCTS_TREE === 'undefined') return;
 
-            // Projects carousel
-            const projTrack = document.getElementById('proj-track');
-            const projItems = projTrack ? Array.from(projTrack.querySelectorAll('.proj-item')) : [];
-            const projPrev = document.getElementById('proj-prev');
-            const projNext = document.getElementById('proj-next');
-            const projDots = Array.from(document.querySelectorAll('.proj-dot'));
-            let projIndex = 0;
+                cardsWrap.innerHTML = PRODUCTS_TREE.map((cat, i) => `
+                    <a href="${cat.slug}.html" class="modeli-card group reveal${i % 3 === 1 ? ' delay-100' : i % 3 === 2 ? ' delay-200' : ''}">
+                        ${cat.image ? `
+                        <div class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                            <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover" draggable="false">
+                        </div>` : `
+                        <div class="image-zoom-container aspect-[3/4] bg-gray-300 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400"></div>
+                            <div class="relative text-center p-6">
+                                <svg class="w-12 h-12 mx-auto mb-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                <p class="font-semibold text-gray-700">${cat.title}</p>
+                            </div>
+                        </div>`}
+                        <h3 class="text-lg font-semibold mb-3">${cat.title}</h3>
+                        <span class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full group-hover:bg-black transition-colors">
+                            Pogledaj modele
+                            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </a>
+                `).join('');
 
-            function projMaxIndex() {
-                if (!projItems.length) return 0;
-                const gap = 20;
-                const itemWidth = projItems[0].offsetWidth;
-                const itemW = itemWidth + gap;
-                const totalWidth = projItems.length * itemWidth + (projItems.length - 1) * gap;
-                const padLeft = parseInt(getComputedStyle(projTrack).paddingLeft) || 0;
-                const containerW = projTrack.parentElement.offsetWidth;
-                return Math.max(0, Math.floor((padLeft + totalWidth - containerW) / itemW));
-            }
+                const cardObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                cardsWrap.querySelectorAll('.reveal').forEach(el => cardObserver.observe(el));
 
-            function updateProj() {
-                if (!projItems.length) return;
-                const itemW = projItems[0].offsetWidth + 20;
-                const max = projMaxIndex();
-                projIndex = Math.min(projIndex, max);
-                projTrack.style.transform = `translateX(-${projIndex * itemW}px)`;
-                projPrev.disabled = projIndex === 0;
-                projNext.disabled = projIndex >= max;
-                projDots.forEach((d, i) => {
-                    d.classList.toggle('active', i === projIndex);
-                });
-            }
+                const cards = Array.from(cardsWrap.children);
 
-            projPrev?.addEventListener('click', () => { if (projIndex > 0) { projIndex--; updateProj(); } });
-            projNext?.addEventListener('click', () => { if (projIndex < projMaxIndex()) { projIndex++; updateProj(); } });
-            projDots.forEach((dot, i) => {
-                dot.addEventListener('click', () => { projIndex = Math.min(i, projMaxIndex()); updateProj(); });
-            });
+                dotsWrap.innerHTML = cards.map((_, i) => `<button class="modeli-dot${i === 0 ? ' active' : ''}" aria-label="Prikaži kategoriju ${i + 1}"></button>`).join('');
+                const dots = Array.from(dotsWrap.children);
 
-            // Touch swipe
-            let touchStartX = 0;
-            projTrack?.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-            projTrack?.addEventListener('touchend', e => {
-                const delta = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(delta) > 50) {
-                    if (delta > 0 && projIndex < projMaxIndex()) projIndex++;
-                    else if (delta < 0 && projIndex > 0) projIndex--;
-                    updateProj();
+                function updateArrows() {
+                    prevBtn.disabled = cardsWrap.scrollLeft <= 4;
+                    nextBtn.disabled = cardsWrap.scrollLeft >= cardsWrap.scrollWidth - cardsWrap.clientWidth - 4;
                 }
-            });
 
-            window.addEventListener('resize', updateProj);
-            updateProj();
+                function updateDots() {
+                    let idx = 0;
+                    cards.forEach((c, i) => {
+                        if (c.offsetLeft <= cardsWrap.scrollLeft + 20) idx = i;
+                    });
+                    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    cardsWrap.scrollBy({ left: -(cards[0].offsetWidth + 24), behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    cardsWrap.scrollBy({ left: cards[0].offsetWidth + 24, behavior: 'smooth' });
+                });
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        cardsWrap.scrollTo({ left: cards[i].offsetLeft - (window.innerWidth < 768 ? 20 : 60), behavior: 'smooth' });
+                    });
+                });
+
+                cardsWrap.addEventListener('scroll', () => {
+                    updateArrows();
+                    updateDots();
+                });
+
+                // Ne dopusti da normalan (vertikalni) scroll miša bude "zarobljen" unutar
+                // reda i pretvoren u horizontalni pomak — stranica se mora nastaviti skrolati.
+                cardsWrap.addEventListener('wheel', (e) => {
+                    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                        e.preventDefault();
+                        window.scrollBy(0, e.deltaY);
+                    }
+                }, { passive: false });
+
+                updateArrows();
+                updateDots();
+            })();
+
+            // Image accordion — Završeni projekti
+            (function () {
+                const items = Array.from(document.querySelectorAll('.acc-item'));
+                if (!items.length) return;
+
+                function setActive(i) {
+                    items.forEach((item, j) => item.classList.toggle('active', j === i));
+                }
+
+                items.forEach((item, i) => {
+                    item.addEventListener('mouseenter', () => setActive(i));
+                    item.addEventListener('click', () => setActive(i));
+                });
+            })();
+
+            // Boje — paleta PET felta
+            (function () {
+                const COLORS = [
+            { name: 'Dark Grey Wool', img: 'boje/dark-grey-wool.jpg' },
+            { name: 'Glacier Blue', img: 'boje/glacier-blue.jpg' },
+            { name: 'Stone Grey', img: 'boje/stone-grey.jpg' },
+            { name: 'Spring Forest', img: 'boje/spring-forest.jpg' },
+            { name: 'Pistachio Green', img: 'boje/pistachio-green.jpg' },
+            { name: 'Lavender', img: 'boje/lavender.jpg' },
+            { name: 'Beach Sand Beige', img: 'boje/beach-sand-beige.jpg' },
+            { name: 'White Lily', img: 'boje/white-lily.jpg' },
+            { name: 'Dry Autumn Leaves', img: 'boje/dry-autumn-leaves.jpg' },
+            { name: 'Olive Green', img: 'boje/olive-green.jpg' },
+            { name: 'Turquoise', img: 'boje/turquoise.jpg' },
+            { name: 'Turmeric Yellow', img: 'boje/turmeric-yellow.jpg' },
+            { name: 'Jade Green', img: 'boje/jade-green.jpg' },
+            { name: 'Blue Grey Wool', img: 'boje/blue-grey-wool.jpg' },
+            { name: 'Beige Wool', img: 'boje/beige-wool.jpg' },
+            { name: 'Sky Blue', img: 'boje/sky-blue.jpg' },
+            { name: 'Emerald Green', img: 'boje/emerald-green.jpg' },
+            { name: 'Sun Yellow', img: 'boje/sun-yellow.jpg' },
+            { name: 'Off White Greyish Wool', img: 'boje/off-white-greyish-wool.jpg' },
+            { name: 'Apple Green', img: 'boje/apple-green.jpg' },
+            { name: 'Charcoal Grey', img: 'boje/charcoal-grey.jpg' },
+            { name: 'Light Blue Wool', img: 'boje/light-blue-wool.jpg' },
+            { name: 'Dirty Purple', img: 'boje/dirty-purple.jpg' },
+            { name: 'Pale White Grey Wool', img: 'boje/pale-white-grey-wool.jpg' },
+            { name: 'White Rose', img: 'boje/white-rose.jpg' },
+            { name: 'Grass Green', img: 'boje/grass-green.jpg' },
+            { name: 'Cornflower Blue', img: 'boje/cornflower-blue.jpg' },
+            { name: 'Desert Sand Beige', img: 'boje/desert-sand-beige.jpg' },
+            { name: 'Meadow Saffron', img: 'boje/meadow-saffron.jpg' },
+            { name: 'Pale Yellow', img: 'boje/pale-yellow.jpg' },
+            { name: 'Kingfisher Blue', img: 'boje/kingfisher-blue.jpg' },
+            { name: 'Peacock Blue', img: 'boje/peacock-blue.jpg' },
+            { name: 'Brick Brown', img: 'boje/brick-brown.jpg' },
+            { name: 'Black Panther', img: 'boje/black-panther.jpg' },
+            { name: 'Blue Caviar', img: 'boje/blue-caviar.jpg' },
+            { name: 'Orange', img: 'boje/orange.jpg' },
+            { name: 'Blueberry Blue', img: 'boje/blueberry-blue.jpg' },
+            { name: 'Greyish White Wool', img: 'boje/greyish-white-wool.jpg' },
+            { name: 'White Coffee', img: 'boje/white-coffee.jpg' },
+            { name: 'Rose Red', img: 'boje/rose-red.jpg' },
+            { name: 'Snow White', img: 'boje/snow-white.jpg' },
+            { name: 'Grey Wool', img: 'boje/grey-wool.jpg' },
+            { name: 'Off White', img: 'boje/off-white.jpg' },
+            { name: 'Pigeon Gray', img: 'boje/pigeon-gray.jpg' },
+            { name: 'Dark Grey', img: 'boje/dark-grey.jpg' },
+            { name: 'Chocolate Brown', img: 'boje/chocolate-brown.jpg' },
+            { name: 'Old Wine Red', img: 'boje/old-wine-red.jpg' },
+            { name: 'Salmon Pink', img: 'boje/salmon-pink.jpg' },
+            { name: 'Midnight Blue', img: 'boje/midnight-blue.jpg' },
+            { name: 'Dry Pampas Grass', img: 'boje/dry-pampas-grass.jpg' },
+            { name: 'Light Olive Green', img: 'boje/light-olive-green.jpg' },
+                ];
+
+                const preview = document.getElementById('boje-preview');
+                const allGrid = document.getElementById('boje-all-grid');
+                const allBtn = document.getElementById('boje-all-btn');
+                const modal = document.getElementById('boje-modal');
+                const modalBackdrop = document.getElementById('boje-modal-backdrop');
+                const modalClose = document.getElementById('boje-modal-close');
+                if (!preview || !allGrid) return;
+
+                function swatchHTML(c) {
+                    return `
+                        <div>
+                            <div class="aspect-square rounded-xl overflow-hidden bg-gray-200">
+                                <img src="${c.img}" alt="PET felt boja — ${c.name}" class="w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 text-center">${c.name}</p>
+                        </div>`;
+                }
+
+                preview.innerHTML = COLORS.slice(0, 9).map(swatchHTML).join('');
+                allGrid.innerHTML = COLORS.map(swatchHTML).join('');
+
+                function openModal() {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+                function closeModal() {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+
+                allBtn?.addEventListener('click', openModal);
+                modalClose?.addEventListener('click', closeModal);
+                modalBackdrop?.addEventListener('click', closeModal);
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+                });
+            })();
         });
-
-        // GSAP ScrollTrigger — Kako radimo
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to('#kako-header', {
-            scrollTrigger: {
-                trigger: '#proizvodnja',
-                start: 'top 78%',
-            },
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: 'power3.out'
-        });
-
-        gsap.to('.kako-step', {
-            scrollTrigger: {
-                trigger: '.kako-step',
-                start: 'top 80%',
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.9,
-            ease: 'power3.out',
-            stagger: 0.16
-        });
-
-        gsap.to('#kako-cta', {
-            scrollTrigger: {
-                trigger: '#kako-cta',
-                start: 'top 92%',
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'power3.out'
-        });
-
-        // Image accordion — Završeni projekti
-        (function () {
-            const items = Array.from(document.querySelectorAll('.acc-item'));
-            if (!items.length) return;
-
-            function setActive(i) {
-                items.forEach((item, j) => item.classList.toggle('active', j === i));
-            }
-
-            items.forEach((item, i) => {
-                item.addEventListener('mouseenter', () => setActive(i));
-                item.addEventListener('click', () => setActive(i));
-            });
-        })();
 
         // Form submit handler
         function handleSubmit(e) {

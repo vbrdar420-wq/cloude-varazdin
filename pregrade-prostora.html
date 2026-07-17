@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregrade prostora — Lola Acoustix</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .scrollbar-hide {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-card[hidden] {
+            display: none;
+        }
+
+        .category-group[hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Pregrade prostora</h1>
+        <p class="mt-4 text-slate-500 text-lg max-w-xl">
+            Elegantne razdjelne stijene koje dijele prostor bez gubitka svjetla, prozračnosti i zvučne udobnosti.
+        </p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav aria-label="Podkategorije" class="max-w-6xl mx-auto px-6 mt-10 md:mt-14">
+        <div id="tabs" class="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+            <button type="button" data-filter="all"
+                class="tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200">
+                Sve pregrade
+            </button>
+            <button type="button" data-filter="air-divider"
+                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
+                Air divider
+            </button>
+            <button type="button" data-filter="freestanding-divider"
+                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
+                Freestanding divider
+            </button>
+        </div>
+    </nav>
+
+    <!-- Product Groups -->
+    <main class="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <div id="category-sections" class="flex flex-col gap-16 md:gap-20">
+
+                <section class="category-group" data-group="air-divider">
+                    <div class="max-w-2xl mb-6 md:mb-8">
+                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">Air divider</h2>
+                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Air divider ima perforiranu površinu koja propušta svjetlo i zrak između dviju zona, a pritom i dalje prigušuje zvuk.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+
+                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="air-divider"
+                        data-title="Rain" data-subtitle="Air divider" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-base font-medium text-slate-900">Rain</h3>
+                    </article>
+
+                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="air-divider"
+                        data-title="Bubles" data-subtitle="Air divider" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-base font-medium text-slate-900">Bubles</h3>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="category-group" data-group="freestanding-divider">
+                    <div class="max-w-2xl mb-6 md:mb-8">
+                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">Freestanding divider</h2>
+                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Freestanding divider ne zahtijeva montažu na zid ili strop — postavlja se i premješta samostalno, pa se raspored prostora mijenja po potrebi.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+
+                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="freestanding-divider"
+                        data-title="Stone" data-subtitle="Freestanding divider" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-base font-medium text-slate-900">Stone</h3>
+                    </article>
+
+                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="freestanding-divider"
+                        data-title="Nex" data-subtitle="Freestanding divider" data-description="Nex je samostojeća modularna pregrada s geometrijskim izrezima koja osigurava privatnost, akustično prigušenje i estetski dojam. Pokretna je i fleksibilna te ne zahtijeva trajnu instalaciju, što je čini idealnom za urede i otvorene radne prostore kojima je potrebno stilsko, a funkcionalno razdvajanje." data-images='["proizvodi/nex/1.jpg", "proizvodi/nex/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                            <img src="proizvodi/nex/1.jpg" alt="Nex" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="mt-4 text-base font-medium text-slate-900">Nex</h3>
+                    </article>
+                    </div>
+                </section>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-backdrop" class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
+
+        <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden">
+            <button id="modal-close" type="button" aria-label="Zatvori"
+                class="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-slate-100 flex items-center justify-center transition-colors duration-200 shadow-sm">
+                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div id="modal-image-wrap" class="relative aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+                <svg id="modal-image-placeholder" class="w-14 h-14 text-slate-300 absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+
+                <div id="modal-gallery" class="hidden w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                    <div id="modal-gallery-track" class="flex h-full"></div>
+                </div>
+
+                <button id="modal-gallery-prev" type="button" aria-label="Prethodna slika"
+                    class="hidden absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-sm transition-colors duration-200">
+                    <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button id="modal-gallery-next" type="button" aria-label="Sljedeća slika"
+                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-sm transition-colors duration-200">
+                    <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </button>
+                <div id="modal-gallery-dots" class="hidden absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5"></div>
+            </div>
+
+            <div class="p-8 md:p-10">
+                <p id="modal-subtitle" class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">Air divider</p>
+                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Rain</h2>
+                <p id="modal-description" class="text-slate-500 leading-relaxed hidden"></p>
+                <a href="index.html#kontakt"
+                    class="mt-6 inline-flex items-center gap-2 bg-slate-900 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-slate-800 transition-colors duration-200">
+                    Zatražite ponudu
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Tab filtering — filtrira po grupama (sekcijama), ne po pojedinačnim karticama
+        const tabs = document.querySelectorAll('.tab-btn');
+        const groupSections = document.querySelectorAll('.category-group');
+        const cards = document.querySelectorAll('.product-card');
+        const TAB_ACTIVE = 'tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200';
+        const TAB_INACTIVE = 'tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200';
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => { t.className = TAB_INACTIVE; });
+                tab.className = TAB_ACTIVE;
+
+                const filter = tab.dataset.filter;
+                groupSections.forEach(section => {
+                    section.hidden = !(filter === 'all' || section.dataset.group === filter);
+                });
+            });
+        });
+
+        // Quick-view modal
+        const modal = document.getElementById('product-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalClose = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSubtitle = document.getElementById('modal-subtitle');
+        const modalDescription = document.getElementById('modal-description');
+        const modalImagePlaceholder = document.getElementById('modal-image-placeholder');
+        const modalGallery = document.getElementById('modal-gallery');
+        const modalGalleryTrack = document.getElementById('modal-gallery-track');
+        const modalGalleryPrev = document.getElementById('modal-gallery-prev');
+        const modalGalleryNext = document.getElementById('modal-gallery-next');
+        const modalGalleryDots = document.getElementById('modal-gallery-dots');
+
+        function updateActiveDot() {
+            if (!modalGalleryDots.children.length) return;
+            const index = Math.round(modalGallery.scrollLeft / modalGallery.clientWidth);
+            Array.from(modalGalleryDots.children).forEach((dot, i) => {
+                dot.classList.toggle('bg-white', i === index);
+                dot.classList.toggle('bg-white/60', i !== index);
+            });
+        }
+
+        modalGallery.addEventListener('scroll', updateActiveDot);
+        modalGalleryPrev.addEventListener('click', () => {
+            modalGallery.scrollBy({ left: -modalGallery.clientWidth, behavior: 'smooth' });
+        });
+        modalGalleryNext.addEventListener('click', () => {
+            modalGallery.scrollBy({ left: modalGallery.clientWidth, behavior: 'smooth' });
+        });
+        modalGalleryDots.addEventListener('click', (e) => {
+            const dot = e.target.closest('.modal-dot');
+            if (!dot) return;
+            modalGallery.scrollTo({ left: Number(dot.dataset.index) * modalGallery.clientWidth, behavior: 'smooth' });
+        });
+
+        function openModal(card) {
+            modalTitle.textContent = card.dataset.title;
+            modalSubtitle.textContent = card.dataset.subtitle;
+            if (card.dataset.description) {
+                modalDescription.textContent = card.dataset.description;
+                modalDescription.classList.remove('hidden');
+            } else {
+                modalDescription.textContent = '';
+                modalDescription.classList.add('hidden');
+            }
+
+            let images = [];
+            if (card.dataset.images) {
+                try { images = JSON.parse(card.dataset.images); } catch (e) { images = []; }
+            }
+
+            if (images.length > 0) {
+                modalGalleryTrack.innerHTML = images.map(src => `
+                    <div class="w-full h-full flex-shrink-0 snap-center flex items-center justify-center bg-slate-100">
+                        <img src="${src}" alt="${card.dataset.title}" class="max-w-full max-h-full object-contain">
+                    </div>
+                `).join('');
+                modalGallery.scrollLeft = 0;
+                modalGallery.classList.remove('hidden');
+                modalImagePlaceholder.classList.add('hidden');
+
+                const showNav = images.length > 1;
+                modalGalleryPrev.classList.toggle('hidden', !showNav);
+                modalGalleryNext.classList.toggle('hidden', !showNav);
+                modalGalleryDots.classList.toggle('hidden', !showNav);
+                modalGalleryDots.innerHTML = showNav
+                    ? images.map((_, i) => `<button type="button" data-index="${i}" class="modal-dot w-1.5 h-1.5 rounded-full bg-white/60 hover:bg-white transition-colors duration-200"></button>`).join('')
+                    : '';
+                updateActiveDot();
+            } else {
+                modalGalleryTrack.innerHTML = '';
+                modalGallery.classList.add('hidden');
+                modalImagePlaceholder.classList.remove('hidden');
+                modalGalleryPrev.classList.add('hidden');
+                modalGalleryNext.classList.add('hidden');
+                modalGalleryDots.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => openModal(card));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(card);
+                }
+            });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
+    </script>
+</body>
+
+</html>
