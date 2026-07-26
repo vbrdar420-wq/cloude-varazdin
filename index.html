@@ -41,7 +41,7 @@
         "name": "Lola Acoustix",
         "alternateName": "Cloud d.o.o.",
         "url": "https://lolaacoustix.com/",
-        "logo": "https://lolaacoustix.com/wp-content/uploads/2024/10/lolaacoustix-logo.png",
+        "logo": "lolaacoustix-logo.png",
         "email": "info@lolaacoustix.com",
         "sameAs": [
             "https://www.facebook.com/profile.php?id=61559754041193",
@@ -111,6 +111,25 @@
             overflow-x: hidden;
         }
 
+        .hero-video {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-video-portrait {
+            display: none;
+        }
+
+        @media (orientation: portrait) {
+            .hero-video-landscape {
+                display: none;
+            }
+
+            .hero-video-portrait {
+                display: block;
+            }
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -146,7 +165,6 @@
             transform: scale(1.05);
         }
 
-        /* Hero crossfade slideshow */
         /* Modeli — horizontal product category carousel */
         .modeli-row-wrap {
             position: relative;
@@ -187,19 +205,19 @@
 
         @media (min-width: 768px) {
             .modeli-card {
-                width: 380px;
+                width: 410px;
             }
         }
 
         @media (min-width: 1024px) {
             .modeli-card {
-                width: calc((100% - 48px) / 3);
+                width: calc((100% - 48px) / 2.65);
             }
         }
 
         @media (max-width: 767px) {
             .modeli-card {
-                width: 86%;
+                width: 88%;
             }
         }
 
@@ -400,23 +418,6 @@
             }
         }
 
-        .namjestaj-relief {
-            position: relative;
-            background-image: url('acoustic-panel.png');
-            background-size: cover;
-            background-position: center;
-        }
-        .namjestaj-relief::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(6, 5, 4, 0.72);
-        }
-        .namjestaj-relief > * {
-            position: relative;
-            z-index: 1;
-        }
-
         .scroll-bounce {
             animation: bounce 2s ease-in-out infinite;
         }
@@ -454,7 +455,7 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo py-6 px-6 md:px-12 text-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#" class="z-50 relative">
-                <img src="https://lolaacoustix.com/wp-content/uploads/2024/10/lolaacoustix-logo.png" alt="Lola Acoustix"
+                <img src="lolaacoustix-logo.png" alt="Lola Acoustix"
                     class="h-7 brightness-0 invert" id="nav-logo">
             </a>
 
@@ -463,6 +464,7 @@
                 <a href="#pet-filc" class="hover:opacity-70 transition-opacity">PET felt</a>
                 <a href="#boje" class="hover:opacity-70 transition-opacity">Boje</a>
                 <a href="#galerija-projekata" class="hover:opacity-70 transition-opacity">Galerija radova</a>
+                <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
                 <a href="#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
                     <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
                     Certifikati
@@ -493,6 +495,7 @@
             <a href="#pet-filc" class="mobile-link hover:opacity-70 transition-opacity">PET felt</a>
             <a href="#boje" class="mobile-link hover:opacity-70 transition-opacity">Boje</a>
             <a href="#galerija-projekata" class="mobile-link hover:opacity-70 transition-opacity">Galerija radova</a>
+            <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
             <a href="#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
                 <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
                 Certifikati
@@ -504,19 +507,19 @@
     </div>
 
     <!-- Hero Section with Video -->
-    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <header class="relative w-full h-screen flex items-end justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 bg-autex-dark">
-            <video class="w-full h-full object-cover" src="video2.mp4" autoplay muted loop playsinline></video>
+            <video class="hero-video hero-video-landscape w-full h-full object-cover" src="video2.mp4" autoplay
+                muted loop playsinline></video>
+            <video class="hero-video hero-video-portrait w-full h-full object-cover" src="hero-vertical.mp4" muted
+                loop playsinline></video>
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-            <div
-                class="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight mb-6 reveal">
-                Oblikujemo<br>vašu tišinu.
-            </div>
-            <h1 class="text-white text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90 reveal delay-100">
-                Akustični paneli od PET felta za apsorpciju zvuka — dizajnirani i izrađeni po mjeri vašeg prostora.
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pb-28 md:pb-32">
+            <h1
+                class="text-white text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight mb-8 reveal">
+                WHERE DESIGN MEETS SOUND
             </h1>
             <div class="flex flex-wrap gap-4 justify-center reveal delay-200">
                 <a href="#modeli"
@@ -531,7 +534,7 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 scroll-bounce reveal delay-300">
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 scroll-bounce reveal delay-300">
             <div class="flex flex-col items-center gap-2 text-white/60">
                 <span class="text-xs tracking-widest uppercase">Scroll</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -542,17 +545,245 @@
     </header>
 
     <!-- Brand Statement -->
-    <section class="py-24 md:py-40 px-6 md:px-12 max-w-7xl mx-auto">
+    <section class="pt-10 pb-4 md:py-40 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="max-w-4xl">
             <h2 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight reveal">
                 Dizajniramo i proizvodimo akustična rješenja koja suzbijaju buku i jeku, balansiraju estetiku s
                 izvanrednim performansama.
             </h2>
-            <div class="mt-12 reveal delay-100">
+            <div class="mt-8 md:mt-12 reveal delay-100">
                 <a href="#galerija-projekata"
                     class="text-lg font-medium border-b border-autex-dark pb-1 hover:text-autex-accent hover:border-autex-accent transition-colors">
                     Naši radovi &rarr;
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proizvodi u prostoru — sticky stack kartice -->
+    <section class="relative bg-white">
+        <div class="h-screen flex items-center justify-center sticky top-0 px-4">
+            <div class="relative flex flex-col items-center justify-center h-[78vh] w-[92vw] md:h-[85vh] md:w-[88vw] max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl">
+                <img src="slika-1.jpeg" alt="Nex — slobodnostojeća pregrada prostora" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+        </div>
+        <div class="h-screen flex items-center justify-center sticky top-0 px-4">
+            <div class="relative flex flex-col items-center justify-center h-[78vh] w-[92vw] md:h-[85vh] md:w-[88vw] max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl">
+                <img src="slika-2.jpeg" alt="Samba — akustična lampa od PET felta" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+        </div>
+        <div class="h-screen flex items-center justify-center sticky top-0 px-4">
+            <div class="relative flex flex-col items-center justify-center h-[78vh] w-[92vw] md:h-[85vh] md:w-[88vw] max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl">
+                <img src="slika-3.jpeg" alt="Dragon — 3D zidna akustična obloga" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+        </div>
+        <div class="h-screen flex items-center justify-center sticky top-0 px-4">
+            <div class="relative flex flex-col items-center justify-center h-[78vh] w-[92vw] md:h-[85vh] md:w-[88vw] max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl">
+                <img src="slika-4.jpeg" alt="Beehive — akustična telefonska kabina po mjeri" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kratka premium izjava -->
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-2xl mx-auto text-center reveal">
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-5">Lola Acoustix</span>
+            <p class="text-2xl md:text-3xl font-medium tracking-tight leading-snug">
+                Gdje tišina postaje dizajn.
+            </p>
+            <p class="text-gray-500 mt-4 leading-relaxed">
+                Akustična rješenja rađena ručno, u Hrvatskoj, za prostore koji zaslužuju više.
+            </p>
+        </div>
+    </section>
+
+    <!-- Scene iz proizvodnje -->
+    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
+        <video class="absolute inset-0 w-full h-full object-cover" src="proizvodnja.mp4" autoplay muted loop playsinline></video>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative text-center px-6">
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/60 block">Naša proizvodnja</span>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="modeli" class="pt-24 pb-12 md:pt-32 md:pb-16 px-6 md:px-12 bg-autex-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Naša ponuda</span>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight">Proizvodi</h2>
+                </div>
+                <a href="#kontakt"
+                    class="hidden md:block text-sm font-medium border-b border-autex-dark pb-1 hover:text-autex-accent transition-colors">Upit
+                    za ponudu</a>
+            </div>
+
+            <div class="modeli-row-wrap">
+                <button id="modeli-prev" class="modeli-arrow modeli-arrow-left" aria-label="Prethodne kategorije">
+                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div id="modeli-cards" class="modeli-row"></div>
+                <button id="modeli-next" class="modeli-arrow modeli-arrow-right" aria-label="Sljedeće kategorije">
+                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+
+            <div id="modeli-dots" class="flex md:hidden justify-center items-center gap-2 mt-6"></div>
+
+            <div class="mt-10 text-center md:hidden reveal">
+                <a href="#kontakt"
+                    class="inline-block border border-autex-dark px-8 py-3 rounded-full font-medium hover:bg-autex-dark hover:text-white transition-colors duration-300">
+                    Pošaljite upit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video o materijalu -->
+    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
+        <video class="absolute inset-0 w-full h-full object-cover" src="video-o-materijalu.mp4" autoplay muted loop playsinline></video>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative text-center px-6">
+            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/60 block">Kako nastaje naš materijal</span>
+        </div>
+    </section>
+
+    <!-- PET felt — eko nota -->
+    <section id="pet-filc" class="py-12 md:py-16 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-3">Naš materijal</span>
+                <h2 class="text-2xl md:text-4xl font-bold tracking-tight leading-tight mb-4">PET felt — eko srce naših proizvoda</h2>
+                <p class="text-gray-500 text-base leading-relaxed">
+                    Svaki naš akustični element izrađen je od PET felta — materijala koji nastaje recikliranjem plastičnih PET boca. One se usitnjavaju, tope i pretvaraju u vlakna koja se dalje prešaju u guste, čvrste ploče spremne za akustičnu obradu. Tako svaka boca dobiva novi život u vašem prostoru, umjesto da završi kao otpad.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 reveal delay-100 text-center sm:text-left">
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">75% reciklirano</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Izrađeno od recikliranih PET boca, bez novih sirovina.</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Vrhunska akustika</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Odlična zvučna apsorpcija bez kompromisa u kvaliteti.</p>
+                </div>
+                <div>
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto sm:mx-0">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Bez štetnih tvari</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Siguran materijal za urede, domove i javne prostore.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 reveal delay-100">
+                <a href="pet-filc-materijal.html"
+                    class="inline-flex items-center gap-2 border border-autex-dark/30 px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-200">
+                    Saznajte više o PET feltu
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifikati -->
+    <section id="certifikati" class="py-12 md:py-16 px-6 md:px-12 bg-autex-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-3">Kvaliteta i sigurnost</span>
+                <h2 class="text-2xl md:text-4xl font-bold tracking-tight leading-tight mb-4">Certifikati</h2>
+                <p class="text-gray-500 text-base leading-relaxed">
+                    Naši proizvodi zadovoljavaju stroge standarde kvalitete, sigurnosti i akustičnih performansi.
+                    Certifikati u nastavku bit će uskoro nadopunjeni stvarnom dokumentacijom.
+                </p>
+            </div>
+
+            <!-- TODO: zamijeniti placeholder kartice stvarnim certifikatima -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 reveal delay-100">
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Protupožarna klasa</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Certifikat o reakciji na požar prema europskoj normi (placeholder).</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Akustični atest</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Ispitani koeficijenti zvučne apsorpcije u akreditiranom laboratoriju (placeholder).</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">ISO standard</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Sustav upravljanja kvalitetom u skladu s ISO certifikacijom (placeholder).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boje — paleta PET felta -->
+    <section id="boje" class="relative bg-white">
+        <div class="relative left-[50%] right-[50%] mx-[-50vw] w-screen reveal">
+            <div class="flex flex-col md:flex-row">
+                <div class="relative w-full md:w-1/2 h-[45vh] md:h-[75vh] overflow-hidden">
+                    <video class="absolute inset-0 w-full h-full object-cover" src="boje.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="w-full md:w-1/2 flex items-center px-6 md:px-16 py-12 md:py-0">
+                    <div class="max-w-md">
+                        <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Boje</span>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Paleta PET felta</h2>
+                        <p class="text-gray-600 text-base leading-relaxed mb-8">
+                            Preko 50 nijansi PET felta — od neutralnih tonova do izražajnih boja, birajte paletu koja se savršeno uklapa u vaš prostor.
+                        </p>
+                        <div id="boje-preview-grid" class="grid grid-cols-4 gap-3 mb-8"></div>
+                        <button id="boje-all-btn" type="button"
+                            class="inline-flex items-center gap-3 bg-autex-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-black transition-colors duration-300">
+                            Pogledaj sve boje
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal — sve boje -->
+        <div id="boje-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="boje-modal-title">
+            <div id="boje-modal-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+            <div class="relative bg-[#0d0d0d] rounded-2xl w-full max-w-4xl max-h-[85vh] overflow-y-auto p-6 md:p-10">
+                <button id="boje-modal-close" type="button" aria-label="Zatvori"
+                    class="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors z-10">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+                <h2 id="boje-modal-title" class="text-2xl md:text-3xl font-bold tracking-tight mb-8 pr-10 text-white">Sve boje PET felta</h2>
+                <div id="boje-all-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5"></div>
             </div>
         </div>
     </section>
@@ -574,7 +805,7 @@
 
                 <!-- 01 — Ricoh, Njemačka -->
                 <div class="acc-item active">
-                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/04/IMG-20260213-WA0064-L-1-scaled.jpg" alt="Akustične zidne obloge od PET felta — korporativni ured Ricoh, Njemačka">
+                    <img src="IMG-20260213-WA0064-L-1-scaled.jpg" alt="Akustične zidne obloge od PET felta — korporativni ured Ricoh, Njemačka">
                     <div class="acc-overlay"></div>
                     <div class="acc-label-v"><span>Ricoh, Njemačka</span></div>
                     <div class="acc-content">
@@ -622,7 +853,7 @@
 
                 <!-- 04 — City Island, Zagreb -->
                 <div class="acc-item">
-                    <img src="https://lolaacoustix.com/wp-content/uploads/2026/02/IMG-20260127-WA0038-L.jpeg" alt="Akustične zidne obloge i stropni baflesi — projekt City Island, Zagreb">
+                    <img src="IMG-20260127-WA0038-L.jpeg" alt="Akustične zidne obloge i stropni baflesi — projekt City Island, Zagreb">
                     <div class="acc-overlay"></div>
                     <div class="acc-label-v"><span>City Island, Zagreb</span></div>
                     <div class="acc-content">
@@ -661,233 +892,6 @@
                 </a>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Product Categories -->
-    <section id="modeli" class="py-12 px-6 md:px-12 bg-autex-light">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12 reveal">
-                <h2 class="text-4xl md:text-6xl font-bold tracking-tight">Proizvodi</h2>
-                <a href="#kontakt"
-                    class="hidden md:block text-sm font-medium border-b border-autex-dark pb-1 hover:text-autex-accent transition-colors">Upit
-                    za ponudu</a>
-            </div>
-
-            <div class="modeli-row-wrap">
-                <button id="modeli-prev" class="modeli-arrow modeli-arrow-left" aria-label="Prethodne kategorije">
-                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="modeli-cards" class="modeli-row"></div>
-                <button id="modeli-next" class="modeli-arrow modeli-arrow-right" aria-label="Sljedeće kategorije">
-                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-            </div>
-
-            <div id="modeli-dots" class="flex md:hidden justify-center items-center gap-2 mt-6"></div>
-
-            <div class="mt-10 text-center md:hidden reveal">
-                <a href="#kontakt"
-                    class="inline-block border border-autex-dark px-8 py-3 rounded-full font-medium hover:bg-autex-dark hover:text-white transition-colors duration-300">
-                    Pošaljite upit
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Office Furniture Banner -->
-    <section class="namjestaj-relief py-16 px-6 md:px-12 bg-autex-dark text-white">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal">
-            <div class="max-w-2xl">
-                <span class="text-sm font-semibold tracking-widest uppercase text-gray-400 mb-3 block">Kompletno
-                    opremanje ureda</span>
-                <h3 class="text-2xl md:text-4xl font-bold tracking-tight">Uz akustiku, nudimo i uredski namještaj</h3>
-                <p class="text-gray-400 mt-4 leading-relaxed">
-                    U našoj ponudi pronađite i premium uredski namještaj, uključujući elektropodizne stolove, za
-                    potpuno opremanje modernog radnog prostora na jednom mjestu.
-                </p>
-            </div>
-            <div class="flex-shrink-0">
-                <a href="#kontakt"
-                    class="inline-block bg-white text-autex-dark px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap">
-                    Saznajte više &rarr;
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Boje — paleta PET felta -->
-    <section id="boje" class="py-24 md:py-32 px-6 md:px-12 bg-autex-light relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl reveal">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Paleta boja</span>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">Boje PET felta</h2>
-                <p class="text-gray-500 text-lg leading-relaxed">
-                    PET felt dolazi u paleti od 51 boje inspirirane bojama prirode — od smirujućih zelenih tonova
-                    šuma do toplih nijansi sunčane zemlje. Ispod je nekoliko primjera iz naše ponude.
-                </p>
-            </div>
-
-            <div id="boje-preview" class="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-9 gap-4 mt-16 reveal delay-100"></div>
-
-            <div class="mt-10 reveal delay-200">
-                <button id="boje-all-btn" type="button"
-                    class="inline-flex items-center gap-2 border border-autex-dark px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-300">
-                    Pogledaj sve boje
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Modal — sve boje -->
-        <div id="boje-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="boje-modal-title">
-            <div id="boje-modal-backdrop" class="absolute inset-0 bg-autex-dark/60 backdrop-blur-sm"></div>
-            <div class="relative bg-white rounded-2xl w-full max-w-4xl max-h-[85vh] overflow-y-auto p-6 md:p-10">
-                <button id="boje-modal-close" type="button" aria-label="Zatvori"
-                    class="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 rounded-full bg-autex-light flex items-center justify-center hover:bg-gray-200 transition-colors z-10">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-                <h2 id="boje-modal-title" class="text-2xl md:text-3xl font-bold tracking-tight mb-8 pr-10">Sve boje PET felta</h2>
-                <div id="boje-all-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifikati -->
-    <section id="certifikati" class="py-24 md:py-32 px-6 md:px-12 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl reveal">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Kvaliteta i sigurnost</span>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">Certifikati</h2>
-                <p class="text-gray-500 text-lg leading-relaxed">
-                    Naši proizvodi zadovoljavaju stroge standarde kvalitete, sigurnosti i akustičnih performansi.
-                    Certifikati u nastavku bit će uskoro nadopunjeni stvarnom dokumentacijom.
-                </p>
-            </div>
-
-            <!-- TODO: zamijeniti placeholder kartice stvarnim certifikatima -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 reveal delay-100">
-                <div class="border border-gray-200 rounded-2xl p-8 text-center">
-                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">Protupožarna klasa</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Certifikat o reakciji na požar prema europskoj normi (placeholder).</p>
-                </div>
-                <div class="border border-gray-200 rounded-2xl p-8 text-center">
-                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">Akustični atest</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Ispitani koeficijenti zvučne apsorpcije u akreditiranom laboratoriju (placeholder).</p>
-                </div>
-                <div class="border border-gray-200 rounded-2xl p-8 text-center">
-                    <div class="w-12 h-12 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">ISO standard</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Sustav upravljanja kvalitetom u skladu s ISO certifikacijom (placeholder).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Naš pristup -->
-    <section class="py-24 md:py-32 px-6 md:px-12 bg-white">
-        <div class="max-w-2xl mx-auto text-center reveal">
-            <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-6">Naš pristup</span>
-            <p class="text-xl md:text-2xl text-gray-500 leading-relaxed">
-                Malom stanu ili velikom uredu pristupamo s jednakom pažnjom. Iza nas su brojni zadovoljni klijenti
-                u Hrvatskoj i Njemačkoj, provjerena kvaliteta izrade i rokovi na koje se možete osloniti. Svaki
-                prostor prvo analiziramo, a zatim dajemo stručnu preporuku rješenja koje odgovara upravo vama.
-            </p>
-            <a href="#kontakt"
-                class="inline-block mt-8 text-sm font-medium border-b border-autex-dark pb-1 hover:text-autex-accent hover:border-autex-accent transition-colors">
-                Zatražite besplatnu stručnu procjenu &rarr;
-            </a>
-        </div>
-    </section>
-
-    <!-- Scene proizvodnje -->
-    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-white/[0.06]"></div>
-        <div class="relative text-center px-6">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-6">
-                <svg class="w-7 h-7 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-            </div>
-            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-4">Naša proizvodnja</span>
-            <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3">Scene proizvodnje</h2>
-            <p class="text-white/40 text-sm max-w-sm mx-auto">Ovo je privremeni placeholder. Video iz naše proizvodne hale bit će uskoro dodan.</p>
-        </div>
-    </section>
-
-    <!-- PET felt — eko nota -->
-    <section id="pet-filc" class="py-24 md:py-32 px-6 md:px-12 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl reveal">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Naš materijal</span>
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-6">PET felt — eko srce naših proizvoda</h2>
-                <p class="text-gray-500 text-lg leading-relaxed">
-                    Svaki naš akustični element izrađen je od PET felta — materijala koji nastaje recikliranjem plastičnih PET boca. One se usitnjavaju, tope i pretvaraju u vlakna koja se dalje prešaju u guste, čvrste ploče spremne za akustičnu obradu. Tako svaka boca dobiva novi život u vašem prostoru, umjesto da završi kao otpad.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 reveal delay-100 text-center sm:text-left">
-                <div>
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">75% reciklirano</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Izrađeno od recikliranih PET boca, bez novih sirovina.</p>
-                </div>
-                <div>
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">Vrhunska akustika</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Odlična zvučna apsorpcija bez kompromisa u kvaliteti.</p>
-                </div>
-                <div>
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-5 mx-auto sm:mx-0">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2">Bez štetnih tvari</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Siguran materijal za urede, domove i javne prostore.</p>
-                </div>
-            </div>
-
-            <div class="mt-12 reveal delay-100">
-                <a href="pet-filc-materijal.html"
-                    class="inline-flex items-center gap-2 border border-autex-dark/30 px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-200">
-                    Saznajte više o PET feltu
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PET felt video — full-bleed placeholder -->
-    <section class="relative w-full min-h-[60vh] md:min-h-[75vh] bg-[#0d0d0d] text-white flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-white/[0.06]"></div>
-        <div class="relative text-center px-6">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-6">
-                <svg class="w-7 h-7 md:w-8 md:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-            </div>
-            <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/35 block mb-4">Iza kulisa</span>
-            <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-3">Nastajanje PET felta</h2>
-            <p class="text-white/40 text-sm max-w-sm mx-auto">Ovo je privremeni placeholder. Video će biti naknadno dodan.</p>
         </div>
     </section>
 
@@ -958,12 +962,16 @@
 
     <!-- Priča o Loli -->
     <section class="reveal">
-        <img src="lola-mobile.png"
-            alt="This is a story about Lola: small dog with strong bark, happy eyes in the dark, waving tail always in the air, her best friend was every cozy chair. She gave us fun, she gave us laugh, but most of all, she gave us love. — written by Andrijana Mađarić"
-            class="w-full h-auto block md:hidden">
-        <img src="lola.png"
-            alt="This is a story about Lola: small dog with strong bark, happy eyes in the dark, waving tail always in the air, her best friend was every cozy chair. She gave us fun, she gave us laugh, but most of all, she gave us love. — written by Andrijana Mađarić"
-            class="w-full h-auto hidden md:block">
+        <div class="md:hidden w-full h-[58vw] bg-[#ECEBE9] overflow-hidden">
+            <img src="prica-o-loli.jpeg"
+                alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
+                class="w-full h-full object-cover object-center">
+        </div>
+        <div class="hidden md:block max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-20">
+            <img src="prica-o-loli.jpeg"
+                alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
+                class="w-full h-auto rounded-2xl">
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -1125,7 +1133,7 @@
     <footer class="bg-autex-dark text-white py-16 px-6 md:px-12">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div>
-                <img src="https://lolaacoustix.com/wp-content/uploads/2024/10/lolaacoustix-logo.png" alt="Lola Acoustix"
+                <img src="lolaacoustix-logo.png" alt="Lola Acoustix"
                     class="h-6 brightness-0 invert mb-6">
                 <p class="text-sm text-gray-400 leading-relaxed mb-6">Redefiniramo akustični prostor kroz besprijekoran
                     dizajn i visoke performanse.</p>
@@ -1151,6 +1159,8 @@
             <div>
                 <h3 class="font-semibold mb-4">Tvrtka</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="nasa-proizvodnja.html" class="hover:text-white transition-colors">Naša proizvodnja</a>
+                    </li>
                     <li><a href="#galerija-projekata" class="hover:text-white transition-colors">Galerija projekata</a>
                     </li>
                     <li><a href="#certifikati" class="hover:text-white transition-colors">Certifikati</a></li>
@@ -1176,6 +1186,29 @@
             const navLogo = document.getElementById('nav-logo');
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
+
+            // Hero video — switch between landscape/portrait clip based on screen orientation
+            (function () {
+                const landscapeVideo = document.querySelector('header .hero-video-landscape');
+                const portraitVideo = document.querySelector('header .hero-video-portrait');
+                if (!landscapeVideo || !portraitVideo) return;
+
+                const orientationQuery = window.matchMedia('(orientation: portrait)');
+
+                function applyOrientation(isPortrait) {
+                    if (isPortrait) {
+                        landscapeVideo.pause();
+                        portraitVideo.currentTime = 0;
+                        portraitVideo.play().catch(() => { });
+                    } else {
+                        portraitVideo.pause();
+                        landscapeVideo.play().catch(() => { });
+                    }
+                }
+
+                applyOrientation(orientationQuery.matches);
+                orientationQuery.addEventListener('change', (e) => applyOrientation(e.matches));
+            })();
 
             // Navbar scroll behaviour
             window.addEventListener('scroll', () => {
@@ -1249,7 +1282,7 @@
                                 <p class="font-semibold text-gray-700">${cat.title}</p>
                             </div>
                         </div>`}
-                        <h3 class="text-lg font-semibold mb-3">${cat.title}</h3>
+                        <h3 class="text-lg md:text-xl font-semibold mb-3.5">${cat.title}</h3>
                         <span class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full group-hover:bg-black transition-colors">
                             Pogledaj modele
                             <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1386,26 +1419,33 @@
             { name: 'Light Olive Green', img: 'boje/light-olive-green.jpg' },
                 ];
 
-                const preview = document.getElementById('boje-preview');
                 const allGrid = document.getElementById('boje-all-grid');
+                const previewGrid = document.getElementById('boje-preview-grid');
                 const allBtn = document.getElementById('boje-all-btn');
                 const modal = document.getElementById('boje-modal');
                 const modalBackdrop = document.getElementById('boje-modal-backdrop');
                 const modalClose = document.getElementById('boje-modal-close');
-                if (!preview || !allGrid) return;
+                if (!allGrid) return;
 
                 function swatchHTML(c) {
                     return `
                         <div>
-                            <div class="aspect-square rounded-xl overflow-hidden bg-gray-200">
+                            <div class="aspect-square rounded-xl overflow-hidden bg-white/10">
                                 <img src="${c.img}" alt="PET felt boja — ${c.name}" class="w-full h-full object-cover" loading="lazy">
                             </div>
-                            <p class="text-xs text-gray-500 mt-2 text-center">${c.name}</p>
+                            <p class="text-xs text-white/60 mt-2 text-center">${c.name}</p>
                         </div>`;
                 }
 
-                preview.innerHTML = COLORS.slice(0, 9).map(swatchHTML).join('');
+                function previewSwatchHTML(c) {
+                    return `
+                        <div class="aspect-square rounded-lg overflow-hidden bg-gray-100" title="${c.name}">
+                            <img src="${c.img}" alt="PET felt boja — ${c.name}" class="w-full h-full object-cover" loading="lazy">
+                        </div>`;
+                }
+
                 allGrid.innerHTML = COLORS.map(swatchHTML).join('');
+                if (previewGrid) previewGrid.innerHTML = COLORS.slice(0, 8).map(previewSwatchHTML).join('');
 
                 function openModal() {
                     modal.classList.remove('hidden');

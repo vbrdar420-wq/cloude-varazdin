@@ -4,7 +4,7 @@
 const PRODUCTS_TREE = [
     {
         id: 'zidne-obloge', slug: 'zidne-obloge', title: 'Zidne obloge',
-        image: 'https://lolaacoustix.com/wp-content/uploads/2024/10/KOSI22cm_WALL_FINAL_WEB-scaled.jpg',
+        image: 'KOSI22cm_WALL_FINAL_WEB-scaled.jpg',
         children: [
             {
                 id: 'v-cut-obrada', slug: 'v-cut-obrada', title: 'V cut obrada', image: null,
@@ -33,7 +33,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'pregrade-prostora', slug: 'pregrade-prostora', title: 'Pregrade prostora',
-        image: 'https://lolaacoustix.com/wp-content/uploads/2024/11/VORONOI-WEB-scaled.jpg',
+        image: 'VORONOI-WEB-scaled.jpg',
         children: [
             {
                 id: 'air-divider', slug: 'air-divider', title: 'Air divider', image: null,
@@ -53,7 +53,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'stropni-baflesi', slug: 'stropni-baflesi', title: 'Stropni baflesi',
-        image: 'https://lolaacoustix.com/wp-content/uploads/2024/11/buff_240_final-render-scaled.jpg',
+        image: 'buff_240_final-render-scaled.jpg',
         children: [
             {
                 id: '24mm-ploce', slug: '24mm-ploce', title: '24 mm ploče', image: null,
@@ -80,7 +80,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'lampe', slug: 'lampe', title: 'Lampe',
-        image: 'https://lolaacoustix.com/wp-content/uploads/2024/11/samba_lamp-1-scaled.jpg',
+        image: 'samba_lamp-1-scaled.jpg',
         children: [
             {
                 id: 'lampe-modeli', slug: 'lampe', title: 'Lampe', image: null,
