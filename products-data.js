@@ -1,101 +1,74 @@
-// Stablo proizvoda: kategorija -> podkategorija -> proizvod (proizvoljna dubina).
+// Stablo proizvoda: kategorija -> proizvod.
 // Svaki čvor: { id, slug, title, image (null = koristi placeholder karticu), children? }
 // Nema children -> čvor je finalni proizvod (list).
 const PRODUCTS_TREE = [
     {
-        id: 'zidne-obloge', slug: 'zidne-obloge', title: 'Zidne obloge',
-        image: 'KOSI22cm_WALL_FINAL_WEB-scaled.jpg',
+        id: 'zidne-obloge', slug: 'zidne-obloge', title: 'Obloge zida',
+        image: 'obloge-zida-hero.jpeg',
         children: [
-            {
-                id: 'v-cut-obrada', slug: 'v-cut-obrada', title: 'V cut obrada', image: null,
-                children: [
-                    { id: 'earth-rings', slug: 'earth-rings', title: 'Earth rings', image: null },
-                    { id: 'woodline', slug: 'woodline', title: 'Woodline', image: null },
-                    { id: 'magic-motor', slug: 'magic-motor', title: 'Magic motor', image: null },
-                ]
-            },
-            {
-                id: '3d-forme', slug: '3d-forme', title: '3D forme', image: null,
-                children: [
-                    { id: 'heidi', slug: 'heidi', title: 'Heidi', image: null },
-                    { id: 'dragon', slug: 'dragon', title: 'Dragon', image: null },
-                    { id: 'quadris', slug: 'quadris', title: 'Quadris', image: null },
-                ]
-            },
-            {
-                id: 'parametric', slug: 'parametric', title: 'Parametric', image: null,
-                children: [
-                    { id: 'sound-wave', slug: 'sound-wave', title: 'Sound wave', image: null },
-                    { id: 'mars-crater', slug: 'mars-crater', title: 'Mars crater', image: null },
-                ]
-            },
+            { id: 'earth-lines', slug: 'earth-lines', title: 'Earth Lines', image: null },
+            { id: 'lines', slug: 'lines', title: 'Lines', image: null },
+            { id: 'lines-33', slug: 'lines-33', title: 'Lines 33', image: null },
+            { id: 'geometric', slug: 'geometric', title: 'Geometric', image: null },
+            { id: 'lola-lines', slug: 'lola-lines', title: 'Lola Lines', image: null },
+            { id: 'harmony', slug: 'harmony', title: 'Harmony', image: null },
+            { id: 'mosaic', slug: 'mosaic', title: 'Mosaic', image: null },
+            { id: 'window', slug: 'window', title: 'Window', image: null },
+            { id: 'stream-lines', slug: 'stream-lines', title: 'Stream Lines', image: null },
+            { id: 'dragon', slug: 'dragon', title: 'Dragon', image: null },
+            { id: 'fishermans-net', slug: 'fishermans-net', title: "Fisherman's Net", image: null },
+            { id: 'heidi', slug: 'heidi', title: 'Heidi', image: null },
+            { id: 'quadris', slug: 'quadris', title: 'Quadris', image: null },
+            { id: 'mars-crater', slug: 'mars-crater', title: 'Mars Crater', image: null },
+            { id: 'bamboo', slug: 'bamboo', title: 'Bamboo', image: null },
+            { id: 'parametric-wave', slug: 'parametric-wave', title: 'Parametric Wave', image: null },
         ]
     },
     {
         id: 'pregrade-prostora', slug: 'pregrade-prostora', title: 'Pregrade prostora',
-        image: 'VORONOI-WEB-scaled.jpg',
+        image: 'pregrade-prostora-hero.jpeg',
         children: [
-            {
-                id: 'air-divider', slug: 'air-divider', title: 'Air divider', image: null,
-                children: [
-                    { id: 'rain', slug: 'rain', title: 'Rain', image: null },
-                    { id: 'bubles', slug: 'bubles', title: 'Bubles', image: null },
-                ]
-            },
-            {
-                id: 'freestanding-divider', slug: 'freestanding-divider', title: 'Freestanding divider', image: null,
-                children: [
-                    { id: 'stone', slug: 'stone', title: 'Stone', image: null },
-                    { id: 'nex', slug: 'nex', title: 'Nex', image: null },
-                ]
-            },
+            { id: 'big-x', slug: 'big-x', title: 'Big X', image: null },
+            { id: 'bubbles', slug: 'bubbles', title: 'Bubbles', image: null },
+            { id: 'dark-wood', slug: 'dark-wood', title: 'Dark Wood', image: null },
+            { id: 'nex', slug: 'nex', title: 'Nex', image: null },
+            { id: 'stone', slug: 'stone', title: 'Stone', image: null },
+            { id: 'rain', slug: 'rain', title: 'Rain', image: null },
+            { id: 'triangle', slug: 'triangle', title: 'Triangle', image: null },
+            { id: 'voronoi', slug: 'voronoi', title: 'Voronoi', image: null },
         ]
     },
     {
-        id: 'stropni-baflesi', slug: 'stropni-baflesi', title: 'Stropni baflesi',
-        image: 'buff_240_final-render-scaled.jpg',
+        id: 'stropni-baflesi', slug: 'stropni-baflesi', title: 'Stropni apsorberi',
+        image: 'stropni-apsorberi-hero.jpeg',
         children: [
-            {
-                id: '24mm-ploce', slug: '24mm-ploce', title: '24 mm ploče', image: null,
-                children: [
-                    { id: 'krug', slug: 'krug', title: 'Krug', image: null },
-                    { id: 'kvadrat', slug: 'kvadrat', title: 'Kvadrat', image: null },
-                ]
-            },
-            {
-                id: 'traverza-pera', slug: 'traverza-pera', title: 'Traverza + pera', image: null,
-                children: [
-                    { id: 'goliath', slug: 'goliath', title: 'Goliath', image: null },
-                    { id: 'parametric-2', slug: 'parametric', title: 'Parametric', image: null },
-                ]
-            },
-            {
-                id: 'traverza-pera-2', slug: 'traverza-pera-2', title: 'Traverza + pera 2', image: null,
-                children: [
-                    { id: 'sunflower', slug: 'sunflower', title: 'Sunflower', image: null },
-                    { id: 'orbis', slug: 'orbis', title: 'Orbis', image: null },
-                ]
-            },
+            { id: 'circle', slug: 'circle', title: 'Circle', image: null },
+            { id: 'goliath', slug: 'goliath', title: 'Goliath', image: null },
+            { id: 'i-stripes', slug: 'i-stripes', title: 'I Stripes', image: null },
+            { id: 'orbis', slug: 'orbis', title: 'Orbis', image: null },
+            { id: 'sunflower', slug: 'sunflower', title: 'Sunflower', image: null },
+            { id: 'tree-crown', slug: 'tree-crown', title: 'Tree Crown', image: null },
         ]
     },
     {
-        id: 'lampe', slug: 'lampe', title: 'Lampe',
-        image: 'samba_lamp-1-scaled.jpg',
+        id: 'lampe', slug: 'lampe', title: 'Rasvjeta',
+        image: 'rasvjeta-hero.jpeg',
         children: [
-            {
-                id: 'lampe-modeli', slug: 'lampe', title: 'Lampe', image: null,
-                children: [
-                    { id: 'samba', slug: 'samba', title: 'Samba', image: null },
-                    { id: 'lusteri', slug: 'lusteri', title: 'Lusteri', image: null },
-                ]
-            },
+            { id: 'basket', slug: 'basket', title: 'Basket', image: null },
+            { id: 'avocado', slug: 'avocado', title: 'Avocado', image: null },
+            { id: 'fig', slug: 'fig', title: 'Fig', image: null },
+            { id: 'pear', slug: 'pear', title: 'Pear', image: null },
+            { id: 'pumpkin', slug: 'pumpkin', title: 'Pumpkin', image: null },
+            { id: 'samba', slug: 'samba', title: 'Samba', image: null },
         ]
     },
     {
-        id: 'custom-made', slug: 'custom-made', title: 'Custom made', image: null,
+        id: 'custom-made', slug: 'custom-made', title: 'PET felt elementi u namještaju', image: 'pet-felt-namjestaj-hero.jpeg',
         children: [
-            { id: 'bmw-otok', slug: 'bmw-otok', title: 'BMW otok', image: null },
-            { id: 'beehive', slug: 'beehive', title: 'Beehive', image: null },
+            { id: 'desk-divider', slug: 'desk-divider', title: 'Desk Divider', image: null },
+            { id: 'shell', slug: 'shell', title: 'Shell', image: null },
+            { id: 'tool-box', slug: 'tool-box', title: 'Tool Box', image: null },
+            { id: 'planter', slug: 'planter', title: 'Planter', image: null },
         ]
     },
 ];

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stropni baflesi — Lola Acoustix</title>
+    <title>Stropni apsorberi — Lola Acoustix</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,14 +26,6 @@
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-
-        .product-card[hidden] {
-            display: none;
-        }
-
-        .category-group[hidden] {
-            display: none;
-        }
     </style>
 </head>
 
@@ -41,140 +33,77 @@
 
     <!-- Header -->
     <header class="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Stropni baflesi</h1>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Stropni apsorberi</h1>
         <p class="mt-4 text-slate-500 text-lg max-w-xl">
-            Akustični baflesi za strop koji kombiniraju formu i funkciju u modernim uredskim i javnim prostorima.
+            Akustični apsorberi za strop koji kombiniraju formu i funkciju u modernim uredskim i javnim prostorima.
         </p>
     </header>
 
-    <!-- Tab Navigation -->
-    <nav aria-label="Podkategorije" class="max-w-6xl mx-auto px-6 mt-10 md:mt-14">
-        <div id="tabs" class="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
-            <button type="button" data-filter="all"
-                class="tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200">
-                Svi baflesi
-            </button>
-            <button type="button" data-filter="24mm-ploce"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                24 mm ploče
-            </button>
-            <button type="button" data-filter="traverza-pera"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                Traverza + pera
-            </button>
-            <button type="button" data-filter="traverza-pera-2"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                Traverza + pera 2
-            </button>
-        </div>
-    </nav>
+    <!-- Product Grid -->
+    <main class="max-w-6xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20">
+        <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
 
-    <!-- Product Groups -->
-    <main class="max-w-6xl mx-auto px-6 py-12 md:py-16">
-        <div id="category-sections" class="flex flex-col gap-16 md:gap-20">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Circle" data-subtitle="Stropni apsorberi" data-description="Inspiriran čistim kružnim oblicima, Circle unosi ritam i ravnotežu u svaki interijer. Diskretno poboljšava akustiku, ostavljajući dizajn u prvom planu." data-images='["proizvodi/krug/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/krug/1.webp" alt="Circle" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Circle</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
 
-                <section class="category-group" data-group="24mm-ploce">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">24 mm ploče</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Ploče debljine 24 mm imaju tanak profil pogodan za montažu u gustim nizovima iznad stolova, sastanaka i hodnika.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Goliath" data-subtitle="Stropni apsorberi" data-description="Čista geometrija u svom najjednostavnijem obliku. Linearni raspored lamela stvara moćan apsorber zvuka i snažan vizualni identitet prostora." data-images='["proizvodi/goliath/1.jpg", "proizvodi/goliath/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/goliath/1.jpg" alt="Goliath" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Goliath</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="24mm-ploce"
-                        data-title="Krug" data-subtitle="24 mm ploče" data-description="Krug su okrugli stropni baflesi debljine 24 mm, jednostavnog geometrijskog oblika koji se lako kombinira u nizove iznad radnih stolova i sastanaka. Kompaktan profil učinkovito prigušuje jeku uz minimalan vizualni teret na stropu." data-images='["proizvodi/krug/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/krug/1.webp" alt="Krug" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Krug</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="I Stripes" data-subtitle="Stropni apsorberi" data-description="Inspiriran jednostavnošću i pokretom, I Stripes unosi život u svaki interijer. Ritam lamela stvara izražajan strop i ugodniju zvučnu atmosferu." data-images='["proizvodi/i-stripes/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/i-stripes/1.webp" alt="I Stripes" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">I Stripes</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="24mm-ploce"
-                        data-title="Kvadrat" data-subtitle="24 mm ploče" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Kvadrat</h3>
-                    </article>
-                    </div>
-                </section>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Orbis" data-subtitle="Stropni apsorberi" data-description="Spoj kružne forme i ritma lamela stvara prepoznatljivu prostornu skulpturu. Različite dimenzije unose dinamiku, dok prostor ispunjavaju akustičnom udobnošću." data-images='["proizvodi/orbis/1.jpg", "proizvodi/orbis/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/orbis/1.jpg" alt="Orbis" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Orbis</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
 
-                <section class="category-group" data-group="traverza-pera">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">Traverza + pera</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Sustav traverza + pera vodi baflese duž jedne šine i fiksira ih u jednakim razmacima, bez bušenja stropa za svaki element zasebno.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Sunflower" data-subtitle="Stropni apsorberi" data-description="Inspiriran formom i geometrijom suncokreta, Sunflower pretvara prirodu u arhitektonsku formu. Skulpturalni akustični element koji prostoru donosi karakter, mekoću i zvučnu ravnotežu." data-images='["proizvodi/sunflower/1.webp", "proizvodi/sunflower/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/sunflower/1.webp" alt="Sunflower" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Sunflower</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera"
-                        data-title="Goliath" data-subtitle="Traverza + pera" data-description="Goliath su pravokutni viseći baflesi s okomito poravnatim 24 mm I-profilima u slojevitom rasporedu, dimenzija 240 × 160 cm, projektirani za apsorpciju zvuka i smanjenje jeke u velikim prostorima. Vješaju se o strop tankim sajlama za lagan, lebdeći dojam — idealni za poslovne prostore i javne površine." data-images='["proizvodi/goliath/1.jpg", "proizvodi/goliath/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/goliath/1.jpg" alt="Goliath" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Goliath</h3>
-                    </article>
-
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera"
-                        data-title="Parametric" data-subtitle="Traverza + pera" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Parametric</h3>
-                    </article>
-
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera"
-                        data-title="I Stripes" data-subtitle="Traverza + pera" data-description="I Stripes su izduženi pravokutni baflesi u naizmjeničnom dvobojnom rasporedu slojeva, montirani na sustav traverza + pera. Linearni ritam boja unosi dinamičan vizualni akcent, dok slojevita I-profil struktura učinkovito prigušuje jeku u većim prostorima." data-images='["proizvodi/i-stripes/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/i-stripes/1.webp" alt="I Stripes" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">I Stripes</h3>
-                    </article>
-                    </div>
-                </section>
-
-                <section class="category-group" data-group="traverza-pera-2">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">Traverza + pera 2</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Druga generacija sustava traverza + pera koristi gušći raspored pera, pa je razmak između baflesa manji i strop vizualno teksturiraniji.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera-2"
-                        data-title="Sunflower" data-subtitle="Traverza + pera 2" data-description="Sunflower su okrugli baflesi sa slojevitim, radijalno raspoređenim perima koja podsjećaju na latice cvijeta, montirani na sustav traverza + pera 2. Gusti raspored slojeva dodatno pojačava apsorpciju zvuka i stvara upečatljiv vizualni fokus u prostoru." data-images='["proizvodi/sunflower/1.webp", "proizvodi/sunflower/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/sunflower/1.webp" alt="Sunflower" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Sunflower</h3>
-                    </article>
-
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera-2"
-                        data-title="Orbis" data-subtitle="Traverza + pera 2" data-description="Orbis su okrugli viseći baflesi slojevitog dizajna, obješeni o strop pomoću vidljivih sajli koje stvaraju dojam lebdenja. Zakrivljene, elegantne ploče raspoređene u kružnom obliku savršeno pristaju otvorenim prostorima i uredima kojima je potrebna i akustična kontrola i estetski dojam." data-images='["proizvodi/orbis/1.jpg", "proizvodi/orbis/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/orbis/1.jpg" alt="Orbis" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Orbis</h3>
-                    </article>
-
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="traverza-pera-2"
-                        data-title="Tree Crown" data-subtitle="Traverza + pera 2" data-description="Tree Crown su baflesi slojevite, lepezaste strukture koja podsjeća na krošnju stabla, montirani na sustav traverza + pera 2. Organski oblik unosi prirodan, umirujući dojam u prostor uz visoku akustičnu učinkovitost." data-images='["proizvodi/tree-crown/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/tree-crown/1.webp" alt="Tree Crown" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Tree Crown</h3>
-                    </article>
-                    </div>
-                </section>
-        </div>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Tree Crown" data-subtitle="Stropni apsorberi" data-description="Inspiriran slojevitošću krošnje, Tree Crown stvara osjećaj zaklona i prirodne intime. Skulpturalna forma koja prostoru donosi akustičnu udobnost i novu dimenziju." data-images='["proizvodi/tree-crown/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/tree-crown/1.webp" alt="Tree Crown" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Tree Crown</h3>
+                <p class="text-sm text-slate-400">Stropni apsorberi</p>
+            </article>
+        </section>
     </main>
 
     <!-- Product Detail Modal -->
-    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 md:p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div id="modal-backdrop" class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
 
-        <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden">
+        <div class="relative bg-white rounded-none md:rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden">
             <button id="modal-close" type="button" aria-label="Zatvori"
                 class="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-slate-100 flex items-center justify-center transition-colors duration-200 shadow-sm">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +111,7 @@
                 </svg>
             </button>
 
-            <div id="modal-image-wrap" class="relative aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+            <div id="modal-image-wrap" class="relative aspect-[4/5] md:aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                 <svg id="modal-image-placeholder" class="w-14 h-14 text-slate-300 absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                 </svg>
@@ -203,8 +132,8 @@
             </div>
 
             <div class="p-8 md:p-10">
-                <p id="modal-subtitle" class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">24 mm ploče</p>
-                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Krug</h2>
+                <p id="modal-subtitle" class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">Stropni apsorberi</p>
+                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Circle</h2>
                 <p id="modal-description" class="text-slate-500 leading-relaxed hidden"></p>
                 <a href="index.html#kontakt"
                     class="mt-6 inline-flex items-center gap-2 bg-slate-900 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-slate-800 transition-colors duration-200">
@@ -217,24 +146,7 @@
 
     <script>
 
-        // Tab filtering — filtrira po grupama (sekcijama), ne po pojedinačnim karticama
-        const tabs = document.querySelectorAll('.tab-btn');
-        const groupSections = document.querySelectorAll('.category-group');
         const cards = document.querySelectorAll('.product-card');
-        const TAB_ACTIVE = 'tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200';
-        const TAB_INACTIVE = 'tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200';
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => { t.className = TAB_INACTIVE; });
-                tab.className = TAB_ACTIVE;
-
-                const filter = tab.dataset.filter;
-                groupSections.forEach(section => {
-                    section.hidden = !(filter === 'all' || section.dataset.group === filter);
-                });
-            });
-        });
 
         // Quick-view modal
         const modal = document.getElementById('product-modal');
@@ -291,7 +203,7 @@
             if (images.length > 0) {
                 modalGalleryTrack.innerHTML = images.map(src => `
                     <div class="w-full h-full flex-shrink-0 snap-center flex items-center justify-center bg-slate-100">
-                        <img src="${src}" alt="${card.dataset.title}" class="max-w-full max-h-full object-contain">
+                        <img src="${src}" alt="${card.dataset.title}" class="w-full h-full object-cover md:w-auto md:h-auto md:max-w-full md:max-h-full md:object-contain">
                     </div>
                 `).join('');
                 modalGallery.scrollLeft = 0;

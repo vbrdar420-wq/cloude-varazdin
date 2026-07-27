@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zidne obloge — Lola Acoustix</title>
+    <title>Obloge zida — Lola Acoustix</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,14 +26,6 @@
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-
-        .product-card[hidden] {
-            display: none;
-        }
-
-        .category-group[hidden] {
-            display: none;
-        }
     </style>
 </head>
 
@@ -41,154 +33,167 @@
 
     <!-- Header -->
     <header class="max-w-6xl mx-auto px-6 pt-16 md:pt-24">
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Zidne obloge</h1>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Obloge zida</h1>
         <p class="mt-4 text-slate-500 text-lg max-w-xl">
             Precizne linije, organske forme i parametarski uzorci — akustične zidne obloge dizajnirane za moderan prostor.
         </p>
     </header>
 
-    <!-- Tab Navigation -->
-    <nav aria-label="Podkategorije" class="max-w-6xl mx-auto px-6 mt-10 md:mt-14">
-        <div id="tabs" class="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
-            <button type="button" data-filter="all"
-                class="tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200">
-                Sve obloge
-            </button>
-            <button type="button" data-filter="v-cut-obrada"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                V cut obrada
-            </button>
-            <button type="button" data-filter="3d-forme"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                3D forme
-            </button>
-            <button type="button" data-filter="parametric"
-                class="tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200">
-                Parametric
-            </button>
-        </div>
-    </nav>
+    <!-- Product Grid -->
+    <main class="max-w-6xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-20">
+        <section id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
 
-    <!-- Product Groups -->
-    <main class="max-w-6xl mx-auto px-6 py-12 md:py-16">
-        <div id="category-sections" class="flex flex-col gap-16 md:gap-20">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Earth Lines" data-subtitle="Obloge zida" data-description="Reljef krajolika pretočen je u nježnu igru linija i sjena. Earth Lines prostoru daje dubinu, karakter i osjećaj prirodnog sklada." data-images='["proizvodi/earth-lines/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/earth-lines/1.webp" alt="Earth Lines" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Earth Lines</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                <section class="category-group" data-group="v-cut-obrada">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">V cut obrada</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">V cut obrada usijeca precizne V-kanale u površinu panela, čime nastaju ravne linije koje dodatno raspršuju zvučne valove na zidu.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Lines" data-subtitle="Obloge zida" data-description="Jednostavne linije stvaraju bezvremensku eleganciju. Lines unosi ritam, dubinu i akustičnu udobnost kroz suptilnu igru svjetla i sjene." data-images='["proizvodi/lines/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/lines/1.webp" alt="Lines" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Lines</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="v-cut-obrada"
-                        data-title="Earth rings" data-subtitle="V cut obrada" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Earth rings</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Lines 33" data-subtitle="Obloge zida" data-description="Jedna linija. Jedan kut. Bezbroj mogućnosti. Lines 33 geometrijom stvara ritam, dubinu i elegantnu igru svjetla koja prostoru daje novu dimenziju." data-images='["proizvodi/lines-33/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/lines-33/1.webp" alt="Lines 33" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Lines 33</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="v-cut-obrada"
-                        data-title="Woodline" data-subtitle="V cut obrada" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Woodline</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Geometric" data-subtitle="Obloge zida" data-description="Krug i kvadrat u savršenoj ravnoteži. Geometric reljefnom geometrijom stvara suptilnu igru svjetla i sjene, pretvarajući akustičnu oblogu u arhitektonski detalj." data-images='["proizvodi/geometric/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/geometric/1.webp" alt="Geometric" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Geometric</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="v-cut-obrada"
-                        data-title="Magic motor" data-subtitle="V cut obrada" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Magic motor</h3>
-                    </article>
-                    </div>
-                </section>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Lola Lines" data-subtitle="Obloge zida" data-description="Minimalistička geometrija, maksimalan vizualni efekt. Linije prelaze iz jednog modula u drugi i stvaraju ritam koji prostoru daje karakter i akustičnu udobnost." data-images='["proizvodi/lola-lines/1.webp", "proizvodi/lola-lines/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/lola-lines/1.webp" alt="Lola Lines" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Lola Lines</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                <section class="category-group" data-group="3d-forme">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">3D forme</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">3D forme imaju reljefnu, skulpturalnu površinu s vidljivom dubinom — svjetlo na svakom panelu baca drugačiju sjenu tijekom dana.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Harmony" data-subtitle="Obloge zida" data-description="Geometrija, boja i proporcija spojeni u skladnu kompoziciju. Harmony pretvara akustični panel u suvremenu zidnu umjetnost koja prostoru donosi ritam, dubinu i karakter." data-images='["proizvodi/harmony/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/harmony/1.webp" alt="Harmony" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Harmony</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="3d-forme"
-                        data-title="Heidi" data-subtitle="3D forme" data-description="Heidi krasi upečatljiv pleteni uzorak s preklapajućom strukturom koja stvara dubinu i teksturu na zidu. Osim vizualnog dojma, trodimenzionalni oblik učinkovito smanjuje jeku, pa je idealan izbor za urede i prostore u kojima je važna akustična udobnost." data-images='["proizvodi/heidi/1.jpg", "proizvodi/heidi/2.jpg", "proizvodi/heidi/3.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/heidi/1.jpg" alt="Heidi" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Heidi</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Mosaic" data-subtitle="Obloge zida" data-description="Jedan sustav. Bezbroj kompozicija. Mosaic spaja različite geometrijske motive u jedinstvenu akustičnu zidnu cjelinu koja svakom prostoru daje vlastiti identitet." data-images='["proizvodi/mosaic/1.webp", "proizvodi/mosaic/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/mosaic/1.webp" alt="Mosaic" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Mosaic</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="3d-forme"
-                        data-title="Dragon" data-subtitle="3D forme" data-description="Dragon je 3D zidna obloga oštrih, kutastih formi izrađena od PET felta, koja raspršuje zvučne valove u više smjerova i smanjuje jeku. Ploče variraju u dubini kako bi apsorbirale širok raspon frekvencija, a skulpturalni dizajn unosi snažan vizualni akcent u svaki prostor." data-images='["proizvodi/dragon/1.jpg", "proizvodi/dragon/2.jpg", "proizvodi/dragon/3.jpg", "proizvodi/dragon/4.jpg", "proizvodi/dragon/5.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/dragon/1.jpg" alt="Dragon" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Dragon</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Window" data-subtitle="Obloge zida" data-description="Inspiriran arhitektonskim okvirima i igrom svjetla. Window stvara profinjenu dubinu i ritam koji prostoru donose osjećaj elegancije, mira i akustične udobnosti." data-images='["proizvodi/window/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/window/1.webp" alt="Window" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Window</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="3d-forme"
-                        data-title="Quadris" data-subtitle="3D forme" data-description="Quadris je sustav zidnih panela pravokutnog oblika s prepoznatljivim V-cut uzorkom koji kombinira akustičnu učinkovitost s modernim dizajnom. Smanjuje buku i kontrolira zvučne refleksije, a savršeno pristaje uredima, konferencijskim dvoranama i studijima za snimanje." data-images='["proizvodi/quadris/1.jpg", "proizvodi/quadris/2.jpg"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/quadris/1.jpg" alt="Quadris" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Quadris</h3>
-                    </article>
-                    </div>
-                </section>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Stream Lines" data-subtitle="Obloge zida" data-description="Tanke linije od pleksiglasa presijecaju meku površinu PET filca stvarajući dinamičnu igru svjetla, kontrasta i dubine. Suvremena zidna kompozicija koja spaja akustiku i arhitekturu." data-images='["proizvodi/stream-lines/1.webp", "proizvodi/stream-lines/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/stream-lines/1.webp" alt="Stream Lines" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Stream Lines</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                <section class="category-group" data-group="parametric">
-                    <div class="max-w-2xl mb-6 md:mb-8">
-                        <h2 class="text-xl md:text-2xl font-semibold text-slate-900 mb-2">Parametric</h2>
-                        <p class="text-slate-500 text-sm md:text-base leading-relaxed">Parametric paneli koriste algoritamski generirane valovite uzorke koji se ne ponavljaju, pa svaka zidna površina dobiva vlastitu kompoziciju.</p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Dragon" data-subtitle="Obloge zida" data-description="Inspiriran teksturom zmajeve kože, Dragon stvara snažan trodimenzionalni reljef koji se neprestano mijenja pod utjecajem svjetla. Arhitektonski panel koji prostoru daje karakter, dubinu i vrhunsku akustiku." data-images='["proizvodi/dragon/1.webp", "proizvodi/dragon/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/dragon/1.webp" alt="Dragon" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Dragon</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="parametric"
-                        data-title="Sound wave" data-subtitle="Parametric" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Sound wave</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Fisherman's Net" data-subtitle="Obloge zida" data-description="Inspiriran tradicionalnim tkanjem ribarskih mreža, panel stvara finu trodimenzionalnu teksturu koja kroz ritam isprepletenih linija donosi osjećaj reda, preciznosti i zanatske izrade. Diskretan iz daljine, bogat detaljima iz neposredne blizine." data-images='["proizvodi/fishermans-net/1.webp", "proizvodi/fishermans-net/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/fishermans-net/1.webp" alt="Fisherman's Net" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Fisherman's Net</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="parametric"
-                        data-title="Mars crater" data-subtitle="Parametric" data-description="Opis i fotografija ovog modela bit će naknadno dodani." role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Mars crater</h3>
-                    </article>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Heidi" data-subtitle="Obloge zida" data-description="Inspirirana tradicionalnim pletenjem, Heidi pretvara isprepletene trake u elegantnu trodimenzionalnu akustičnu oblogu koja prostoru daje toplinu, dubinu i osjećaj ručno izrađenog dizajna. Mekoća teksture i igra svjetla stvaraju bezvremenski detalj koji jednako privlači pogled i dodir." data-images='["proizvodi/heidi/1.webp", "proizvodi/heidi/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/heidi/1.webp" alt="Heidi" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Heidi</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
 
-                    <article class="product-card group cursor-pointer transition-opacity duration-300" data-group="parametric"
-                        data-title="Bamboo" data-subtitle="Parametric" data-description="Bamboo je zidna akustična obloga s izduženim, nepravilno raspoređenim izrezima koji podsjećaju na bambusove stabljike. Iza panela je moguća diskretna LED rasvjeta koja dodatno naglašava teksturu i brend identitet u prostoru." data-images='["proizvodi/bamboo/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
-                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
-                            <img src="proizvodi/bamboo/1.webp" alt="Bamboo" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="mt-4 text-base font-medium text-slate-900">Bamboo</h3>
-                    </article>
-                    </div>
-                </section>
-        </div>
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Quadris" data-subtitle="Obloge zida" data-description="Inspiriran ritmom pikselizirane geometrije, Quadris kroz igru različitih visina stvara dinamičnu trodimenzionalnu površinu. Modularni dizajn omogućuje beskrajne kompozicije koje svakom prostoru daju suvremen i prepoznatljiv karakter." data-images='["proizvodi/quadris/1.webp", "proizvodi/quadris/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/quadris/1.webp" alt="Quadris" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Quadris</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
+
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Mars Crater" data-subtitle="Obloge zida" data-description="Inspiriran reljefom površine Marsa, Mars Crater kroz precizno oblikovane kružne forme stvara suptilnu igru svjetla, sjene i dubine. Minimalistička geometrija daje prostoru miran, suvremen karakter s dozom istraživačkog duha." data-images='["proizvodi/mars-crater/1.webp", "proizvodi/mars-crater/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/mars-crater/1.webp" alt="Mars Crater" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Mars Crater</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
+
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Bamboo" data-subtitle="Obloge zida" data-description="Inspirirana elegancijom bambusovih stabljika, Bamboo kroz izdužene organske forme stvara mirnu, ritmičnu kompoziciju koja prostoru daje osjećaj prirodne ravnoteže. Suptilan reljef i igra svjetla unose toplinu, dubinu i bezvremensku eleganciju." data-images='["proizvodi/bamboo/1.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/bamboo/1.webp" alt="Bamboo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Bamboo</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
+
+            <article class="product-card group cursor-pointer transition-opacity duration-300"
+                data-title="Parametric Wave" data-subtitle="Obloge zida" data-description="Inspiriran ritmom valova, Parametric Wave kroz fluidne parametarske forme stvara skulpturalnu površinu koja se neprestano mijenja pod utjecajem svjetla i sjene. Dinamična geometrija prostoru daje osjećaj pokreta, dubine i suvremene elegancije." data-images='["proizvodi/parametric-wave/1.webp", "proizvodi/parametric-wave/2.webp"]' role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden transition-all duration-300 ease-out group-hover:shadow-xl group-hover:-translate-y-1">
+                    <img src="proizvodi/parametric-wave/1.webp" alt="Parametric Wave" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-base font-medium text-slate-900">Parametric Wave</h3>
+                <p class="text-sm text-slate-400">Obloge zida</p>
+            </article>
+        </section>
     </main>
 
     <!-- Product Detail Modal -->
-    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 md:p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div id="modal-backdrop" class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
 
-        <div class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden">
+        <div class="relative bg-white rounded-none md:rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden">
             <button id="modal-close" type="button" aria-label="Zatvori"
                 class="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-slate-100 flex items-center justify-center transition-colors duration-200 shadow-sm">
                 <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +201,7 @@
                 </svg>
             </button>
 
-            <div id="modal-image-wrap" class="relative aspect-video bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
+            <div id="modal-image-wrap" class="relative aspect-[4/5] md:aspect-[16/10] md:max-h-[75vh] bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
                 <svg id="modal-image-placeholder" class="w-14 h-14 text-slate-300 absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                 </svg>
@@ -217,8 +222,8 @@
             </div>
 
             <div class="p-8 md:p-10">
-                <p id="modal-subtitle" class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">V cut obrada</p>
-                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Earth rings</h2>
+                <p id="modal-subtitle" class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-2">Obloge zida</p>
+                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Earth Lines</h2>
                 <p id="modal-description" class="text-slate-500 leading-relaxed hidden"></p>
                 <a href="index.html#kontakt"
                     class="mt-6 inline-flex items-center gap-2 bg-slate-900 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-slate-800 transition-colors duration-200">
@@ -231,24 +236,7 @@
 
     <script>
 
-        // Tab filtering — filtrira po grupama (sekcijama), ne po pojedinačnim karticama
-        const tabs = document.querySelectorAll('.tab-btn');
-        const groupSections = document.querySelectorAll('.category-group');
         const cards = document.querySelectorAll('.product-card');
-        const TAB_ACTIVE = 'tab-btn is-active whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium bg-slate-900 text-white transition-colors duration-200';
-        const TAB_INACTIVE = 'tab-btn whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200';
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => { t.className = TAB_INACTIVE; });
-                tab.className = TAB_ACTIVE;
-
-                const filter = tab.dataset.filter;
-                groupSections.forEach(section => {
-                    section.hidden = !(filter === 'all' || section.dataset.group === filter);
-                });
-            });
-        });
 
         // Quick-view modal
         const modal = document.getElementById('product-modal');
@@ -305,7 +293,7 @@
             if (images.length > 0) {
                 modalGalleryTrack.innerHTML = images.map(src => `
                     <div class="w-full h-full flex-shrink-0 snap-center flex items-center justify-center bg-slate-100">
-                        <img src="${src}" alt="${card.dataset.title}" class="max-w-full max-h-full object-contain">
+                        <img src="${src}" alt="${card.dataset.title}" class="w-full h-full object-cover md:w-auto md:h-auto md:max-w-full md:max-h-full md:object-contain">
                     </div>
                 `).join('');
                 modalGallery.scrollLeft = 0;
