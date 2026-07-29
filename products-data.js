@@ -4,7 +4,7 @@
 const PRODUCTS_TREE = [
     {
         id: 'zidne-obloge', slug: 'zidne-obloge', title: 'Obloge zida',
-        image: 'obloge-zida-hero.jpeg',
+        image: 'obloge-zida-hero.webp',
         children: [
             { id: 'earth-lines', slug: 'earth-lines', title: 'Earth Lines', image: null },
             { id: 'lines', slug: 'lines', title: 'Lines', image: null },
@@ -26,7 +26,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'pregrade-prostora', slug: 'pregrade-prostora', title: 'Pregrade prostora',
-        image: 'pregrade-prostora-hero.jpeg',
+        image: 'pregrade-prostora-hero.webp',
         children: [
             { id: 'big-x', slug: 'big-x', title: 'Big X', image: null },
             { id: 'bubbles', slug: 'bubbles', title: 'Bubbles', image: null },
@@ -40,7 +40,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'stropni-baflesi', slug: 'stropni-baflesi', title: 'Stropni apsorberi',
-        image: 'stropni-apsorberi-hero.jpeg',
+        image: 'stropni-apsorberi-hero.webp',
         children: [
             { id: 'circle', slug: 'circle', title: 'Circle', image: null },
             { id: 'goliath', slug: 'goliath', title: 'Goliath', image: null },
@@ -52,7 +52,7 @@ const PRODUCTS_TREE = [
     },
     {
         id: 'lampe', slug: 'lampe', title: 'Rasvjeta',
-        image: 'rasvjeta-hero.jpeg',
+        image: 'rasvjeta hero 1.webp',
         children: [
             { id: 'basket', slug: 'basket', title: 'Basket', image: null },
             { id: 'avocado', slug: 'avocado', title: 'Avocado', image: null },
@@ -63,7 +63,7 @@ const PRODUCTS_TREE = [
         ]
     },
     {
-        id: 'custom-made', slug: 'custom-made', title: 'PET felt elementi u namještaju', image: 'pet-felt-namjestaj-hero.jpeg',
+        id: 'custom-made', slug: 'custom-made', title: 'PET felt elementi u namještaju', image: 'pet felt namjestaj hero 1.webp',
         children: [
             { id: 'desk-divider', slug: 'desk-divider', title: 'Desk Divider', image: null },
             { id: 'shell', slug: 'shell', title: 'Shell', image: null },
