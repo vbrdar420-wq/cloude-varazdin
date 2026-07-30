@@ -61,6 +61,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://lolaacoustix.com/kalkulator.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lolaacoustix.com/pet-filc-materijal.html</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -111,6 +117,12 @@
   <url>
     <loc>https://lolaacoustix.com/projekt-mursko-sredisce.html</loc>
     <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/projekt-hotel-panorama-prelog.html</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

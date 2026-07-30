@@ -23,13 +23,13 @@
     <meta property="og:url" content="https://lolaacoustix.com/">
     <meta property="og:title" content="Akustični paneli i zidne obloge od PET felta | Lola Acoustix">
     <meta property="og:description" content="Akustične zidne obloge, stropni baflesi i pregrade prostora od recikliranog PET felta, dizajnirani i izrađeni po mjeri.">
-    <meta property="og:image" content="images/og-image.jpg"> <!-- TODO: zamijeniti finalnom OG slikom -->
+    <meta property="og:image" content="https://lolaacoustix.com/images/og-image.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Akustični paneli i zidne obloge od PET felta | Lola Acoustix">
     <meta name="twitter:description" content="Akustične zidne obloge, stropni baflesi i pregrade prostora od recikliranog PET felta, dizajnirani i izrađeni po mjeri.">
-    <meta name="twitter:image" content="images/og-image.jpg"> <!-- TODO: zamijeniti finalnom OG slikom -->
+    <meta name="twitter:image" content="https://lolaacoustix.com/images/og-image.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="products-data.js"></script>
@@ -123,7 +123,7 @@
             display: none;
         }
 
-        @media (orientation: portrait) {
+        @media (orientation: portrait) and (max-width: 900px) {
             .hero-video-landscape {
                 display: none;
             }
@@ -183,10 +183,6 @@
 
         .delay-200 {
             transition-delay: 200ms;
-        }
-
-        .delay-300 {
-            transition-delay: 300ms;
         }
 
         .image-zoom-container {
@@ -473,15 +469,16 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo py-6 px-6 md:px-12 text-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="z-50 relative">
+            <a href="index.html" class="z-50 relative">
                 <img src="lolaacoustix-logo.png" alt="Lola Acoustix"
                     class="h-7 brightness-0 invert" id="nav-logo">
             </a>
 
             <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
                 <a href="#modeli" class="hover:opacity-70 transition-opacity">Proizvodi</a>
+                <a href="projekti.html" class="hover:opacity-70 transition-opacity">Projekti</a>
                 <a href="downloads.html" class="hover:opacity-70 transition-opacity">Downloads</a>
-                <a href="#galerija-projekata" class="hover:opacity-70 transition-opacity">Galerija radova</a>
+                <a href="kalkulator.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
                 <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
                 <a href="news.html" class="hover:opacity-70 transition-opacity">News</a>
                 <a href="#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
@@ -511,8 +508,9 @@
         class="fixed inset-0 z-40 bg-autex-dark text-white flex-col justify-center items-center hidden">
         <div class="flex flex-col space-y-8 text-center text-2xl font-light">
             <a href="#modeli" class="mobile-link hover:opacity-70 transition-opacity">Proizvodi</a>
+            <a href="projekti.html" class="mobile-link hover:opacity-70 transition-opacity">Projekti</a>
             <a href="downloads.html" class="mobile-link hover:opacity-70 transition-opacity">Downloads</a>
-            <a href="#galerija-projekata" class="mobile-link hover:opacity-70 transition-opacity">Galerija radova</a>
+            <a href="kalkulator.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
             <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
             <a href="news.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
             <a href="#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
@@ -528,18 +526,20 @@
     <!-- Hero Section with Video -->
     <header class="relative w-full h-[100svh] md:h-screen flex items-end justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 bg-autex-dark">
-            <video class="hero-video hero-video-landscape w-full h-full object-cover" src="video2.mp4" autoplay
-                muted loop playsinline></video>
-            <video class="hero-video hero-video-portrait w-full h-full object-cover" src="hero-vertical.mp4" muted
-                loop playsinline></video>
+            <video class="hero-video hero-video-landscape w-full h-full object-cover"
+                data-src="video2.mp4" preload="none" muted loop playsinline
+                disablepictureinpicture aria-hidden="true"></video>
+            <video class="hero-video hero-video-portrait w-full h-full object-cover"
+                data-src="hero-vertical.mp4" preload="none" muted loop playsinline
+                disablepictureinpicture aria-hidden="true"></video>
         </div>
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pb-28 md:pb-32">
             <div class="hero-ellipse-overlay absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[190%] md:w-[120%] md:h-[200%] -z-10 pointer-events-none"></div>
-            <h1
+            <p
                 class="text-white text-xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight mb-5 reveal">
                 …where design meets sound
-            </h1>
+            </p>
             <div class="flex flex-row flex-nowrap gap-2 sm:gap-3 justify-center reveal delay-200">
                 <a href="#modeli"
                     class="inline-block bg-white text-autex-dark px-3.5 py-2 sm:px-5 sm:py-2 rounded-full text-xs sm:text-xs md:text-sm font-medium hover:bg-gray-100 transition-colors duration-300 whitespace-nowrap">
@@ -553,13 +553,44 @@
         </div>
     </header>
 
+    <script>
+    (function () {
+        const mq = window.matchMedia('(orientation: portrait) and (max-width: 900px)');
+        const landscape = document.querySelector('.hero-video-landscape');
+        const portrait  = document.querySelector('.hero-video-portrait');
+        const header    = document.querySelector('header');
+        if (!landscape || !portrait) return;
+        let inView = true;
+
+        function ensureLoaded(v) {
+            if (!v.src && v.dataset.src) { v.src = v.dataset.src; v.load(); }
+        }
+        function apply() {
+            const active = mq.matches ? portrait : landscape;
+            const other  = mq.matches ? landscape : portrait;
+            other.pause();
+            if (!inView || document.hidden) { active.pause(); return; }
+            ensureLoaded(active);
+            const p = active.play();
+            if (p && p.catch) p.catch(() => {});
+        }
+        mq.addEventListener('change', apply);
+        document.addEventListener('visibilitychange', apply);
+        if (header && 'IntersectionObserver' in window) {
+            new IntersectionObserver((e) => { inView = e[0].isIntersecting; apply(); },
+                { threshold: 0 }).observe(header);
+        }
+        apply();
+    })();
+    </script>
+
     <!-- Brand Statement -->
     <section class="pt-10 pb-4 md:py-40 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="max-w-4xl">
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight reveal">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight reveal">
                 Dizajniramo i proizvodimo akustična rješenja koja suzbijaju buku i jeku, balansiraju estetiku s
                 izvanrednim performansama.
-            </h2>
+            </h1>
             <div class="mt-8 md:mt-12 reveal delay-100">
                 <a href="#galerija-projekata"
                     class="text-lg font-medium border-b border-autex-dark pb-1 hover:text-autex-accent hover:border-autex-accent transition-colors">
@@ -672,8 +703,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2">75% reciklirano</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Izrađeno od recikliranih PET boca, bez novih sirovina.</p>
+                    <h3 class="font-semibold mb-2">70% reciklirano</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Izrađeno od recikliranih PET boca.</p>
                 </div>
                 <div>
                     <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto sm:mx-0">
@@ -706,46 +737,73 @@
     </section>
 
     <!-- Certifikati -->
-    <section id="certifikati" class="py-12 md:py-16 px-6 md:px-12 bg-autex-light">
+    <section id="certifikati" class="py-20 md:py-28 px-6 md:px-12 bg-autex-light">
         <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl reveal">
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-3">Kvaliteta i sigurnost</span>
+            <div class="max-w-2xl reveal">
+                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-3">Ispitano i certificirano</span>
                 <h2 class="text-2xl md:text-4xl font-bold tracking-tight leading-tight mb-4">Certifikati</h2>
                 <p class="text-gray-500 text-base leading-relaxed">
-                    Naši proizvodi zadovoljavaju stroge standarde kvalitete, sigurnosti i akustičnih performansi.
-                    Certifikati u nastavku bit će uskoro nadopunjeni stvarnom dokumentacijom.
+                    Svaki panel prolazi neovisna laboratorijska ispitivanja prije nego što stigne u vaš prostor — od
+                    reakcije na požar, preko akustične apsorpcije, do zdravstvene sigurnosti materijala.
                 </p>
             </div>
 
-            <!-- TODO: zamijeniti placeholder kartice stvarnim certifikatima -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 reveal delay-100">
-                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 reveal delay-100">
+
+                <!-- Protupožarna zaštita -->
+                <div class="cert-card group bg-white border border-gray-200 rounded-3xl p-8 md:p-9 transition-all duration-500 ease-expo hover:-translate-y-1.5 hover:border-gray-300 hover:shadow-[0_24px_48px_-20px_rgba(26,26,26,0.16)]">
+                    <div class="inline-flex items-center gap-2.5 max-w-full bg-autex-dark text-white rounded-full pl-3 pr-4 py-2.5 mb-7 transition-transform duration-500 ease-expo group-hover:scale-[1.03]">
+                        <svg class="w-4 h-4 text-white/70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
                         </svg>
+                        <span class="text-lg md:text-xl font-bold tracking-tight break-words">B-s1, d0</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Protupožarna klasa</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Certifikat o reakciji na požar prema europskoj normi (placeholder).</p>
+                    <h3 class="font-semibold text-lg mb-3">Protupožarna sigurnost</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Klasifikacija je provedena u skladu s EN&nbsp;13501-1:2018, B-s1-d0.
+                    </p>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                <!-- Akustična apsorpcija -->
+                <div class="cert-card group bg-white border border-gray-200 rounded-3xl p-8 md:p-9 transition-all duration-500 ease-expo hover:-translate-y-1.5 hover:border-gray-300 hover:shadow-[0_24px_48px_-20px_rgba(26,26,26,0.16)]">
+                    <div class="inline-flex items-center gap-2.5 max-w-full bg-autex-dark text-white rounded-full pl-3 pr-4 py-2.5 mb-7 transition-transform duration-500 ease-expo group-hover:scale-[1.03]">
+                        <svg class="w-4 h-4 text-white/70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
                         </svg>
+                        <span class="text-lg md:text-xl font-bold tracking-tight break-words">Klasa A</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Akustični atest</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Ispitani koeficijenti zvučne apsorpcije u akreditiranom laboratoriju (placeholder).</p>
+                    <h3 class="font-semibold text-lg mb-3">Akustična apsorpcija</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Testirano prema ISO&nbsp;354:2003.<br>
+                        Prosječni koeficijent apsorpcije zvuka: α<sub>s</sub>&nbsp;(100–5000&nbsp;Hz)&nbsp;0,80<br>
+                        Koeficijent smanjenja buke: NRC&nbsp;=&nbsp;0,85<br>
+                        Koeficijent ponderirane apsorpcije zvuka: α<sub>w</sub>&nbsp;=&nbsp;0,90<br>
+                        Klasa apsorpcije zvuka: Class A
+                    </p>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                    <div class="w-10 h-10 rounded-full bg-autex-dark flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+
+                <!-- Zdravstveni i eko certifikat -->
+                <div class="cert-card group bg-white border border-gray-200 rounded-3xl p-8 md:p-9 transition-all duration-500 ease-expo hover:-translate-y-1.5 hover:border-gray-300 hover:shadow-[0_24px_48px_-20px_rgba(26,26,26,0.16)]">
+                    <div class="inline-flex items-center gap-2.5 max-w-full bg-autex-dark text-white rounded-full pl-3 pr-4 py-2.5 mb-7 transition-transform duration-500 ease-expo group-hover:scale-[1.03]">
+                        <svg class="w-4 h-4 text-white/70 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                         </svg>
+                        <span class="text-lg md:text-xl font-bold tracking-tight break-words">0% Formaldehida</span>
                     </div>
-                    <h3 class="font-semibold mb-2">ISO standard</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Sustav upravljanja kvalitetom u skladu s ISO certifikacijom (placeholder).</p>
+                    <h3 class="font-semibold text-lg mb-3">Emisija formaldehida</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        ECO friendly: E0
+                    </p>
                 </div>
+
+            </div>
+
+            <div class="mt-10 reveal delay-200">
+                <a href="downloads.html"
+                    class="inline-flex items-center gap-2 border border-autex-dark/30 px-6 py-3 rounded-full text-sm font-medium hover:bg-autex-dark hover:text-white transition-colors duration-200">
+                    Preuzmi certifikat
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -808,16 +866,16 @@
 
             <div id="proj-accordion">
 
-                <!-- 01 — Poslovni uredi, Njemačka -->
+                <!-- 01 — Hotel Panorama, Prelog -->
                 <div class="acc-item active">
-                    <img loading="lazy" decoding="async" src="IMG-20260213-WA0064-L-1-scaled.jpg" alt="Akustične zidne obloge od PET felta — poslovni uredi, Njemačka">
+                    <img loading="lazy" decoding="async" src="projekti/hotel-panorama-prelog/1.webp" alt="Akustične zidne obloge od PET felta — lounge hotela Panorama, Prelog">
                     <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Poslovni uredi, Njemačka</span></div>
+                    <div class="acc-label-v"><span>Hotel Panorama, Prelog</span></div>
                     <div class="acc-content">
                         <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">01 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Poslovni uredi,<br>Njemačka</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje korporativnih ureda za međunarodnog klijenta u Njemačkoj: premium zidne obloge visoke kvalitete.</p>
-                        <a href="projekt-poslovni-uredi-njemacka.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Hotel Panorama,<br>Prelog</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje lobbyja i lounge prostora hotela — zidne obloge i stropni paneli od PET felta u zelenoj i sivoj nijansi.</p>
+                        <a href="projekt-hotel-panorama-prelog.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
                             Pogledaj cijeli projekt
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
@@ -872,16 +930,16 @@
                     </div>
                 </div>
 
-                <!-- 05 — Privatna kuća Sračinec -->
+                <!-- 05 — Poslovni uredi, Njemačka -->
                 <div class="acc-item">
-                    <img loading="lazy" decoding="async" src="sracinec.jpeg" alt="Akustična obrada doma od PET felta — privatna kuća, Sračinec">
+                    <img loading="lazy" decoding="async" src="IMG-20260213-WA0064-L-1-scaled.jpg" alt="Akustične zidne obloge od PET felta — poslovni uredi, Njemačka">
                     <div class="acc-overlay"></div>
-                    <div class="acc-label-v"><span>Privatna kuća, Sračinec</span></div>
+                    <div class="acc-label-v"><span>Poslovni uredi, Njemačka</span></div>
                     <div class="acc-content">
                         <span class="block mb-3 font-mono text-xs tracking-widest" style="color:rgba(255,255,255,0.28)">05 / 05</span>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Privatna kuća,<br>Sračinec</h3>
-                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustična obrada privatnog doma, dokaz da naša rješenja savršeno pristaju i rezidencijalnim prostorima.</p>
-                        <a href="projekt-privatna-kuca-sracinec.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight leading-snug">Poslovni uredi,<br>Njemačka</h3>
+                        <p class="text-white/50 text-sm leading-relaxed mb-7 max-w-sm">Akustično uređenje korporativnih ureda za međunarodnog klijenta u Njemačkoj: premium zidne obloge visoke kvalitete.</p>
+                        <a href="projekt-poslovni-uredi-njemacka.html" class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-colors duration-300">
                             Pogledaj cijeli projekt
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
@@ -901,7 +959,7 @@
     </section>
 
     <!-- Locations Section -->
-    <section id="galerija" class="py-24 md:py-32 px-6 md:px-12">
+    <section id="galerija" class="pt-24 md:pt-32 pb-12 md:pb-16 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 reveal">
                 <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent block mb-4">Kako do nas</span>
@@ -917,7 +975,7 @@
                                 d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Sjedište poduzeća</h3>
+                    <h3 class="text-xl font-bold mb-2">Sjedište i showroom</h3>
                     <p class="text-autex-accent text-sm font-medium mb-4 uppercase tracking-widest">Varaždin</p>
                     <address class="not-italic text-gray-600 leading-relaxed mb-6">
                         Cloud d.o.o.<br>
@@ -941,7 +999,7 @@
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Showroom</h3>
+                    <h3 class="text-xl font-bold mb-2">Showroom - Lola Acoustix Studio #2</h3>
                     <p class="text-gray-400 text-sm font-medium mb-4 uppercase tracking-widest">Zagreb</p>
                     <p class="text-gray-300 text-sm leading-relaxed mb-5">Posjetite naš showroom i uvjerite se osobno u kvalitetu i raspon naših akustičnih rješenja. Otvoreni smo za dogovorene posjete.</p>
                     <address class="not-italic text-gray-300 leading-relaxed mb-6">
@@ -961,6 +1019,24 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News teaser -->
+    <section class="pt-0 pb-8 md:pb-10 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-autex-dark text-white rounded-2xl px-8 py-10 md:px-12 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 reveal">
+                <div>
+                    <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/40 block mb-3">News</span>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Pratite nas na sajmovima i događanjima</h2>
+                    <p class="text-white/60 text-sm md:text-base max-w-xl">Video zapisi s naših nastupa na konferencijama, izložbama i poslovnim susretima.</p>
+                </div>
+                <a href="news.html"
+                    class="inline-flex items-center gap-2 bg-white text-autex-dark px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors duration-300 flex-shrink-0 whitespace-nowrap">
+                    Pogledaj News
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1033,8 +1109,7 @@
                             </div>
 
                             <div>
-                                <p class="font-semibold text-sm">Vana Varga</p>
-                                <p class="text-xs text-autex-accent mb-3">Uredska podrška</p>
+                                <p class="font-semibold text-sm mb-3">Uredska podrška</p>
                                 <a href="tel:+385953696019" class="inline-flex items-center gap-2 text-sm group">
                                     <svg class="w-3.5 h-3.5 text-autex-accent flex-shrink-0" fill="none"
                                         stroke="currentColor" viewBox="0 0 24 24">
@@ -1082,30 +1157,33 @@
 
             <!-- Contact Form -->
             <div class="reveal delay-200 bg-white p-10 rounded-2xl shadow-sm order-1 lg:order-2">
-                <form class="space-y-6" onsubmit="handleSubmit(event)">
+                <form class="space-y-6" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                    <input type="hidden" name="access_key" value="bf81b9cc-5ea4-4b58-9f8a-d53690a12e64">
+                    <input type="hidden" name="subject" value="LEAD-preko web stranice">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="text-xs uppercase tracking-widest text-autex-accent block mb-2">Ime i
                                 prezime</label>
-                            <input type="text" placeholder="Vaše ime" required>
+                            <input type="text" name="name" placeholder="Vaše ime" required>
                         </div>
                         <div>
                             <label class="text-xs uppercase tracking-widest text-autex-accent block mb-2">Email</label>
-                            <input type="email" placeholder="Email adresa" required>
+                            <input type="email" name="email" placeholder="Email adresa" required>
                         </div>
                     </div>
                     <div>
                         <label class="text-xs uppercase tracking-widest text-autex-accent block mb-2">Tvrtka</label>
-                        <input type="text" placeholder="Naziv tvrtke (opcionalno)">
+                        <input type="text" name="company" placeholder="Naziv tvrtke (opcionalno)">
                     </div>
                     <div>
                         <label class="text-xs uppercase tracking-widest text-autex-accent block mb-2">Upit /
                             Poruka</label>
-                        <textarea
+                        <textarea name="message"
                             placeholder="Kako vam možemo pomoći? (akustika, custom narudžba, uredski namještaj...)"
                             rows="5" required class="resize-none"></textarea>
                     </div>
-                    <button type="submit"
+                    <button type="submit" id="contact-submit-btn"
                         class="w-full bg-autex-dark text-white py-4 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
                         Pošalji upit
                     </button>
@@ -1113,6 +1191,11 @@
                 <div id="form-success"
                     class="hidden mt-4 text-center p-4 bg-green-50 rounded-lg text-green-700 text-sm">
                     ✓ Vaš upit je uspješno poslan! Javit ćemo se uskoro.
+                </div>
+                <div id="form-error"
+                    class="hidden mt-4 text-center p-4 bg-red-50 rounded-lg text-red-700 text-sm">
+                    Došlo je do greške pri slanju. Pokušajte ponovno ili nas kontaktirajte izravno na
+                    <a href="mailto:office@cloudpro.hr" class="underline">office@cloudpro.hr</a>.
                 </div>
             </div>
             </div>
@@ -1143,6 +1226,7 @@
                     <li><a href="stropni-baflesi.html" class="hover:text-white transition-colors">Stropni apsorberi</a></li>
                     <li><a href="lampe.html" class="hover:text-white transition-colors">Rasvjeta</a></li>
                     <li><a href="custom-made.html" class="hover:text-white transition-colors">PET felt elementi u namještaju</a></li>
+                    <li><a href="kalkulator.html" class="hover:text-white transition-colors">Akustički kalkulator</a></li>
                 </ul>
             </div>
 
@@ -1189,29 +1273,6 @@
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Hero video — switch between landscape/portrait clip based on screen orientation
-            (function () {
-                const landscapeVideo = document.querySelector('header .hero-video-landscape');
-                const portraitVideo = document.querySelector('header .hero-video-portrait');
-                if (!landscapeVideo || !portraitVideo) return;
-
-                const orientationQuery = window.matchMedia('(orientation: portrait)');
-
-                function applyOrientation(isPortrait) {
-                    if (isPortrait) {
-                        landscapeVideo.pause();
-                        portraitVideo.currentTime = 0;
-                        portraitVideo.play().catch(() => { });
-                    } else {
-                        portraitVideo.pause();
-                        landscapeVideo.play().catch(() => { });
-                    }
-                }
-
-                applyOrientation(orientationQuery.matches);
-                orientationQuery.addEventListener('change', (e) => applyOrientation(e.matches));
-            })();
-
             // Traka fotografija — tap/klik na sliku pauzira/nastavlja pomicanje
             (function () {
                 const track = document.querySelector('.marquee-track');
@@ -1224,23 +1285,61 @@
                 });
             })();
 
-            // Videi ispod hero sekcije — počnu se učitavati/reproducirati 1-2 sekcije prije nego dođu do njih
+            // Videi ispod hero sekcije — lazy load + play/pause ovisno o vidljivosti
             (function () {
                 const lazyVideos = document.querySelectorAll('video.lazy-video[data-src]');
                 if (!lazyVideos.length) return;
 
-                const videoObserver = new IntersectionObserver((entries, obs) => {
+                function ensureLoaded(v) {
+                    if (!v.src && v.dataset.src) {
+                        v.preload = 'auto';
+                        v.src = v.dataset.src;
+                        v.load();
+                    }
+                }
+
+                function playIfVisible(v) {
+                    if (!v.dataset.inview || document.hidden) return;
+                    ensureLoaded(v);
+                    const p = v.play();
+                    if (p && p.catch) p.catch(() => {});
+                }
+
+                const preloadObserver = new IntersectionObserver((entries, obs) => {
                     entries.forEach((entry) => {
                         if (!entry.isIntersecting) return;
-                        const video = entry.target;
-                        video.src = video.dataset.src;
-                        video.load();
-                        video.play().catch(() => { });
-                        obs.unobserve(video);
+                        ensureLoaded(entry.target);
+                        obs.unobserve(entry.target);
                     });
-                }, { rootMargin: '1000px 0px 1000px 0px' });
+                }, { rootMargin: '600px 0px 600px 0px' });
 
-                lazyVideos.forEach((v) => videoObserver.observe(v));
+                const playObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        const v = entry.target;
+                        if (entry.isIntersecting) {
+                            v.dataset.inview = '1';
+                            playIfVisible(v);
+                        } else {
+                            delete v.dataset.inview;
+                            v.pause();
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                lazyVideos.forEach((v) => {
+                    v.setAttribute('preload', 'none');
+                    v.setAttribute('aria-hidden', 'true');
+                    preloadObserver.observe(v);
+                    playObserver.observe(v);
+                });
+
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        lazyVideos.forEach((v) => v.pause());
+                    } else {
+                        lazyVideos.forEach(playIfVisible);
+                    }
+                });
             })();
 
             // Navbar scroll behaviour
@@ -1302,19 +1401,9 @@
 
                 cardsWrap.innerHTML = PRODUCTS_TREE.map((cat, i) => `
                     <a href="${cat.slug}.html" class="modeli-card group reveal${i % 3 === 1 ? ' delay-100' : i % 3 === 2 ? ' delay-200' : ''}">
-                        ${cat.image ? `
                         <div class="image-zoom-container block aspect-[3/4] bg-gray-200 rounded-lg mb-4 overflow-hidden">
                             <img loading="lazy" decoding="async" src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover" draggable="false">
-                        </div>` : `
-                        <div class="image-zoom-container aspect-[3/4] bg-gray-300 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400"></div>
-                            <div class="relative text-center p-6">
-                                <svg class="w-12 h-12 mx-auto mb-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                                <p class="font-semibold text-gray-700">${cat.title}</p>
-                            </div>
-                        </div>`}
+                        </div>
                         <h3 class="text-lg md:text-xl font-semibold mb-3.5">${cat.title}</h3>
                         <span class="inline-flex items-center gap-2 text-sm font-medium bg-autex-dark text-white px-4 py-2 rounded-full group-hover:bg-black transition-colors">
                             Pogledaj modele
@@ -1394,6 +1483,29 @@
                     item.addEventListener('mouseenter', () => setActive(i));
                     item.addEventListener('click', () => setActive(i));
                 });
+            })();
+
+            // Pamti trenutnu sekciju da povratak s podstranica ("Početna") vrati korisnika na isto mjesto
+            (function () {
+                const sectionIds = ['modeli', 'pet-filc', 'certifikati', 'boje', 'galerija-projekata', 'galerija', 'kontakt'];
+                const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+                if (!sections.length) return;
+
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            sessionStorage.setItem('lolaSection', entry.target.id);
+                        }
+                    });
+                }, { rootMargin: '-96px 0px -60% 0px', threshold: 0 });
+
+                sections.forEach((s) => sectionObserver.observe(s));
+
+                function clearIfNearTop() {
+                    if (window.scrollY < 100) sessionStorage.removeItem('lolaSection');
+                }
+                clearIfNearTop();
+                window.addEventListener('scroll', clearIfNearTop, { passive: true });
             })();
 
             // Boje — paleta PET felta
@@ -1499,10 +1611,40 @@
         });
 
         // Form submit handler
-        function handleSubmit(e) {
-            e.preventDefault();
-            document.getElementById('form-success').classList.remove('hidden');
-            e.target.reset();
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const submitBtn = document.getElementById('contact-submit-btn');
+                const successEl = document.getElementById('form-success');
+                const errorEl = document.getElementById('form-error');
+                const originalBtnText = submitBtn.textContent;
+
+                successEl.classList.add('hidden');
+                errorEl.classList.add('hidden');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Šaljem...';
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: contactForm.method,
+                        headers: { 'Accept': 'application/json' },
+                        body: new FormData(contactForm)
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        contactForm.reset();
+                        successEl.classList.remove('hidden');
+                    } else {
+                        errorEl.classList.remove('hidden');
+                    }
+                } catch (err) {
+                    errorEl.classList.remove('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+            });
         }
     </script>
 </body>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akustički kalkulator — Lola Acoustix</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="description" content="Izračunajte okvirnu količinu PET felt akustičnih panela potrebnih za vaš prostor na temelju dimenzija, poda, zidova i namještaja.">
+    <link rel="canonical" href="https://lolaacoustix.com/kalkulator.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        autex: {
+                            dark: '#1a1a1a',
+                            light: '#f5f5f5',
+                            accent: '#8b8b8b'
+                        }
+                    },
+                    transitionTimingFunction: {
+                        'expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==========================================================================
+           AKUSTIČKI KALKULATOR — izračun identičan originalu, redizajnirana skin
+           ========================================================================== */
+        .acalc {
+            padding: 40px;
+            background: #ffffff;
+            border: 1px solid #eef0f2;
+            border-radius: 28px;
+            color: #1a1a1a;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .acalc-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #eef0f2;
+            margin-bottom: 32px;
+        }
+
+        .acalc-kicker {
+            margin: 0;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #8b8b8b;
+        }
+
+        .acalc-lang {
+            display: flex;
+            gap: 2px;
+            padding: 3px;
+            background: #f5f5f5;
+            border-radius: 999px;
+        }
+
+        .acalc-lang button {
+            border: 0;
+            background: none;
+            padding: 7px 16px;
+            border-radius: 999px;
+            font: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            color: #8b8b8b;
+            cursor: pointer;
+            transition: color .2s, background-color .2s;
+        }
+
+        .acalc-lang button[aria-pressed="true"] {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .acalc-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px 32px;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        .acalc-dims {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px 32px;
+        }
+
+        .acalc-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .acalc-field>label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #8b8b8b;
+        }
+
+        .acalc-field select,
+        .acalc-field input {
+            font: inherit;
+            font-size: 15px;
+            width: 100%;
+            padding: 10px 0;
+            background: transparent;
+            color: #1a1a1a;
+            border: none;
+            border-bottom: 1px solid rgba(26, 26, 26, .16);
+            border-radius: 0;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: border-color .25s;
+        }
+
+        .acalc-field select {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%238b8b8b' stroke-width='1.6' stroke-linecap='round'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 2px center;
+            padding-right: 20px;
+        }
+
+        .acalc-field input::placeholder {
+            color: #b7bac0;
+        }
+
+        .acalc-field input:focus,
+        .acalc-field select:focus {
+            outline: none;
+            border-color: #1a1a1a;
+        }
+
+        .acalc-field input:focus-visible,
+        .acalc-field select:focus-visible,
+        .acalc-lang button:focus-visible {
+            outline: 2px solid #1a1a1a;
+            outline-offset: 2px;
+        }
+
+        .acalc-field input[aria-invalid="true"] {
+            border-color: #c8332e;
+        }
+
+        .acalc-err {
+            margin: 24px 0 0;
+            color: #c8332e;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .acalc-err:empty {
+            display: none;
+        }
+
+        .acalc-out {
+            margin: 36px 0 0;
+            padding: 32px 28px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .acalc-out[hidden] {
+            display: none;
+        }
+
+        .acalc-figs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .acalc-fig dt {
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .45);
+            margin: 0 0 10px;
+        }
+
+        .acalc-fig dd {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -.03em;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .acalc-fig dd span {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, .45);
+            margin-left: 4px;
+            letter-spacing: 0;
+        }
+
+        .acalc-meter {
+            margin: 32px 0 0;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .acalc-meter-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .acalc-meter-row h3 {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .acalc-meter-val {
+            font-size: 22px;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -.02em;
+            color: #fff;
+        }
+
+        .acalc-track {
+            height: 6px;
+            background: rgba(255, 255, 255, .12);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .acalc-fill {
+            height: 100%;
+            width: 0;
+            background: #fff;
+            border-radius: 99px;
+            transition: width .35s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .acalc-steps {
+            margin: 28px 0 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .acalc-steps h3 {
+            margin: 0 0 14px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        .acalc-step {
+            display: grid;
+            grid-template-columns: 1fr 110px 46px;
+            align-items: center;
+            gap: 12px;
+            padding: 7px 0;
+        }
+
+        .acalc-step-name {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .65);
+        }
+
+        .acalc-bar {
+            position: relative;
+            height: 5px;
+            background: rgba(255, 255, 255, .12);
+            border-radius: 99px;
+        }
+
+        .acalc-bar::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -3px;
+            bottom: -3px;
+            width: 1px;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .acalc-bar i {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            border-radius: 99px;
+            display: block;
+        }
+
+        .acalc-bar i.up {
+            left: 50%;
+            background: #fff;
+        }
+
+        .acalc-bar i.down {
+            right: 50%;
+            background: rgba(255, 255, 255, .35);
+        }
+
+        .acalc-step-val {
+            font-size: 12.5px;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+            text-align: right;
+        }
+
+        .acalc-step-val.up {
+            color: #fff;
+        }
+
+        .acalc-step-val.down {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .acalc-note {
+            margin: 28px 0 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .acalc-note p {
+            margin: 0;
+        }
+
+        .acalc-note p+p {
+            margin-top: 6px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .acalc-fill {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .acalc {
+                padding: 28px 22px;
+                border-radius: 22px;
+            }
+
+            .acalc-form,
+            .acalc-dims,
+            .acalc-figs {
+                grid-template-columns: 1fr;
+            }
+
+            .acalc-step {
+                grid-template-columns: 1fr 76px 40px;
+                gap: 8px;
+            }
+
+            .acalc-out {
+                padding: 26px 20px;
+            }
+
+            .acalc-meter-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo py-4 px-6 md:px-12 bg-white text-autex-dark shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="z-50 relative">
+                <img src="lolaacoustix-logo.png" alt="Lola Acoustix"
+                    class="h-7 brightness-0" id="nav-logo">
+            </a>
+
+            <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
+                <a href="index.html#modeli" class="hover:opacity-70 transition-opacity">Proizvodi</a>
+                <a href="projekti.html" class="hover:opacity-70 transition-opacity">Projekti</a>
+                <a href="downloads.html" class="hover:opacity-70 transition-opacity">Downloads</a>
+                <a href="kalkulator.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
+                <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+                <a href="news.html" class="hover:opacity-70 transition-opacity">News</a>
+                <a href="index.html#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
+                    <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
+                    Certifikati
+                </a>
+            </div>
+
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html#kontakt"
+                    class="border border-current px-5 py-2 rounded-full hover:bg-autex-dark hover:text-white transition-colors duration-300">
+                    Pošalji Upit
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Otvori navigacijski izbornik" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-autex-dark text-white flex-col justify-center items-center hidden">
+        <div class="flex flex-col space-y-8 text-center text-2xl font-light">
+            <a href="index.html#modeli" class="mobile-link hover:opacity-70 transition-opacity">Proizvodi</a>
+            <a href="projekti.html" class="mobile-link hover:opacity-70 transition-opacity">Projekti</a>
+            <a href="downloads.html" class="mobile-link hover:opacity-70 transition-opacity">Downloads</a>
+            <a href="kalkulator.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
+            <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+            <a href="news.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
+            <a href="index.html#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
+                <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
+                Certifikati
+            </a>
+            <a href="index.html#kontakt"
+                class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
+                Upit</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto px-6 pt-32 md:pt-40">
+        <a href="index.html" id="back-home-link"
+            class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-900 transition-colors duration-200 mb-8">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                <path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Početna
+        </a>
+        <p class="text-xs font-medium tracking-[0.3em] uppercase text-slate-400 mb-3">Alat</p>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Izračunajte potreban broj panela</h1>
+        <p class="mt-4 text-slate-500 text-lg max-w-2xl">
+            Unesite dimenzije i karakteristike prostorije za okvirnu procjenu potrebne količine akustičnih panela.
+        </p>
+    </header>
+
+    <!-- Calculator -->
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-16">
+
+        <div class="acalc" id="acalc">
+            <div class="acalc-top">
+                <p class="acalc-kicker" data-i18n="title">Akustički kalkulator</p>
+                <p class="sr-only" data-i18n="sub">Procjena potrebne količine panela na temelju dimenzija i
+                    materijala prostorije.</p>
+                <div class="acalc-lang" role="group" aria-label="Jezik / Language">
+                    <button type="button" data-lang="hr" aria-pressed="true">HR</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+            </div>
+
+            <form class="acalc-form" id="acalc-form" novalidate>
+                <div class="acalc-dims">
+                    <div class="acalc-field">
+                        <label for="ac-l" data-i18n="length">Dužina (m)</label>
+                        <input id="ac-l" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
+                    </div>
+                    <div class="acalc-field">
+                        <label for="ac-w" data-i18n="width">Širina (m)</label>
+                        <input id="ac-w" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
+                    </div>
+                    <div class="acalc-field">
+                        <label for="ac-h" data-i18n="height">Visina (m)</label>
+                        <input id="ac-h" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
+                    </div>
+                </div>
+
+                <div class="acalc-field">
+                    <label for="ac-room" data-i18n="roomType">Tip prostorije</label>
+                    <select id="ac-room">
+                        <option value="studio">studio</option>
+                        <option value="office">ured</option>
+                        <option value="living">dnevni boravak</option>
+                    </select>
+                </div>
+
+                <div class="acalc-field">
+                    <label for="ac-glass" data-i18n="glassArea">Površina stakla (m²)</label>
+                    <input id="ac-glass" type="number" min="0" step="0.5" inputmode="decimal" placeholder="0">
+                </div>
+
+                <div class="acalc-field">
+                    <label for="ac-floor" data-i18n="floorType">Tip poda</label>
+                    <select id="ac-floor">
+                        <option value="concrete">beton</option>
+                        <option value="ceramic">keramika</option>
+                        <option value="parquet">parket</option>
+                        <option value="laminate">laminat</option>
+                        <option value="vinyl">vinil</option>
+                        <option value="carpet">tepison</option>
+                    </select>
+                </div>
+
+                <div class="acalc-field">
+                    <label for="ac-wall" data-i18n="wallType">Tip zida</label>
+                    <select id="ac-wall">
+                        <option value="concrete">betonski zid</option>
+                        <option value="drywall">gipskarton</option>
+                        <option value="brick">cigla</option>
+                        <option value="ceramic">keramičke pločice</option>
+                        <option value="wood">drvene obloge</option>
+                    </select>
+                </div>
+
+                <div class="acalc-field">
+                    <label for="ac-furniture" data-i18n="furniture">Količina namještaja</label>
+                    <select id="ac-furniture">
+                        <option value="lot">puno</option>
+                        <option value="medium">srednje</option>
+                        <option value="little">malo</option>
+                    </select>
+                </div>
+            </form>
+
+            <p class="acalc-err" id="acalc-err" role="alert"></p>
+
+            <section class="acalc-out" id="acalc-out" aria-live="polite" hidden>
+                <dl class="acalc-figs">
+                    <div class="acalc-fig">
+                        <dt data-i18n="wallPanels">Zidni paneli</dt>
+                        <dd id="ac-r-wall">0<span>m²</span></dd>
+                    </div>
+                    <div class="acalc-fig">
+                        <dt data-i18n="dividerPanels">Viseći pregradni</dt>
+                        <dd id="ac-r-divider">0<span>m²</span></dd>
+                    </div>
+                    <div class="acalc-fig">
+                        <dt data-i18n="ceilingPanels">Stropni paneli</dt>
+                        <dd id="ac-r-ceiling">0<span>m²</span></dd>
+                    </div>
+                </dl>
+
+                <div class="acalc-meter">
+                    <div class="acalc-meter-row">
+                        <h3 data-i18n="improvement">Procijenjeno poboljšanje akustike</h3>
+                        <span class="acalc-meter-val" id="ac-r-improve">0%</span>
+                    </div>
+                    <div class="acalc-track">
+                        <div class="acalc-fill" id="ac-r-fill"></div>
+                    </div>
+                </div>
+
+                <div class="acalc-steps">
+                    <h3 data-i18n="details">Detalji</h3>
+                    <div id="ac-r-steps"></div>
+                </div>
+
+                <div class="acalc-note">
+                    <p data-i18n="note1">Svi proračuni su rađeni za PET filc 12 mm, gustoće 2400 g/m².</p>
+                    <p data-i18n="note2">Postavljanjem panela s razmakom od zida (min. 20 mm) povećava se apsorpcija
+                        zvuka.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- CTA -->
+        <section class="mt-16 md:mt-20 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Napravimo nešto zajedno</h2>
+            <a href="index.html#kontakt"
+                class="inline-flex items-center gap-2 bg-slate-900 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-slate-800 transition-colors duration-200">
+                Javite nam se
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* ======================================================================
+               PREKIDAČ
+
+               true  = 1:1 s originalnim kodom. Tip zida NE utječe na m², samo na
+                       postotak poboljšanja. Brojke se poklapaju sa starom stranicom.
+               false = tip zida utječe i na m² (ono što je kod očito namjeravao).
+               ====================================================================== */
+            var LEGACY_MODE = true;
+
+            /* ---------------------------------------------------------------------
+               Faktori — točno onako kako ih je original imao.
+               Tipovi kojih nema u originalnom kodu ostaju 1.00 (bez utjecaja):
+               pod keramika/parket/laminat/vinil, zid gipskarton/cigla,
+               prostorija dnevni boravak, namještaj srednje.
+               --------------------------------------------------------------------- */
+            var CONFIG = {
+                baseRatio: 0.20,
+                split: { wall: 0.50, divider: 0.25, ceiling: 0.25 },
+                glass: { threshold: 10, factor: 1.25 },
+                improvement: { base: 50, scale: 100, cap: 85 },
+                factors: {
+                    floor: {
+                        concrete: 1.20, ceramic: 1.00, parquet: 1.00,
+                        laminate: 1.00, vinyl: 1.00, carpet: 0.80
+                    },
+                    furniture: { lot: 0.85, medium: 1.00, little: 1.15 },
+                    room: { studio: 1.30, office: 1.20, living: 1.00 },
+                    wall: {
+                        concrete: 1.20, ceramic: 1.20, brick: 1.00,
+                        drywall: 1.00, wood: 0.90
+                    }
+                }
+            };
+
+            /* ======================================================================
+               IZRAČUN — čista funkcija. Redoslijed primjene faktora je isti kao u
+               originalu (pod -> staklo -> namještaj -> prostorija -> zid) da se i
+               popis u "Detalji" poklapa red po red.
+               ====================================================================== */
+            function calculate(input) {
+                var volume = input.length * input.width * input.height;
+                var area = volume * CONFIG.baseRatio;
+                var steps = [];
+
+                function apply(factor, key) {
+                    if (typeof factor !== "number" || factor === 1) return;
+                    area *= factor;
+                    steps.push({ key: key, factor: factor });
+                }
+
+                apply(CONFIG.factors.floor[input.floor], "floor." + input.floor);
+                if (input.glass > CONFIG.glass.threshold) apply(CONFIG.glass.factor, "glass");
+                apply(CONFIG.factors.furniture[input.furniture], "furniture." + input.furniture);
+                apply(CONFIG.factors.room[input.room], "room." + input.room);
+
+                var wallFactor = CONFIG.factors.wall[input.wall];
+                var wallKey = "wall." + input.wall;
+
+                // U novom načinu zid ulazi PRIJE podjele, pa mijenja i kvadrate.
+                if (!LEGACY_MODE) apply(wallFactor, wallKey);
+
+                var panels = {
+                    wall: Math.round(area * CONFIG.split.wall),
+                    divider: Math.round(area * CONFIG.split.divider),
+                    ceiling: Math.round(area * CONFIG.split.ceiling)
+                };
+
+                // U legacy načinu zid ulazi POSLIJE podjele — kvadrati su već fiksirani,
+                // pa utječe samo na postotak. Ovo je ponašanje stare stranice.
+                if (LEGACY_MODE) apply(wallFactor, wallKey);
+
+                var improvement = Math.min(
+                    CONFIG.improvement.cap,
+                    Math.round(CONFIG.improvement.base + (area / volume) * CONFIG.improvement.scale)
+                );
+
+                return { volume: volume, area: area, panels: panels, improvement: improvement, steps: steps };
+            }
+
+            /* ======================================================================
+               PRIJEVODI — jedan objekt po jeziku, svi ključevi prisutni.
+               Tekstovi koraka preuzeti iz originala.
+               ====================================================================== */
+            var I18N = {
+                hr: {
+                    title: "Akustički kalkulator",
+                    sub: "Procjena potrebne količine panela na temelju dimenzija i materijala prostorije.",
+                    length: "Dužina (m)", width: "Širina (m)", height: "Visina (m)",
+                    roomType: "Tip prostorije", glassArea: "Površina stakla (m²)",
+                    floorType: "Tip poda", wallType: "Tip zida", furniture: "Količina namještaja",
+                    wallPanels: "Zidni paneli", dividerPanels: "Viseći pregradni", ceilingPanels: "Stropni paneli",
+                    improvement: "Procijenjeno poboljšanje akustike",
+                    details: "Detalji",
+                    note1: "Svi proračuni su rađeni za PET filc 12 mm, gustoće 2400 g/m².",
+                    note2: "Postavljanjem panela s razmakom od zida (min. 20 mm) povećava se apsorpcija zvuka.",
+                    errDims: "Unesite sve dimenzije.",
+                    options: {
+                        studio: "studio", office: "ured", living: "dnevni boravak",
+                        concreteFloor: "beton", ceramic: "keramika", parquet: "parket",
+                        laminate: "laminat", vinyl: "vinil", carpet: "tepison",
+                        concreteWall: "betonski zid", drywall: "gipskarton", brick: "cigla",
+                        ceramicWall: "keramičke pločice", wood: "drvene obloge",
+                        lot: "puno", medium: "srednje", little: "malo"
+                    },
+                    steps: {
+                        "floor.concrete": "Tvrdi pod",
+                        "floor.carpet": "Tepison",
+                        "glass": "Puno stakla",
+                        "furniture.lot": "Puno namještaja",
+                        "furniture.little": "Malo namještaja",
+                        "room.studio": "Studio",
+                        "room.office": "Ured",
+                        "wall.concrete": "Tvrdi zidovi",
+                        "wall.ceramic": "Tvrdi zidovi",
+                        "wall.wood": "Drvene obloge"
+                    }
+                },
+                en: {
+                    title: "Acoustic calculator",
+                    sub: "Estimated panel coverage based on room dimensions and surface materials.",
+                    length: "Length (m)", width: "Width (m)", height: "Height (m)",
+                    roomType: "Room type", glassArea: "Glass area (m²)",
+                    floorType: "Floor type", wallType: "Wall type", furniture: "Amount of furniture",
+                    wallPanels: "Wall panels", dividerPanels: "Air divider", ceilingPanels: "Ceiling baffles",
+                    improvement: "Estimated acoustic improvement",
+                    details: "Details",
+                    note1: "All calculations are based on PET felt 12 mm, density 2400 g/m².",
+                    note2: "Installing panels with a wall gap (min. 20 mm) increases sound absorption.",
+                    errDims: "Enter all dimensions.",
+                    options: {
+                        studio: "studio", office: "office", living: "living room",
+                        concreteFloor: "concrete", ceramic: "ceramic", parquet: "parquet",
+                        laminate: "laminate", vinyl: "vinyl", carpet: "carpet",
+                        concreteWall: "concrete wall", drywall: "drywall", brick: "brick",
+                        ceramicWall: "ceramic tiles", wood: "wood panelling",
+                        lot: "a lot", medium: "medium", little: "little"
+                    },
+                    steps: {
+                        "floor.concrete": "Hard floor",
+                        "floor.carpet": "Carpet",
+                        "glass": "Large glazed area",
+                        "furniture.lot": "Plenty of furniture",
+                        "furniture.little": "Little furniture",
+                        "room.studio": "Studio",
+                        "room.office": "Office",
+                        "wall.concrete": "Hard walls",
+                        "wall.ceramic": "Hard walls",
+                        "wall.wood": "Wood panelling"
+                    }
+                }
+            };
+
+            var OPTION_KEYS = {
+                "ac-room": { studio: "studio", office: "office", living: "living" },
+                "ac-floor": {
+                    concrete: "concreteFloor", ceramic: "ceramic", parquet: "parquet",
+                    laminate: "laminate", vinyl: "vinyl", carpet: "carpet"
+                },
+                "ac-wall": {
+                    concrete: "concreteWall", drywall: "drywall", brick: "brick",
+                    ceramic: "ceramicWall", wood: "wood"
+                },
+                "ac-furniture": { lot: "lot", medium: "medium", little: "little" }
+            };
+
+            /* ====================================================================== */
+
+            var root = document.getElementById("acalc");
+            var form = document.getElementById("acalc-form");
+            var errEl = document.getElementById("acalc-err");
+            var outEl = document.getElementById("acalc-out");
+            var stepsEl = document.getElementById("ac-r-steps");
+
+            var lang = "hr";
+            function t() { return I18N[lang]; }
+            function num(id) { var v = parseFloat(document.getElementById(id).value); return isFinite(v) ? v : 0; }
+            function val(id) { return document.getElementById(id).value; }
+
+            function applyLanguage(next) {
+                lang = next;
+                var dict = t();
+
+                root.querySelectorAll("[data-i18n]").forEach(function (el) {
+                    var key = el.getAttribute("data-i18n");
+                    if (dict[key]) el.textContent = dict[key];
+                });
+
+                Object.keys(OPTION_KEYS).forEach(function (selectId) {
+                    var sel = document.getElementById(selectId);
+                    Array.prototype.forEach.call(sel.options, function (opt) {
+                        var key = OPTION_KEYS[selectId][opt.value];
+                        if (key && dict.options[key]) opt.text = dict.options[key];
+                    });
+                });
+
+                root.querySelectorAll(".acalc-lang button").forEach(function (b) {
+                    b.setAttribute("aria-pressed", String(b.dataset.lang === next));
+                });
+                document.documentElement.lang = next;
+
+                render();
+            }
+
+            function stepBar(factor) {
+                var pct = (factor - 1) * 100;
+                var width = Math.min(50, Math.abs(pct) / 30 * 50);
+                var cls = pct > 0 ? "up" : "down";
+                return '<div class="acalc-bar"><i class="' + cls + '" style="width:' + width + '%"></i></div>';
+            }
+
+            function render() {
+                var dict = t();
+
+                var input = {
+                    length: num("ac-l"), width: num("ac-w"), height: num("ac-h"),
+                    glass: num("ac-glass"),
+                    room: val("ac-room"), floor: val("ac-floor"),
+                    wall: val("ac-wall"), furniture: val("ac-furniture")
+                };
+
+                ["ac-l", "ac-w", "ac-h"].forEach(function (id) {
+                    var el = document.getElementById(id);
+                    el.setAttribute("aria-invalid", String(el.value !== "" && !(parseFloat(el.value) > 0)));
+                });
+
+                if (!input.length || !input.width || !input.height) {
+                    var touched = ["ac-l", "ac-w", "ac-h"].some(function (id) {
+                        return document.getElementById(id).value !== "";
+                    });
+                    errEl.textContent = touched ? dict.errDims : "";
+                    outEl.hidden = true;
+                    return;
+                }
+
+                errEl.textContent = "";
+                outEl.hidden = false;
+
+                var r = calculate(input);
+
+                document.getElementById("ac-r-wall").innerHTML = r.panels.wall + "<span>m²</span>";
+                document.getElementById("ac-r-divider").innerHTML = r.panels.divider + "<span>m²</span>";
+                document.getElementById("ac-r-ceiling").innerHTML = r.panels.ceiling + "<span>m²</span>";
+                document.getElementById("ac-r-improve").textContent = r.improvement + "%";
+                document.getElementById("ac-r-fill").style.width = r.improvement + "%";
+
+                stepsEl.innerHTML = r.steps.map(function (s) {
+                    var pct = Math.round((s.factor - 1) * 100);
+                    var cls = pct > 0 ? "up" : "down";
+                    return '<div class="acalc-step">' +
+                        '<span class="acalc-step-name">' + (dict.steps[s.key] || s.key) + "</span>" +
+                        stepBar(s.factor) +
+                        '<span class="acalc-step-val ' + cls + '">' + (pct > 0 ? "+" : "") + pct + "%</span>" +
+                        "</div>";
+                }).join("");
+            }
+
+            form.addEventListener("input", render);
+            form.addEventListener("change", render);
+            form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+            root.querySelectorAll(".acalc-lang button").forEach(function (b) {
+                b.addEventListener("click", function () { applyLanguage(b.dataset.lang); });
+            });
+
+            applyLanguage("hr");
+        })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-autex-dark text-white py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <img loading="lazy" decoding="async" src="lolaacoustix-logo.png" alt="Lola Acoustix"
+                    class="h-6 brightness-0 invert mb-6">
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">Redefiniramo akustični prostor kroz besprijekoran
+                    dizajn i visoke performanse.</p>
+                <div class="space-y-2 text-sm text-gray-400">
+                    <p><a href="mailto:office@cloudpro.hr"
+                            class="hover:text-white transition-colors">office@cloudpro.hr</a></p>
+                    <p>Ulica Dragutina Rakovca 3, 42000 Varaždin</p>
+                    <p>Buzinski krči 5, 10000 Zagreb</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Proizvodi</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="zidne-obloge.html" class="hover:text-white transition-colors">Obloge zida</a></li>
+                    <li><a href="pregrade-prostora.html" class="hover:text-white transition-colors">Pregrade prostora</a></li>
+                    <li><a href="stropni-baflesi.html" class="hover:text-white transition-colors">Stropni apsorberi</a></li>
+                    <li><a href="lampe.html" class="hover:text-white transition-colors">Rasvjeta</a></li>
+                    <li><a href="custom-made.html" class="hover:text-white transition-colors">PET felt elementi u namještaju</a></li>
+                    <li><a href="kalkulator.html" class="hover:text-white transition-colors">Akustički kalkulator</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Tvrtka</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="nasa-proizvodnja.html" class="hover:text-white transition-colors">Naša proizvodnja</a>
+                    </li>
+                    <li><a href="pet-filc-materijal.html" class="hover:text-white transition-colors">PET felt materijal</a></li>
+                    <li><a href="index.html#boje" class="hover:text-white transition-colors">Boje</a></li>
+                    <li><a href="index.html#certifikati" class="hover:text-white transition-colors">Certifikati</a></li>
+                    <li><a href="news.html" class="hover:text-white transition-colors">News</a></li>
+                    <li><a href="index.html#kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Projekti i resursi</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="index.html#galerija-projekata" class="hover:text-white transition-colors">Galerija projekata</a>
+                    </li>
+                    <li><a href="projekti.html" class="hover:text-white transition-colors">Svi projekti</a></li>
+                    <li><a href="index.html#galerija" class="hover:text-white transition-colors">Naše lokacije</a></li>
+                    <li><a href="downloads.html" class="hover:text-white transition-colors">Downloads</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2026 Lolaacoustix. All Rights Reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var link = document.getElementById('back-home-link');
+            var section = sessionStorage.getItem('lolaSection');
+            if (link && section) link.href = 'index.html#' + section;
+        })();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navLogo = document.getElementById('nav-logo');
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Mobile menu toggle
+            let menuOpen = false;
+            menuToggle.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                mobileMenu.classList.toggle('hidden', !menuOpen);
+                mobileMenu.classList.toggle('flex', menuOpen);
+                menuToggle.setAttribute('aria-expanded', String(menuOpen));
+                menuToggle.setAttribute('aria-label', menuOpen ? 'Zatvori navigacijski izbornik' : 'Otvori navigacijski izbornik');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOpen = false;
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Otvori navigacijski izbornik');
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
