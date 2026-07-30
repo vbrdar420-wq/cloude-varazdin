@@ -1,0 +1,32 @@
+# Netlify Redirects za Lola Acoustix
+# Format: /stara-putanja  /nova-putanja  301
+
+/products/ / 301
+/color/ / 301
+/gallery/ /projekti.html 301
+/zagreb/ /projekt-zagreb.html 301
+/hr/ /nasa-proizvodnja.html 301
+/impressum/ /impressum.html 301
+/downloads/ /downloads.html 301
+/de/ / 301
+/pet-felt/ /pet-filc-materijal.html 301
+/about-us/ / 301
+/privacy-policy/ /privacy.html 301
+/cookie-policy/ /cookie-policy.html 301
+/products/product-01/ /stropni-baflesi.html 301
+/projekt-stuttgart-2/ /projekt-stuttgart-2.html 301
+/projekt-bakaceva-zagreb/ /projekt-bakaceva-zagreb.html 301
+/poslovni-uredi-zagreb/ /projekt-poslovni-uredi-zagreb.html 301
+/privatna-kuca-zagreb/ /projekt-privatna-kuca-zagreb.html 301
+/privatna-kuca-sracinec/ /projekt-privatna-kuca-sracinec.html 301
+/projekt-u-sarajevu-bih/ /projekt-u-sarajevu-bih.html 301
+/projekt-u-city-island-zagreb/ /projekt-city-island-zagreb.html 301
+/projekt-u-matrix-office-park-zagreb/ /projekt-u-matrix-office-park-zagreb.html 301
+/projekt-privatni-kucni-glazbeni-studio-heidelberg/ /projekt-privatni-kucni-glazbeni-studio-heidelberg.html 301
+/projekt-salon-za-masazu-na-tresnjevci-zagreb/ /projekt-salon-za-masazu-na-tresnjevci-zagreb.html 301
+/wp-content/uploads/2025/05/Sound-absorption-classification.pdf /downloads/Sound-absorption-classification-12mm.pdf 301
+/wp-content/uploads/2025/05/Formaldehyde-Emmission-classification.pdf /downloads/Formaldehyde-Emmission-classification.pdf 301
+/wp-content/uploads/2025/05/FIRE-CLASSIFICATION-12-mm.pdf /downloads/Fire-classification-12mm.pdf 301
+/wp-content/uploads/2024/12/LOLA_ACOUSTIX_2025_web.pdf /downloads/Lola-Acoustix-Katalog-2025.pdf 301
+/wp-content/uploads/2024/12/The_BEEHIVE.pdf /downloads/Beehive-Technical-Sheet.pdf 301
+/wp-content/uploads/2025/05/P_413-25-520-1-EN.pdf /downloads/Sound-absorption-classification-24mm.pdf 301
