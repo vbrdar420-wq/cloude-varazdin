@@ -301,6 +301,7 @@
                 <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
+                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Postavke kolačića</button>
             </div>
         </div>
     </footer>
@@ -331,6 +332,73 @@
                 });
             });
         });
+    </script>
+
+    <!-- Cookie consent -->
+    <div id="cookie-banner"
+        class="hidden fixed z-[60] bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-sm bg-autex-dark text-white rounded-2xl shadow-[0_24px_48px_-20px_rgba(0,0,0,0.55)] p-6 transition-all duration-700 ease-expo translate-y-8 opacity-0">
+        <div class="flex items-start gap-3 mb-5">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="9" cy="10" r="1" fill="currentColor" stroke="none" />
+                <circle cx="14.5" cy="8.5" r="1" fill="currentColor" stroke="none" />
+                <circle cx="15" cy="14" r="1" fill="currentColor" stroke="none" />
+                <circle cx="10" cy="15.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            <div>
+                <p class="font-semibold text-sm mb-1.5">Kolačići</p>
+                <p class="text-xs text-white/60 leading-relaxed">
+                    Koristimo kolačiće za ispravan rad stranice i poboljšanje korisničkog iskustva. Više u
+                    <a href="cookie-policy.html" class="underline hover:text-white transition-colors">Cookie Policy</a>.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button id="cookie-accept-all" type="button"
+                class="flex-1 bg-white text-autex-dark text-xs font-medium rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity">
+                Prihvaćam sve
+            </button>
+            <button id="cookie-accept-necessary" type="button"
+                class="flex-1 border border-white/30 text-white text-xs font-medium rounded-full px-5 py-2.5 hover:bg-white hover:text-autex-dark transition-colors duration-300">
+                Samo neophodni
+            </button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var KEY = 'lolaCookieConsent';
+            var banner = document.getElementById('cookie-banner');
+            if (!banner) return;
+
+            function show() {
+                banner.classList.remove('hidden');
+                requestAnimationFrame(function () {
+                    banner.classList.remove('translate-y-8', 'opacity-0');
+                });
+            }
+            function hide() {
+                banner.classList.add('translate-y-8', 'opacity-0');
+                setTimeout(function () { banner.classList.add('hidden'); }, 500);
+            }
+            function setConsent(value) {
+                localStorage.setItem(KEY, value);
+                hide();
+            }
+
+            document.getElementById('cookie-accept-all').addEventListener('click', function () { setConsent('all'); });
+            document.getElementById('cookie-accept-necessary').addEventListener('click', function () { setConsent('necessary'); });
+            document.querySelectorAll('.cookie-settings-link').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    show();
+                });
+            });
+
+            if (!localStorage.getItem(KEY)) {
+                setTimeout(show, 600);
+            }
+        })();
     </script>
 
 </body>
