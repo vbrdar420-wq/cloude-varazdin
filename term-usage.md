@@ -52,7 +52,46 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 
 ---
 
-**Napomena o skoli:** ovaj popis će narasti kad se prevede Serija 3 (27 projekt-stranica) — svaka nova serija dodaje nove retke, postojeći ostaju.
+**Napomena o skoli:** /en/ je sada u potpunosti preveden (Serija 1+2+3). Sljedeći krug je /de/, istim redoslijedom serija.
+
+---
+
+# Serija 3 — 27 pojedinačnih project-*.html stranica (/en/)
+
+- **Svih 27 stranica**: title, meta description, eyebrow (regija/grad), h1, intro paragraf, alt tekstovi (uključujući 3 posebna opisna alt teksta na `project-hotel-panorama-prelog.html`, ostali su bare-name), "Svi projekti" → "All Projects", prev/next navigacija između susjednih projekata, footer "Colors"→"Colours"
+- **Pravilo primijenjeno dosljedno**: toponimi i nazivi tvrtki/objekata NETAKNUTI (Zagreb, Sračinec, Trešnjevka, Središće, Bakačeva, Heidelberg, Stuttgart, Prelog, Varaždin, Skytoll, Matrix Office Park, City Island, Lola Acoustix Showroom); nazivi zemalja prevedeni (Njemačka→Germany, Hrvatska→Croatia, Bosna i Hercegovina→Bosnia and Herzegovina); generički opisni dijelovi naziva prevedeni (npr. "Poslovni uredi"→"Business Offices", "Ostali poslovni prostori"→"Other Business Spaces", "Privatna kuća"→"Private Residence", "Salon za masažu"→"Massage Salon")
+- **Dosljednost naziva provjerena skriptno**: uspoređen h3 na `projects.html` sa h1 na svakoj od 27 stranica — svih 27 identično, 0 razlika
+- **i18n-map.json**: 27 zasebnih ključeva, filename se NE mijenja (ostaje `project-*.html` u sve tri jezične mape)
+- Puni popis 27 stranica i njihovih EN naziva:
+  | Datoteka | EN naziv |
+  |---|---|
+  | project-zagreb.html | Zagreb |
+  | project-bakaceva-zagreb.html | Bakačeva, Zagreb |
+  | project-city-island-zagreb.html | City Island, Zagreb |
+  | project-city-island-zagreb-2.html | City Island, Zagreb — II |
+  | project-commercial-spaces-zagreb.html | Other Business Spaces, Zagreb |
+  | project-matrix-office-park-zagreb.html | Matrix Office Park, Zagreb |
+  | project-offices-zagreb.html | Business Offices, Zagreb |
+  | project-private-residence-zagreb.html | Private Residence, Zagreb |
+  | project-skytoll-zagreb.html | Skytoll, Zagreb |
+  | project-sredisce-zagreb.html | Središće, Zagreb |
+  | project-massage-salon-tresnjevka-zagreb.html | Massage Salon, Trešnjevka |
+  | project-mursko-sredisce.html | Mursko Središće |
+  | project-private-residence-sracinec.html | Private Residence, Sračinec |
+  | project-hotel-panorama-prelog.html | Hotel Panorama, Prelog |
+  | project-lola-acoustix-showroom.html | Lola Acoustix Showroom |
+  | project-sarajevo-bih.html | Sarajevo, Bosnia and Herzegovina |
+  | project-offices-germany.html | Business Offices, Germany |
+  | project-darmstadt.html | Darmstadt, Germany |
+  | project-dusseldorf.html | Düsseldorf, Germany |
+  | project-frankfurt.html | Frankfurt, Germany |
+  | project-mannheim.html | Mannheim, Germany |
+  | project-stuttgart.html | Stuttgart, Germany |
+  | project-stuttgart-2.html | Stuttgart 2, Germany |
+  | project-stuttgart-3.html | Stuttgart 3, Germany |
+  | project-weiden-1.html | Weiden 1, Germany |
+  | project-weiden-2.html | Weiden 2, Germany |
+  | project-home-music-studio-heidelberg.html | Private Home Music Studio, Heidelberg |
 
 ---
 
