@@ -3,22 +3,22 @@
 const PRODUCTS_TREE = [
     {
         id: 'zidne-obloge', slug: 'zidne-obloge', title: 'Obloge zida',
-        image: 'obloge-zida-hero.webp'
+        image: '/obloge-zida-hero.webp'
     },
     {
         id: 'pregrade-prostora', slug: 'pregrade-prostora', title: 'Pregrade prostora',
-        image: 'pregrade-prostora-hero.webp'
+        image: '/pregrade-prostora-hero.webp'
     },
     {
         id: 'stropni-baflesi', slug: 'stropni-baflesi', title: 'Stropni apsorberi',
-        image: 'stropni-apsorberi-hero.webp'
+        image: '/stropni-apsorberi-hero.webp'
     },
     {
         id: 'lampe', slug: 'lampe', title: 'Rasvjeta',
-        image: 'rasvjeta-hero-1.webp'
+        image: '/rasvjeta-hero-1.webp'
     },
     {
         id: 'custom-made', slug: 'custom-made', title: 'PET felt elementi u namještaju',
-        image: 'pet-felt-namjestaj-hero-1.webp'
+        image: '/pet-felt-namjestaj-hero-1.webp'
     },
 ];
