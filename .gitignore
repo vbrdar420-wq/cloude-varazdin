@@ -2,3 +2,11 @@
 .claude/
 drive-download-20260725T164819Z-1-001/
 drive-download-20260725T164819Z-1-001.zip
+
+# backups / originals / scratch, never for deploy
+index.html.backup
+*.backup
+news 1.mp4
+videa-originali/
+scratchpad/
+*.scratchpad/

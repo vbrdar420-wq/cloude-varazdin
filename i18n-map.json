@@ -25,23 +25,23 @@
     "hr": "index.html"
   },
   "kalkulator.html": {
-    "de": "rechner.html",
-    "en": "calculator.html",
+    "de": "akustikrechner.html",
+    "en": "acoustic-calculator.html",
     "hr": "kalkulator.html"
   },
   "lampe.html": {
-    "de": "beleuchtung.html",
+    "de": "akustikleuchten.html",
     "en": "lighting.html",
     "hr": "lampe.html"
   },
   "nasa-proizvodnja.html": {
-    "de": "unsere-produktion.html",
-    "en": "our-production.html",
+    "de": "fertigung.html",
+    "en": "manufacturing.html",
     "hr": "nasa-proizvodnja.html"
   },
   "news-showroom-lola-acoustix.html": {
-    "de": "aktuelles-showroom-eroeffnung.html",
-    "en": "news-showroom-opening.html",
+    "de": "showroom-eroeffnung.html",
+    "en": "showroom-opening.html",
     "hr": "novosti-showroom-lola-acoustix.html"
   },
   "news.html": {
@@ -50,8 +50,8 @@
     "hr": "novosti.html"
   },
   "pet-filc-materijal.html": {
-    "de": "pet-filz-material.html",
-    "en": "pet-felt-material.html",
+    "de": "pet-filz.html",
+    "en": "pet-felt.html",
     "hr": "pet-filc-materijal.html"
   },
   "pregrade-prostora.html": {
@@ -110,8 +110,8 @@
     "hr": "projekt-mursko-sredisce.html"
   },
   "projekt-ostali-poslovni-prostori-zagreb.html": {
-    "de": "projekt-weitere-gewerberaeume-zagreb.html",
-    "en": "project-other-business-spaces-zagreb.html",
+    "de": "projekt-gewerberaeume-zagreb.html",
+    "en": "project-commercial-spaces-zagreb.html",
     "hr": "projekt-ostali-poslovni-prostori-zagreb.html"
   },
   "projekt-poslovni-uredi-njemacka.html": {
@@ -120,27 +120,27 @@
     "hr": "projekt-poslovni-uredi-njemacka.html"
   },
   "projekt-poslovni-uredi-zagreb.html": {
-    "de": "projekt-buero-zagreb.html",
+    "de": "projekt-bueroraeume-zagreb.html",
     "en": "project-offices-zagreb.html",
     "hr": "projekt-poslovni-uredi-zagreb.html"
   },
   "projekt-privatna-kuca-sracinec.html": {
     "de": "projekt-privathaus-sracinec.html",
-    "en": "project-private-house-sracinec.html",
+    "en": "project-private-residence-sracinec.html",
     "hr": "projekt-privatna-kuca-sracinec.html"
   },
   "projekt-privatna-kuca-zagreb.html": {
     "de": "projekt-privathaus-zagreb.html",
-    "en": "project-private-house-zagreb.html",
+    "en": "project-private-residence-zagreb.html",
     "hr": "projekt-privatna-kuca-zagreb.html"
   },
   "projekt-privatni-kucni-glazbeni-studio-heidelberg.html": {
-    "de": "projekt-heim-musikstudio-heidelberg.html",
+    "de": "projekt-tonstudio-heidelberg.html",
     "en": "project-home-music-studio-heidelberg.html",
     "hr": "projekt-privatni-kucni-glazbeni-studio-heidelberg.html"
   },
   "projekt-salon-za-masazu-na-tresnjevci-zagreb.html": {
-    "de": "projekt-massagesalon-tresnjevka-zagreb.html",
+    "de": "projekt-massagestudio-tresnjevka-zagreb.html",
     "en": "project-massage-salon-tresnjevka-zagreb.html",
     "hr": "projekt-salon-za-masazu-na-tresnjevci-zagreb.html"
   },
@@ -205,7 +205,7 @@
     "hr": "projekti.html"
   },
   "stropni-baflesi.html": {
-    "de": "deckensegel.html",
+    "de": "deckenbaffeln.html",
     "en": "ceiling-baffles.html",
     "hr": "stropni-baflesi.html"
   },
