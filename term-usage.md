@@ -138,4 +138,43 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 ## Site-wide: British spelling standard (odluka donesena u ovoj seriji)
 - Cijeli `/en/` sada dosljedno koristi **britanski pravopis**: colour/colours, fibre, organised, centre, -ise (ne -ize), grey — vidi glossary.md pravilo 7 za punu listu i iznimke (schema.org `Organization`, ARIA `dialog`, Tailwind `transition-colors` — kod, ne dira se)
 - `og:locale` promijenjen s `en_US` na `en_GB` na sve 3 stranice koje ga imaju (index.html, news.html, showroom-opening.html)
+
+---
+
+# DE Serija 1 — pokriva /de/: index.html (naslovnica) + 5 stranica proizvoda (wandpaneele.html, raumteiler.html, deckenbaffeln.html, akustikleuchten.html, sonderanfertigung.html)
+
+## Homepage (de/index.html)
+- Cijela stranica prevedena: title/meta/OG/Twitter, JSON-LD `department[0].name`, nav + mobile nav, hero, marquee alt-tekst, brand-statement H1 (prepisan neliterarno po pravilu 9 iz glossaryja), premium-izjava sekcija, Naša-proizvodnja eyebrow, Product Categories (Naša ponuda→Unser Angebot), PET-felt eco sekcija (H2, intro, 3 stat kartice, CTA), Certifikati (NRC vrijednost zadržana kao stvarni certificirani podatak — vidi pravilo "tehnički podaci/norme/brojke se ne mijenjaju"; prevedene samo oznake), Boje sekcija (glossary exact match za eyebrow/heading, modal), Završeni projekti (5 kartica — toponimi/nazivi objekata NErodijena, samo "Njemačka"→"Deutschland"), Lokacije, News teaser, Kontakt (labeli forme, poruke uspjeha/greške, nazivi kontakt-osoba: "Direktor prodaje"→"Vertriebsleiter", "Project manager" zadržan kao engleska posuđenica po EN presedanu, "Uredska podrška"→"Büro-Service"), footer, cookie-banner
+- **Skriveno polje forme** `value="LEAD-preko web stranice"` namjerno NEPROMIJENJENO (interni lead-tracking string, isto kao EN presedan)
+- **Alt tekst "Lola Story" slike** namjerno NEPROMIJENJEN (već engleski u HR izvorniku, brand-voice element ostaje engleski na svim jezičnim verzijama — isti presedan kao hero tagline "…where design meets sound")
+- **Dosljedno "Sie"** kroz cijelu stranicu (forma, CTA-ovi, poruke)
+- Verificirano Playwrightom: 0 loših response-a, 0 console grešaka; screenshotovi potvrdili da nav i boje-sekcija ne pucaju (Rechner kratka oznaka radi dobro)
+
+## Wandpaneele (de/wandpaneele.html, ← zidne-obloge.html)
+- title, meta, h1, intro, 16× naziv modela zadržan (Earth Lines, Lines, Lines 33, Geometric, Lola Lines, Harmony, Mosaic, Window, Stream Lines, Dragon, Fisherman's Net, Heidi, Quadris, Mars Crater, Bamboo, Parametric Wave), 16× data-description prevedena kao izvorni njemački B2B tekst (ne doslovan prijevod HR rečenica)
+- Kategorija-podnaslov: "Obloge zida" → "Wandpaneele" (16× data-subtitle + 16× vidljivi `<p>` + modal-subtitle)
+
+## Raumteiler (de/raumteiler.html, ← pregrade-prostora.html)
+- title, meta, h1, intro, 8× model (Big X, Bubbles, Dark Wood, Nex, Stone, Rain, Triangle, Voronoi), sve data-description prevedene
+- Kategorija-podnaslov: "Pregrade prostora" → "Raumteiler" (17× ukupno svih pojavljivanja)
+
+## Deckenbaffeln (de/deckenbaffeln.html, ← stropni-baflesi.html)
+- title, meta, h1, intro, 6× model (Circle, Goliath, I Stripes, Orbis, Sunflower, Tree Crown), sve data-description prevedene
+- **Normalizacija naziva**: HR izvornik koristi "Stropni apsorberi" (title/h1/subtitle) premda je filename `stropni-baflesi.html` — isto neslaganje kao kod EN Serije 1. Normalizirano na jedan dosljedan DE naziv "Deckenbaffeln" (usklađen s filenameom), isti pristup kao EN "Ceiling Baffles"
+
+## Akustikleuchten (de/akustikleuchten.html, ← lampe.html)
+- title, meta, h1, intro, 6× model (Basket, Avocado, Fig, Pear, Pumpkin, Samba), sve data-description prevedene
+- Kategorija-podnaslov: "Rasvjeta" → "Akustikleuchten" (glossary exact match, red. 17 glossary.md)
+
+## Sonderanfertigung (de/sonderanfertigung.html, ← custom-made.html)
+- title, meta, h1, intro, 4× model (Desk Divider, Shell, Tool Box, Planter), sve data-description prevedene
+- **Neutralni naziv za sporni "custom-made" proizvod**: "PET felt elementi u namještaju" → "PET-Filz-Möbelelemente" (isti pristup kao EN presedan na de/index.html footeru — izbjegnut doslovan "Sonderanfertigung", jer HR naziv opisuje namještajne elemente, ne narudžbu po mjeri)
+
+## Strukturna ispravka: de/products-data.js (5. instanca "relative path breaks in subfolder" klase bugova)
+- **Problem otkriven**: `de/index.html` je učitavao `/products-data.js` (apsolutni put na root), pa su kartice kategorija na DE naslovnici prikazivale HR nazive ("Obloge zida", "Pregrade prostora"...) i linkale na HR filename-ove (`zidne-obloge.html` itd.) umjesto na stvarne DE stranice — potpuno slomljena navigacija s naslovnice na DE proizvodne stranice
+- **Ispravka**: kreiran `de/products-data.js` sa DE slug/title vrijednostima usklađenim sa stvarnim DE filename-ovima (wandpaneele, raumteiler, deckenbaffeln, akustikleuchten, sonderanfertigung); `de/index.html` script-src promijenjen s `/products-data.js` (apsolutni) na `products-data.js` (relativni), isti obrazac kao `en/index.html`
+- Analogno prethodne 4 instance ove klase bugova (products-data.js image fields, data-images JSON-array, homepage COLORS img paths x4 jezika)
+
+## Kalkulator jezični prekidač
+- Uklanjanje mini prekidača jezika u `de/akustikrechner.html` planirano za DE Seriju 2 (isto kao EN), NIJE dio Serije 1
 - Retroaktivno provjerena i ispravljena Serija 1 (lighting.html "centerpiece"→"centrepiece", "smaller offices and homes"→"smaller office and residential spaces"; svih 6 Serija-1 stranica: footer "Colors"→"Colours"; index.html "PET Felt Color Range"→"Colour Range", "Pigeon Gray"→"Pigeon Grey", "fiber"→"fibre")
