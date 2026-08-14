@@ -181,6 +181,27 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 
 ---
 
+# DE Serija 3 — pokriva /de/: svih 27 pojedinačnih projekt-*.html stranica
+
+## Otkriveno prije prevođenja
+- Zajednički boilerplate (nav/mobile-menu/footer/cookie-banner) na svih 27 stranica bio je VEĆ preveden na njemački iz ranije faze projekta (vjerojatno kad je struktura kopirana) — provjereno diacritic-sweepom i grepom za HR fraze prije početka rada, 0 pogodaka. Serija 3 je stoga obuhvatila samo stranicama-jedinstveni sadržaj: title, meta, eyebrow (lokacija), h1, intro, alt-tekstovi slika, prev/next navigacijski linkovi.
+
+## Prevedeno (svih 27 stranica)
+- title + meta description (jedinstveni po projektu)
+- eyebrow (lokacija): Njemačka→Deutschland, Bosna i Hercegovina→Bosnien und Herzegowina, Hrvatska→Kroatien; toponimi/gradovi (Zagreb, Prelog, Varaždin, Sračinec) NEPROMIJENJENI
+- h1 — usklađen 1:1 s odgovarajućom karticom na `projekte.html` (verificirano skriptom: 27/27 podudaranja, 0 mismatcheva)
+- intro paragraf — svaki prepisan kao prirodan njemački B2B tekst (ne doslovan prijevod HR rečenice)
+- alt-tekstovi slika — generički (ponavljaju h1 naziv) automatski ažurirani na novi naziv na svih 27 stranica
+- **Hotel Panorama, Prelog** — 3 posebna opisna alt-teksta (lounge sa zelenim zidnim oblogama / recepcija s PET felt lamelama / valoviti stropni paneli na ulazu) prevedena pojedinačno, ne generičkim replace-om
+- prev/next navigacijski linkovi na dnu svake stranice — ažurirani da pokazuju preveden naziv susjednog projekta (usklađeno s href-om), umjesto dosadašnjeg hrvatskog/miješanog teksta
+
+## Pravilo primijenjeno (isto kao EN Serija 3)
+- Toponimi, nazivi tvrtki/zgrada/kompleksa (City Island, Matrix Office Park, Skytoll) NErodijena
+- Samo opisni/generički dijelovi naziva prevedeni (npr. "Poslovni uredi, Njemačka"→"Büroräume, Deutschland", "Ostali poslovni prostori, Zagreb"→"Weitere Gewerberäume, Zagreb", "Privatna kuća"→"Privathaus", "Salon za masažu"→"Massagesalon", "Privatni kućni glazbeni studio"→"Privates Heim-Musikstudio")
+- Dosljednost imena verificirana skriptom (usporedba `projekte.html` h3 kartica vs. h1 svake pojedinačne stranice) — 0 mismatcheva
+
+---
+
 # DE Serija 2 — pokriva /de/: akustikrechner.html, fertigung.html, pet-filz.html, projekte.html, downloads.html, aktuelles.html, showroom-eroeffnung.html, impressum.html, datenschutzerklaerung.html, cookie-richtlinie.html
 
 ## Akustikrechner (de/akustikrechner.html, ← kalkulator.html)
