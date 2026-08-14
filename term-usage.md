@@ -157,6 +157,7 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 ## Raumteiler (de/raumteiler.html, ← pregrade-prostora.html)
 - title, meta, h1, intro, 8× model (Big X, Bubbles, Dark Wood, Nex, Stone, Rain, Triangle, Voronoi), sve data-description prevedene
 - Kategorija-podnaslov: "Pregrade prostora" → "Raumteiler" (17× ukupno svih pojavljivanja)
+- **Ispravka nakon revizije**: Bubbles opis prvotno koristio "aufsteigender Blasen" — zamijenjeno s "aufsteigender Wasserperlen" jer je "Blase(n)" dvoznačna riječ s neugodnim kolokvijalnim asocijacijama u njemačkom. Dodano kao pravilo 8 u glossary.md; provjereno da se "Blasen" ne pojavljuje nigdje drugdje u `/de/`
 
 ## Deckenbaffeln (de/deckenbaffeln.html, ← stropni-baflesi.html)
 - title, meta, h1, intro, 6× model (Circle, Goliath, I Stripes, Orbis, Sunflower, Tree Crown), sve data-description prevedene
@@ -177,4 +178,49 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 
 ## Kalkulator jezični prekidač
 - Uklanjanje mini prekidača jezika u `de/akustikrechner.html` planirano za DE Seriju 2 (isto kao EN), NIJE dio Serije 1
+
+---
+
+# DE Serija 2 — pokriva /de/: akustikrechner.html, fertigung.html, pet-filz.html, projekte.html, downloads.html, aktuelles.html, showroom-eroeffnung.html, impressum.html, datenschutzerklaerung.html, cookie-richtlinie.html
+
+## Akustikrechner (de/akustikrechner.html, ← kalkulator.html)
+- Cijela stranica prevedena: title, meta, header, svi form-labeli i select-opcije, rezultatska sekcija, CTA
+- **JS I18N objekt**: prije prevoda sadržavao `hr` i `en` ključeve (legacy stanje kopirano iz HR izvornika) — zamijenjeno jednim `de` ključem sa svim prijevodima (title/sub/length/width/height/roomType/glassArea/floorType/wallType/furniture/wallPanels/dividerPanels/ceilingPanels/improvement/details/note1/note2/errDims/options/steps)
+- **Uklonjen mini jezični prekidač** (isto kao EN): HTML `.acalc-lang` gumbi (`<div class="acalc-lang" role="group">...HR/EN...</div>`), 3 CSS pravila (`.acalc-lang`, `.acalc-lang button`, `.acalc-lang button[aria-pressed="true"]`), uklonjen `.acalc-lang button:focus-visible` iz zajedničkog focus-visible selektora, JS listener-registracija za `.acalc-lang button` klik, `var lang = "hr"` → `"de"`, `applyLanguage("hr")` → `applyLanguage("de")`
+- **dividerPanels label**: "Trennpaneele" (generički naziv, ne "Raumteiler" — isti pristup kao EN "Divider panels" koji namjerno ne ponavlja naziv kategorije "Room Dividers")
+- **ceilingPanels/wallPanels label**: "Deckenbaffeln"/"Wandpaneele" — usklađeno s nazivima kategorija (isto kao EN "Ceiling baffles"/"Wall panels")
+- Funkcionalno testirano Playwrightom (unos dimenzija/pod/zid/staklo/namještaj) — izračun radi identično, 0 console grešaka
+
+## Fertigung (de/fertigung.html, ← nasa-proizvodnja.html)
+- Cijela stranica prevedena: title (separator "|"→"—" radi dosljednosti, isto kao EN), meta, eyebrow "Kako radimo"→"So arbeiten wir", h1, intro, hero alt, svih 7 procesnih sekcija (H2+tekst), lista mogućnosti obrade, stats blok, video heading, CTA
+- **Brojke "10.000+" i "52+" nepromijenjene** — HR format (točka kao tisućica) već odgovara njemačkoj konvenciji, za razliku od EN gdje je trebalo "10,000+"
+
+## PET-Filz (de/pet-filz.html, ← pet-felt.html)
+- Cijela stranica prevedena: title (skraćen na "PET-Filz — Lola Acoustix", isti obrazac kao EN), meta, eyebrow, h1 "PET felt"→"PET-Filz", intro, proces-slika alt+caption, 5 ključnih prednosti (strong+opis), stats blok, 12× ikona svojstava materijala (alt+label), CTA
+- **NRC vrijednost**: "0.9" → "0,9" (samo format decimalnog zareza prema DE konvenciji — pravilo 4 iz glossaryja — vrijednost nepromijenjena; label "Koeficijent smanjenja buke (NRC)"→"Geräuschreduzierungskoeffizient (NRC)", usklađeno s formulacijom već korištenom na de/index.html certifikatima)
+
+## Abgeschlossene Projekte — indeks stranica (de/projekte.html, ← projekti.html)
+- title, meta, h1, intro, 27× kartica (h3 naziv + alt + kategorija)
+- Pravilo primijenjeno: nazivi zemalja prevedeni (Njemačka→Deutschland, BiH→Bosnien und Herzegowina), toponimi/vlastita imena NErodijena (Zagreb, Sračinec, Središće, Bakačeva, Trešnjevka, Heidelberg, Stuttgart, Matrix Office Park...), generički opisni nazivi kartica prevedeni (npr. "Poslovni uredi"→"Büroräume", "Privatna kuća"→"Privathaus")
+- Kartica "Poslovni uredi, Njemačka"→"Büroräume, Deutschland" usklađena s hrefom `projekt-buero-deutschland.html` i s formulacijom već korištenom u de/index.html Completed-Projects sekciji
+- **Napomena**: 27 pojedinačnih projekt-*.html stranica (DE Serija 3) NISU prevedene — verificirano skriptom (27 mismatcheva h1 vs. card, svi očekivani) — linkovi trenutno vode na hrvatske verzije tih stranica dok Serija 3 ne bude gotova
+
+## Downloads (de/downloads.html)
+- title (već "Downloads", nepromijenjen), meta, h1, intro, 7× naziv datoteke za preuzimanje
+- Veličine datoteka (MB) formatirane s DE decimalnim zarezom (npr. "28.8 MB"→"28,8 MB") — isti princip kao NRC vrijednost, format konvertiran, iznos nepromijenjen
+- Isti PDF/ZIP hrefovi dijele se između sva tri jezika, nisu preimenovani
+
+## News + TV Beitrag: Lola Acoustix Showroom (de/aktuelles.html, ← novosti.html; de/showroom-eroeffnung.html, ← otvorenje-showrooma.html)
+- Cijele stranice prevedene: title, meta, OG/Twitter (og:locale već `de_DE`), JSON-LD (name/description video objekta), h1, intro, video-kartica (eyebrow/naslov/opis/alt), datum
+- Datumski format promijenjen na DE konvenciju: "30. srpnja 2026." → "30. Juli 2026" (glossary pravilo 5)
+
+## Pravne stranice — Impressum, Datenschutzerklärung, Cookie-Richtlinie
+- **Vlastite stranice**: `de/impressum.html`, `de/datenschutzerklaerung.html`, `de/cookie-richtlinie.html` — prevedene doslovno/konzervativno po izričitom zahtjevu (točnost prije stila, bez preformuliranja), boilerplate (nav/footer/cookie-banner) prethodno nije bio primijenjen na ove 3 stranice pa je prvo pušten `de_boilerplate.py`
+- **Podaci o tvrtki NETAKNUTI**: naziv (Cloud d.o.o.), OIB (92781041318), matični broj (070119811), sud (Varaždin, Tt-14/3840-2), IBAN (HR7224840081135232733), SWIFT/BIC (RZBHHR2X), adresa, ime direktorice (Andrijana Mađarić — samo titula "direktor"→"Geschäftsführerin" prevedena), e-mail, telefon — svi identični izvorniku
+- **Stammkapital provjeren na zahtjev korisnika**: "20.000,00 kn" — VEĆ u njemačkom formatu (točka tisućica, zarez decimalno), isti zapis kao HR izvornik, iznos i format nepromijenjeni (za razliku od EN gdje je format trebalo konvertirati u "20,000.00 kn")
+- **Naslov stranice**: "Privacy Policy" (H1+title) → "Datenschutzerklärung" (za razliku od EN koji je zadržao "Privacy Policy" jer je već engleski u HR izvorniku — DE ima vlastiti ustaljeni pravni naziv pa je preveden, ovo NIJE brand-voice element nego pravni compliance tekst)
+- **Impressum** naslov ostaje "Impressum" (već njemačka riječ u HR izvorniku, kao i za EN/HR)
+- **Agencija za zaštitu osobnih podataka** — službeni hrvatski naziv i adresa/telefon/email/web zadržani NETAKNUTI u kontakt-bloku (stvarno državno tijelo — AZOP), u proznoj rečenici dodan njemački opisni prijevod u zagradi "(Agentur für den Schutz personenbezogener Daten)" radi razumljivosti, isti pristup kao EN "Croatian Personal Data Protection Agency"
+- **i18n-map.json**: `impressum.html`→`de: "impressum.html"`, `privacy.html`→`de: "datenschutzerklaerung.html"`, `cookies.html`→`de: "cookie-richtlinie.html"` (provjeriti točan mapping key ako se razlikuje)
+- **Spominje se**: footer bottom-bar na svim stranicama (Impressum / Datenschutz / Cookie-Richtlinie linkovi + Cookie-Einstellungen gumb)
 - Retroaktivno provjerena i ispravljena Serija 1 (lighting.html "centerpiece"→"centrepiece", "smaller offices and homes"→"smaller office and residential spaces"; svih 6 Serija-1 stranica: footer "Colors"→"Colours"; index.html "PET Felt Color Range"→"Colour Range", "Pigeon Gray"→"Pigeon Grey", "fiber"→"fibre")

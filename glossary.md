@@ -88,6 +88,7 @@ Status: **na pregledu** — čeka potvrdu prije početka prijevoda.
 5. **Datumi**: EN format "13 August 2026", DE format "13. August 2026".
 6. **DE tekst je tipično 15-30% duži od EN/HR** — pri prijevodu izbornika, gumbi i kartica provjeriti da se ne razbija layout; gdje treba, skratiti formulaciju (ne smanjivati font niti mijenjati CSS).
 7. **EN pravopis — britanski, dosljedno kroz cijeli sajt** (europsko tržište, ne američko): colour/colours (ne color), fibre (ne fiber), organised (ne organized), centre/centred (ne center), -ise ne -ize (organise, customise, recognise...), grey (ne gray) — provjeriti postojeće nazive boja/proizvoda za dosljednost. `og:locale` je `en_GB`. Iznimka: fiksni tehnički/spec pojmovi koji se ne prevode i ne mijenjaju pravopisno — npr. schema.org `"@type": "Organization"`, ARIA vrijednosti (`role="dialog"`), CSS/JS API nazivi (`scrollBy({behavior:...})`, Tailwind klasa `transition-colors`) — to je kod, ne sadržaj, ostaje kako jest.
+8. **DE: izbjegavati riječ "Blase(n)"** kao prijevod za "mjehurić(i)"/"bubbles" — dvoznačna je i ima neugodne kolokvijalne asocijacije u razgovornom njemačkom. Za opise proizvoda/materijala koji vizualno referiraju mjehuriće (npr. proizvod "Bubbles") koristiti "Perle(n)"/"Wasserperle(n)" (poetski, koristi se za mjehuriće u pjenušcu/vodi) ili preformulirati rečenicu bez te imenice.
 
 ## 9. Kako se piše (ne prevodi doslovno)
 

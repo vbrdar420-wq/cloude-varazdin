@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <title>Akustički kalkulator — Lola Acoustix</title>
+    <title>Akustikrechner — Lola Acoustix</title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="description" content="Izračunajte okvirnu količinu PET felt akustičnih panela potrebnih za vaš prostor na temelju dimenzija, poda, zidova i namještaja.">
+    <meta name="description" content="Berechnen Sie die ungefähre Menge an PET-Filz-Akustikpaneelen, die Sie für Ihren Raum benötigen — basierend auf Abmessungen, Boden, Wänden und Möbeln.">
     <link rel="canonical" href="https://lolaacoustix.com/de/akustikrechner.html">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -79,33 +79,6 @@
             color: #8b8b8b;
         }
 
-        .acalc-lang {
-            display: flex;
-            gap: 2px;
-            padding: 3px;
-            background: #f5f5f5;
-            border-radius: 999px;
-        }
-
-        .acalc-lang button {
-            border: 0;
-            background: none;
-            padding: 7px 16px;
-            border-radius: 999px;
-            font: inherit;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: .08em;
-            color: #8b8b8b;
-            cursor: pointer;
-            transition: color .2s, background-color .2s;
-        }
-
-        .acalc-lang button[aria-pressed="true"] {
-            background: #1a1a1a;
-            color: #fff;
-        }
-
         .acalc-form {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -171,8 +144,7 @@
         }
 
         .acalc-field input:focus-visible,
-        .acalc-field select:focus-visible,
-        .acalc-lang button:focus-visible {
+        .acalc-field select:focus-visible {
             outline: 2px solid #1a1a1a;
             outline-offset: 2px;
         }
@@ -426,26 +398,26 @@
             </a>
 
             <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
-                <a href="index.html#modeli" class="hover:opacity-70 transition-opacity">Proizvodi</a>
-                <a href="projekte.html" class="hover:opacity-70 transition-opacity">Projekti</a>
+                <a href="index.html#modeli" class="hover:opacity-70 transition-opacity">Produkte</a>
+                <a href="projekte.html" class="hover:opacity-70 transition-opacity">Projekte</a>
                 <a href="downloads.html" class="hover:opacity-70 transition-opacity">Downloads</a>
-                <a href="akustikrechner.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
-                <a href="fertigung.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+                <a href="akustikrechner.html" class="hover:opacity-70 transition-opacity">Rechner</a>
+                <a href="fertigung.html" class="hover:opacity-70 transition-opacity">Fertigung</a>
                 <a href="aktuelles.html" class="hover:opacity-70 transition-opacity">News</a>
                 <a href="index.html#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
                     <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
-                    Certifikati
+                    Zertifikate
                 </a>
             </div>
 
             <div class="hidden xl:flex items-center space-x-6 text-sm font-medium">
                 <a href="index.html#kontakt"
                     class="border border-current px-5 py-2 rounded-full hover:bg-autex-dark hover:text-white transition-colors duration-300">
-                    Pošalji Upit
+                    Anfrage senden
                 </a>
             </div>
 
-            <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Otvori navigacijski izbornik" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
@@ -458,19 +430,19 @@
     <div id="mobile-menu"
         class="fixed inset-0 z-40 bg-autex-dark text-white flex-col justify-center items-center hidden">
         <div class="flex flex-col space-y-8 text-center text-2xl font-light">
-            <a href="index.html#modeli" class="mobile-link hover:opacity-70 transition-opacity">Proizvodi</a>
-            <a href="projekte.html" class="mobile-link hover:opacity-70 transition-opacity">Projekti</a>
+            <a href="index.html#modeli" class="mobile-link hover:opacity-70 transition-opacity">Produkte</a>
+            <a href="projekte.html" class="mobile-link hover:opacity-70 transition-opacity">Projekte</a>
             <a href="downloads.html" class="mobile-link hover:opacity-70 transition-opacity">Downloads</a>
-            <a href="akustikrechner.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
-            <a href="fertigung.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+            <a href="akustikrechner.html" class="mobile-link hover:opacity-70 transition-opacity">Rechner</a>
+            <a href="fertigung.html" class="mobile-link hover:opacity-70 transition-opacity">Fertigung</a>
             <a href="aktuelles.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
             <a href="index.html#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
                 <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
-                Certifikati
+                Zertifikate
             </a>
             <a href="index.html#kontakt"
-                class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
-                Upit</a>
+                class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Anfrage
+                senden</a>
         </div>
     </div>
 
@@ -482,12 +454,12 @@
                 <path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
-            Početna
+            Startseite
         </a>
-        <p class="text-xs font-medium tracking-[0.3em] uppercase text-slate-400 mb-3">Alat</p>
-        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Izračunajte potreban broj panela</h1>
+        <p class="text-xs font-medium tracking-[0.3em] uppercase text-slate-400 mb-3">Tool</p>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Berechnen Sie die benötigte Panelmenge</h1>
         <p class="mt-4 text-slate-500 text-lg max-w-2xl">
-            Unesite dimenzije i karakteristike prostorije za okvirnu procjenu potrebne količine akustičnih panela.
+            Geben Sie die Abmessungen und Eigenschaften Ihres Raums ein, um die benötigte Menge an Akustikpaneelen abzuschätzen.
         </p>
     </header>
 
@@ -496,74 +468,70 @@
 
         <div class="acalc" id="acalc">
             <div class="acalc-top">
-                <p class="acalc-kicker" data-i18n="title">Akustički kalkulator</p>
-                <p class="sr-only" data-i18n="sub">Procjena potrebne količine panela na temelju dimenzija i
-                    materijala prostorije.</p>
-                <div class="acalc-lang" role="group" aria-label="Jezik / Language">
-                    <button type="button" data-lang="hr" aria-pressed="true">HR</button>
-                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
-                </div>
+                <p class="acalc-kicker" data-i18n="title">Akustikrechner</p>
+                <p class="sr-only" data-i18n="sub">Schätzung der benötigten Panelmenge basierend auf
+                    Raumabmessungen und Materialien.</p>
             </div>
 
             <form class="acalc-form" id="acalc-form" novalidate>
                 <div class="acalc-dims">
                     <div class="acalc-field">
-                        <label for="ac-l" data-i18n="length">Dužina (m)</label>
+                        <label for="ac-l" data-i18n="length">Länge (m)</label>
                         <input id="ac-l" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
                     </div>
                     <div class="acalc-field">
-                        <label for="ac-w" data-i18n="width">Širina (m)</label>
+                        <label for="ac-w" data-i18n="width">Breite (m)</label>
                         <input id="ac-w" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
                     </div>
                     <div class="acalc-field">
-                        <label for="ac-h" data-i18n="height">Visina (m)</label>
+                        <label for="ac-h" data-i18n="height">Höhe (m)</label>
                         <input id="ac-h" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="0.0">
                     </div>
                 </div>
 
                 <div class="acalc-field">
-                    <label for="ac-room" data-i18n="roomType">Tip prostorije</label>
+                    <label for="ac-room" data-i18n="roomType">Raumtyp</label>
                     <select id="ac-room">
-                        <option value="studio">studio</option>
-                        <option value="office">ured</option>
-                        <option value="living">dnevni boravak</option>
+                        <option value="studio">Studio</option>
+                        <option value="office">Büro</option>
+                        <option value="living">Wohnzimmer</option>
                     </select>
                 </div>
 
                 <div class="acalc-field">
-                    <label for="ac-glass" data-i18n="glassArea">Površina stakla (m²)</label>
+                    <label for="ac-glass" data-i18n="glassArea">Glasfläche (m²)</label>
                     <input id="ac-glass" type="number" min="0" step="0.5" inputmode="decimal" placeholder="0">
                 </div>
 
                 <div class="acalc-field">
-                    <label for="ac-floor" data-i18n="floorType">Tip poda</label>
+                    <label for="ac-floor" data-i18n="floorType">Bodentyp</label>
                     <select id="ac-floor">
-                        <option value="concrete">beton</option>
-                        <option value="ceramic">keramika</option>
-                        <option value="parquet">parket</option>
-                        <option value="laminate">laminat</option>
-                        <option value="vinyl">vinil</option>
-                        <option value="carpet">tepison</option>
+                        <option value="concrete">Beton</option>
+                        <option value="ceramic">Keramik</option>
+                        <option value="parquet">Parkett</option>
+                        <option value="laminate">Laminat</option>
+                        <option value="vinyl">Vinyl</option>
+                        <option value="carpet">Teppich</option>
                     </select>
                 </div>
 
                 <div class="acalc-field">
-                    <label for="ac-wall" data-i18n="wallType">Tip zida</label>
+                    <label for="ac-wall" data-i18n="wallType">Wandtyp</label>
                     <select id="ac-wall">
-                        <option value="concrete">betonski zid</option>
-                        <option value="drywall">gipskarton</option>
-                        <option value="brick">cigla</option>
-                        <option value="ceramic">keramičke pločice</option>
-                        <option value="wood">drvene obloge</option>
+                        <option value="concrete">Betonwand</option>
+                        <option value="drywall">Gipskarton</option>
+                        <option value="brick">Ziegel</option>
+                        <option value="ceramic">Keramikfliesen</option>
+                        <option value="wood">Holzverkleidung</option>
                     </select>
                 </div>
 
                 <div class="acalc-field">
-                    <label for="ac-furniture" data-i18n="furniture">Količina namještaja</label>
+                    <label for="ac-furniture" data-i18n="furniture">Möblierungsgrad</label>
                     <select id="ac-furniture">
-                        <option value="lot">puno</option>
-                        <option value="medium">srednje</option>
-                        <option value="little">malo</option>
+                        <option value="lot">viel</option>
+                        <option value="medium">mittel</option>
+                        <option value="little">wenig</option>
                     </select>
                 </div>
             </form>
@@ -573,22 +541,22 @@
             <section class="acalc-out" id="acalc-out" aria-live="polite" hidden>
                 <dl class="acalc-figs">
                     <div class="acalc-fig">
-                        <dt data-i18n="wallPanels">Zidni paneli</dt>
+                        <dt data-i18n="wallPanels">Wandpaneele</dt>
                         <dd id="ac-r-wall">0<span>m²</span></dd>
                     </div>
                     <div class="acalc-fig">
-                        <dt data-i18n="dividerPanels">Viseći pregradni</dt>
+                        <dt data-i18n="dividerPanels">Trennpaneele</dt>
                         <dd id="ac-r-divider">0<span>m²</span></dd>
                     </div>
                     <div class="acalc-fig">
-                        <dt data-i18n="ceilingPanels">Stropni paneli</dt>
+                        <dt data-i18n="ceilingPanels">Deckenbaffeln</dt>
                         <dd id="ac-r-ceiling">0<span>m²</span></dd>
                     </div>
                 </dl>
 
                 <div class="acalc-meter">
                     <div class="acalc-meter-row">
-                        <h3 data-i18n="improvement">Procijenjeno poboljšanje akustike</h3>
+                        <h3 data-i18n="improvement">Geschätzte akustische Verbesserung</h3>
                         <span class="acalc-meter-val" id="ac-r-improve">0%</span>
                     </div>
                     <div class="acalc-track">
@@ -597,24 +565,24 @@
                 </div>
 
                 <div class="acalc-steps">
-                    <h3 data-i18n="details">Detalji</h3>
+                    <h3 data-i18n="details">Details</h3>
                     <div id="ac-r-steps"></div>
                 </div>
 
                 <div class="acalc-note">
-                    <p data-i18n="note1">Svi proračuni su rađeni za PET filc 12 mm, gustoće 2400 g/m².</p>
-                    <p data-i18n="note2">Postavljanjem panela s razmakom od zida (min. 20 mm) povećava se apsorpcija
-                        zvuka.</p>
+                    <p data-i18n="note1">Alle Berechnungen basieren auf PET-Filz 12 mm, Dichte 2400 g/m².</p>
+                    <p data-i18n="note2">Die Montage der Paneele mit Wandabstand (min. 20 mm) erhöht die
+                        Schallabsorption.</p>
                 </div>
             </section>
         </div>
 
         <!-- CTA -->
         <section class="mt-16 md:mt-20 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Napravimo nešto zajedno</h2>
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Lassen Sie uns etwas gemeinsam gestalten</h2>
             <a href="index.html#kontakt"
                 class="inline-flex items-center gap-2 bg-slate-900 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-slate-800 transition-colors duration-200">
-                Javite nam se
+                Kontaktieren Sie uns
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -712,70 +680,37 @@
                Tekstovi koraka preuzeti iz originala.
                ====================================================================== */
             var I18N = {
-                hr: {
-                    title: "Akustički kalkulator",
-                    sub: "Procjena potrebne količine panela na temelju dimenzija i materijala prostorije.",
-                    length: "Dužina (m)", width: "Širina (m)", height: "Visina (m)",
-                    roomType: "Tip prostorije", glassArea: "Površina stakla (m²)",
-                    floorType: "Tip poda", wallType: "Tip zida", furniture: "Količina namještaja",
-                    wallPanels: "Zidni paneli", dividerPanels: "Viseći pregradni", ceilingPanels: "Stropni paneli",
-                    improvement: "Procijenjeno poboljšanje akustike",
-                    details: "Detalji",
-                    note1: "Svi proračuni su rađeni za PET filc 12 mm, gustoće 2400 g/m².",
-                    note2: "Postavljanjem panela s razmakom od zida (min. 20 mm) povećava se apsorpcija zvuka.",
-                    errDims: "Unesite sve dimenzije.",
-                    options: {
-                        studio: "studio", office: "ured", living: "dnevni boravak",
-                        concreteFloor: "beton", ceramic: "keramika", parquet: "parket",
-                        laminate: "laminat", vinyl: "vinil", carpet: "tepison",
-                        concreteWall: "betonski zid", drywall: "gipskarton", brick: "cigla",
-                        ceramicWall: "keramičke pločice", wood: "drvene obloge",
-                        lot: "puno", medium: "srednje", little: "malo"
-                    },
-                    steps: {
-                        "floor.concrete": "Tvrdi pod",
-                        "floor.carpet": "Tepison",
-                        "glass": "Puno stakla",
-                        "furniture.lot": "Puno namještaja",
-                        "furniture.little": "Malo namještaja",
-                        "room.studio": "Studio",
-                        "room.office": "Ured",
-                        "wall.concrete": "Tvrdi zidovi",
-                        "wall.ceramic": "Tvrdi zidovi",
-                        "wall.wood": "Drvene obloge"
-                    }
-                },
-                en: {
-                    title: "Acoustic calculator",
-                    sub: "Estimated panel coverage based on room dimensions and surface materials.",
-                    length: "Length (m)", width: "Width (m)", height: "Height (m)",
-                    roomType: "Room type", glassArea: "Glass area (m²)",
-                    floorType: "Floor type", wallType: "Wall type", furniture: "Amount of furniture",
-                    wallPanels: "Wall panels", dividerPanels: "Air divider", ceilingPanels: "Ceiling baffles",
-                    improvement: "Estimated acoustic improvement",
+                de: {
+                    title: "Akustikrechner",
+                    sub: "Schätzung der benötigten Panelmenge basierend auf Raumabmessungen und Materialien.",
+                    length: "Länge (m)", width: "Breite (m)", height: "Höhe (m)",
+                    roomType: "Raumtyp", glassArea: "Glasfläche (m²)",
+                    floorType: "Bodentyp", wallType: "Wandtyp", furniture: "Möblierungsgrad",
+                    wallPanels: "Wandpaneele", dividerPanels: "Trennpaneele", ceilingPanels: "Deckenbaffeln",
+                    improvement: "Geschätzte akustische Verbesserung",
                     details: "Details",
-                    note1: "All calculations are based on PET felt 12 mm, density 2400 g/m².",
-                    note2: "Installing panels with a wall gap (min. 20 mm) increases sound absorption.",
-                    errDims: "Enter all dimensions.",
+                    note1: "Alle Berechnungen basieren auf PET-Filz 12 mm, Dichte 2400 g/m².",
+                    note2: "Die Montage der Paneele mit Wandabstand (min. 20 mm) erhöht die Schallabsorption.",
+                    errDims: "Bitte geben Sie alle Abmessungen ein.",
                     options: {
-                        studio: "studio", office: "office", living: "living room",
-                        concreteFloor: "concrete", ceramic: "ceramic", parquet: "parquet",
-                        laminate: "laminate", vinyl: "vinyl", carpet: "carpet",
-                        concreteWall: "concrete wall", drywall: "drywall", brick: "brick",
-                        ceramicWall: "ceramic tiles", wood: "wood panelling",
-                        lot: "a lot", medium: "medium", little: "little"
+                        studio: "Studio", office: "Büro", living: "Wohnzimmer",
+                        concreteFloor: "Beton", ceramic: "Keramik", parquet: "Parkett",
+                        laminate: "Laminat", vinyl: "Vinyl", carpet: "Teppich",
+                        concreteWall: "Betonwand", drywall: "Gipskarton", brick: "Ziegel",
+                        ceramicWall: "Keramikfliesen", wood: "Holzverkleidung",
+                        lot: "viel", medium: "mittel", little: "wenig"
                     },
                     steps: {
-                        "floor.concrete": "Hard floor",
-                        "floor.carpet": "Carpet",
-                        "glass": "Large glazed area",
-                        "furniture.lot": "Plenty of furniture",
-                        "furniture.little": "Little furniture",
+                        "floor.concrete": "Harter Boden",
+                        "floor.carpet": "Teppich",
+                        "glass": "Große Glasfläche",
+                        "furniture.lot": "Viel Mobiliar",
+                        "furniture.little": "Wenig Mobiliar",
                         "room.studio": "Studio",
-                        "room.office": "Office",
-                        "wall.concrete": "Hard walls",
-                        "wall.ceramic": "Hard walls",
-                        "wall.wood": "Wood panelling"
+                        "room.office": "Büro",
+                        "wall.concrete": "Harte Wände",
+                        "wall.ceramic": "Harte Wände",
+                        "wall.wood": "Holzverkleidung"
                     }
                 }
             };
@@ -801,7 +736,7 @@
             var outEl = document.getElementById("acalc-out");
             var stepsEl = document.getElementById("ac-r-steps");
 
-            var lang = "hr";
+            var lang = "de";
             function t() { return I18N[lang]; }
             function num(id) { var v = parseFloat(document.getElementById(id).value); return isFinite(v) ? v : 0; }
             function val(id) { return document.getElementById(id).value; }
@@ -823,9 +758,6 @@
                     });
                 });
 
-                root.querySelectorAll(".acalc-lang button").forEach(function (b) {
-                    b.setAttribute("aria-pressed", String(b.dataset.lang === next));
-                });
                 document.documentElement.lang = next;
 
                 render();
@@ -888,11 +820,7 @@
             form.addEventListener("change", render);
             form.addEventListener("submit", function (e) { e.preventDefault(); });
 
-            root.querySelectorAll(".acalc-lang button").forEach(function (b) {
-                b.addEventListener("click", function () { applyLanguage(b.dataset.lang); });
-            });
-
-            applyLanguage("hr");
+            applyLanguage("de");
         })();
     </script>
 
@@ -902,8 +830,8 @@
             <div>
                 <img loading="lazy" decoding="async" src="/lolaacoustix-logo.png" alt="Lola Acoustix"
                     class="h-6 brightness-0 invert mb-6">
-                <p class="text-sm text-gray-400 leading-relaxed mb-6">Redefiniramo akustični prostor kroz besprijekoran
-                    dizajn i visoke performanse.</p>
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">Wir gestalten akustische Räume mit klarem
+                    Design und hoher Leistung.</p>
                 <div class="space-y-2 text-sm text-gray-400">
                     <p><a href="mailto:office@cloudpro.hr"
                             class="hover:text-white transition-colors">office@cloudpro.hr</a></p>
@@ -913,37 +841,37 @@
             </div>
 
             <div>
-                <h3 class="font-semibold mb-4">Proizvodi</h3>
+                <h3 class="font-semibold mb-4">Produkte</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="wandpaneele.html" class="hover:text-white transition-colors">Obloge zida</a></li>
-                    <li><a href="raumteiler.html" class="hover:text-white transition-colors">Pregrade prostora</a></li>
-                    <li><a href="deckenbaffeln.html" class="hover:text-white transition-colors">Stropni apsorberi</a></li>
-                    <li><a href="akustikleuchten.html" class="hover:text-white transition-colors">Rasvjeta</a></li>
-                    <li><a href="sonderanfertigung.html" class="hover:text-white transition-colors">PET felt elementi u namještaju</a></li>
-                    <li><a href="akustikrechner.html" class="hover:text-white transition-colors">Akustički kalkulator</a></li>
+                    <li><a href="wandpaneele.html" class="hover:text-white transition-colors">Wandpaneele</a></li>
+                    <li><a href="raumteiler.html" class="hover:text-white transition-colors">Raumteiler</a></li>
+                    <li><a href="deckenbaffeln.html" class="hover:text-white transition-colors">Deckenbaffeln</a></li>
+                    <li><a href="akustikleuchten.html" class="hover:text-white transition-colors">Akustikleuchten</a></li>
+                    <li><a href="sonderanfertigung.html" class="hover:text-white transition-colors">PET-Filz-Möbelelemente</a></li>
+                    <li><a href="akustikrechner.html" class="hover:text-white transition-colors">Akustikrechner</a></li>
                 </ul>
             </div>
 
             <div>
-                <h3 class="font-semibold mb-4">Tvrtka</h3>
+                <h3 class="font-semibold mb-4">Unternehmen</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="fertigung.html" class="hover:text-white transition-colors">Naša proizvodnja</a>
+                    <li><a href="fertigung.html" class="hover:text-white transition-colors">Fertigung</a>
                     </li>
-                    <li><a href="pet-filz.html" class="hover:text-white transition-colors">PET felt materijal</a></li>
-                    <li><a href="index.html#boje" class="hover:text-white transition-colors">Boje</a></li>
-                    <li><a href="index.html#certifikati" class="hover:text-white transition-colors">Certifikati</a></li>
+                    <li><a href="pet-filz.html" class="hover:text-white transition-colors">PET-Filz</a></li>
+                    <li><a href="index.html#boje" class="hover:text-white transition-colors">Farben</a></li>
+                    <li><a href="index.html#certifikati" class="hover:text-white transition-colors">Zertifikate</a></li>
                     <li><a href="aktuelles.html" class="hover:text-white transition-colors">News</a></li>
                     <li><a href="index.html#kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
                 </ul>
             </div>
 
             <div>
-                <h3 class="font-semibold mb-4">Projekti i resursi</h3>
+                <h3 class="font-semibold mb-4">Projekte &amp; Ressourcen</h3>
                 <ul class="space-y-3 text-sm text-gray-400">
-                    <li><a href="index.html#galerija-projekata" class="hover:text-white transition-colors">Galerija projekata</a>
+                    <li><a href="index.html#galerija-projekata" class="hover:text-white transition-colors">Projektgalerie</a>
                     </li>
-                    <li><a href="projekte.html" class="hover:text-white transition-colors">Svi projekti</a></li>
-                    <li><a href="index.html#galerija" class="hover:text-white transition-colors">Naše lokacije</a></li>
+                    <li><a href="projekte.html" class="hover:text-white transition-colors">Alle Projekte</a></li>
+                    <li><a href="index.html#galerija" class="hover:text-white transition-colors">Unsere Standorte</a></li>
                     <li><a href="downloads.html" class="hover:text-white transition-colors">Downloads</a></li>
                 </ul>
             </div>
@@ -954,9 +882,9 @@
             <p>&copy; 2026 Lolaacoustix. All Rights Reserved.</p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
-                <a href="datenschutzerklaerung.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="cookie-richtlinie.html" class="hover:text-white transition-colors">Cookie Policy</a>
-                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Postavke kolačića</button>
+                <a href="datenschutzerklaerung.html" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="cookie-richtlinie.html" class="hover:text-white transition-colors">Cookie-Richtlinie</a>
+                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Cookie-Einstellungen</button>
             </div>
         </div>
     </footer>
@@ -983,13 +911,13 @@
                 mobileMenu.classList.toggle('hidden', !menuOpen);
                 mobileMenu.classList.toggle('flex', menuOpen);
                 menuToggle.setAttribute('aria-expanded', String(menuOpen));
-                menuToggle.setAttribute('aria-label', menuOpen ? 'Zatvori navigacijski izbornik' : 'Otvori navigacijski izbornik');
+                menuToggle.setAttribute('aria-label', menuOpen ? 'Menü schließen' : 'Menü öffnen');
             });
             document.querySelectorAll('.mobile-link').forEach(link => {
                 link.addEventListener('click', () => {
                     menuOpen = false;
                     menuToggle.setAttribute('aria-expanded', 'false');
-                    menuToggle.setAttribute('aria-label', 'Otvori navigacijski izbornik');
+                    menuToggle.setAttribute('aria-label', 'Menü öffnen');
                     mobileMenu.classList.add('hidden');
                     mobileMenu.classList.remove('flex');
                 });
@@ -1009,21 +937,21 @@
                 <circle cx="10" cy="15.5" r="1" fill="currentColor" stroke="none" />
             </svg>
             <div>
-                <p class="font-semibold text-sm mb-1.5">Kolačići</p>
+                <p class="font-semibold text-sm mb-1.5">Cookies</p>
                 <p class="text-xs text-white/60 leading-relaxed">
-                    Koristimo kolačiće za ispravan rad stranice i poboljšanje korisničkog iskustva. Više u
-                    <a href="cookie-richtlinie.html" class="underline hover:text-white transition-colors">Cookie Policy</a>.
+                    Wir verwenden Cookies, damit die Website ordnungsgemäß funktioniert und um Ihre Nutzererfahrung zu verbessern. Mehr dazu in unserer
+                    <a href="cookie-richtlinie.html" class="underline hover:text-white transition-colors">Cookie-Richtlinie</a>.
                 </p>
             </div>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
             <button id="cookie-accept-all" type="button"
                 class="flex-1 bg-white text-autex-dark text-xs font-medium rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity">
-                Prihvaćam sve
+                Alle akzeptieren
             </button>
             <button id="cookie-accept-necessary" type="button"
                 class="flex-1 border border-white/30 text-white text-xs font-medium rounded-full px-5 py-2.5 hover:bg-white hover:text-autex-dark transition-colors duration-300">
-                Samo neophodni
+                Nur notwendige
             </button>
         </div>
     </div>
