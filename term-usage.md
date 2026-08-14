@@ -197,7 +197,12 @@ Format po nazivu: **gdje živi** (vlastita stranica) → **gdje se spominje** (s
 
 ## PET-Filz (de/pet-filz.html, ← pet-felt.html)
 - Cijela stranica prevedena: title (skraćen na "PET-Filz — Lola Acoustix", isti obrazac kao EN), meta, eyebrow, h1 "PET felt"→"PET-Filz", intro, proces-slika alt+caption, 5 ključnih prednosti (strong+opis), stats blok, 12× ikona svojstava materijala (alt+label), CTA
-- **NRC vrijednost**: "0.9" → "0,9" (samo format decimalnog zareza prema DE konvenciji — pravilo 4 iz glossaryja — vrijednost nepromijenjena; label "Koeficijent smanjenja buke (NRC)"→"Geräuschreduzierungskoeffizient (NRC)", usklađeno s formulacijom već korištenom na de/index.html certifikatima)
+- **Stat kartica ISPRAVLJENA nakon revizije**: vrijednost "0,9" ostaje, ali label "Geräuschreduzierungskoeffizient (NRC)" → "Schallabsorptionsgrad αw". Razlog: ovo je samostalna headline-brojka (uparena s "70% Recyclingmaterial"), a 0,9 odgovara istoj αw = 0,90 vrijednosti koja se na naslovnici navodi kao zaseban certificirani podatak — DE tržište koristi αw (EN ISO 11654), NRC je američka norma (ASTM C423). Klasa apsorpcije NIJE dodana ovdje (kartica ima format jedan-broj-jedna-oznaka, Klasa A već stoji na naslovnici)
+
+## Site-wide: NRC vs. αw ispravka (nakon revizije, obje DE pojave)
+- **de/index.html** (Certifikati kartica): "Geräuschreduzierungskoeffizient: NRC = 0,85" → "Schallabsorptionsgrad NRC (ASTM C423): 0,85" — brojka 0,85 nepromijenjena (stvarna, zasebna certificirana vrijednost, različita od αw = 0,90 u retku ispod), ali uklonjen izmišljeni njemački složeni prijevod termina NRC — sada je jasno označeno kao NRC (američka norma) bez prevođenja pojma u složenicu
+- **de/pet-filz.html**: vidi gore
+- **EN provjeren za dosljednost**: `en/index.html` i `en/pet-felt.html` koriste "Noise Reduction Coefficient (NRC)" — ovo NIJE analogna greška jer je to doslovno raspisana engleska kratica (NRC = Noise Reduction Coefficient je izvorni engleski/ASTM naziv termina, ne prijevod-izum kao njemački "Geräuschreduzierungskoeffizient"). EN ne treba izmjenu
 
 ## Abgeschlossene Projekte — indeks stranica (de/projekte.html, ← projekti.html)
 - title, meta, h1, intro, 27× kartica (h3 naziv + alt + kategorija)
