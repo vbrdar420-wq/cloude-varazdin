@@ -470,13 +470,8 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo py-6 px-6 md:px-12 text-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="z-50 relative">
-                <div id="nav-logo" class="brightness-0 invert">
-                    <img src="/lolaacoustix-logo.png" alt="Lola Acoustix" class="hidden xl:block h-7">
-                    <div class="xl:hidden flex flex-col items-center gap-0.5">
-                        <img src="/lolaacoustix-logo-dog.png" alt="" aria-hidden="true" class="h-6 w-auto">
-                        <img src="/lolaacoustix-logo-text.png" alt="Lola Acoustix" class="h-4 w-auto">
-                    </div>
-                </div>
+                <img src="/lolaacoustix-logo.png" alt="Lola Acoustix"
+                    class="h-7 brightness-0 invert" id="nav-logo">
             </a>
 
             <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
@@ -1056,15 +1051,37 @@
 
     <!-- Priča o Loli -->
     <section class="reveal">
-        <div class="md:hidden w-full h-[58vw] bg-[#ECEBE9] overflow-hidden">
-            <img loading="lazy" decoding="async" src="/prica-o-loli.jpeg"
-                alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
-                class="w-full h-full object-cover object-center">
-        </div>
-        <div class="hidden md:block max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-20">
+        <!-- xl and up: original designed composite, unchanged -->
+        <div class="hidden xl:block max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-20">
             <img loading="lazy" decoding="async" src="/prica-o-loli.jpeg"
                 alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
                 class="w-full h-auto rounded-2xl">
+        </div>
+
+        <!-- Below xl: split into a real photo and real, readable text -->
+        <div class="xl:hidden">
+            <img loading="lazy" decoding="async" src="/prica-o-loli-photo.jpg"
+                alt="Lola, the dog Lola Acoustix is named after, sitting on an armchair"
+                class="w-full h-[85vw] max-h-[440px] object-cover object-top sm:w-auto sm:h-auto sm:max-w-md sm:mx-auto sm:mt-12 sm:rounded-2xl sm:shadow-md">
+            <div class="bg-[#ECEBE9] text-autex-dark px-6 py-12 md:px-12 md:py-16">
+                <div class="max-w-xl mx-auto md:mx-0">
+                    <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-5">The<br>Lola Story</h2>
+                    <div class="w-10 border-t border-autex-dark/40 mb-6"></div>
+                    <div class="space-y-4 text-[15px] leading-relaxed text-autex-dark/80">
+                        <p>Lola was never a business plan.</p>
+                        <p>She was a dog.</p>
+                        <p>A loyal companion who reminded us every day that the best things in life are often the simplest ones.</p>
+                        <p>When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy.</p>
+                        <p>Today, we design spaces where people feel better.</p>
+                        <p>And every time we see the name Lola, we remember why we started.</p>
+                    </div>
+                    <p class="font-serif italic text-2xl mt-8 mb-6">Lola. 🐾</p>
+                    <span class="inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase border-b border-autex-dark pb-1">
+                        Read the Full Story
+                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
