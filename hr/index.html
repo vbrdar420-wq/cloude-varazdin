@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!-- TODO (produkcija): Tailwind CDN (<script src="https://cdn.tailwindcss.com">) zamijeniti statičkim
-     Tailwind buildom (Tailwind CLI / PostCSS) radi performansi. Namjerno nepromijenjeno sada da se ne
-     naruši postojeći vizual. -->
 <html lang="hr" class="scroll-smooth">
 
 <head>
@@ -31,11 +28,9 @@
     <meta name="twitter:description" content="Akustične zidne obloge, stropni baflesi i pregrade prostora od recikliranog PET felta, dizajnirani i izrađeni po mjeri.">
     <meta name="twitter:image" content="https://lolaacoustix.com/images/og-image.jpg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/vendor/tailwind.js"></script>
     <script src="/products-data.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/fonts/inter.css">
 
     <script type="application/ld+json">
     {
@@ -1182,6 +1177,13 @@
                         <textarea name="message"
                             placeholder="Kako vam možemo pomoći? (akustika, custom narudžba, uredski namještaj...)"
                             rows="5" required class="resize-none"></textarea>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="privacy-consent" name="privacy-consent" required
+                            class="mt-1 w-4 h-4 rounded border-gray-300 text-autex-dark focus:ring-autex-dark flex-shrink-0">
+                        <label for="privacy-consent" class="text-sm text-gray-500 leading-snug">
+                            Pročitao/la sam i prihvaćam <a href="privatnost.html" class="underline hover:text-autex-dark transition-colors">Politiku privatnosti</a>.
+                        </label>
                     </div>
                     <button type="submit" id="contact-submit-btn"
                         class="w-full bg-autex-dark text-white py-4 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
