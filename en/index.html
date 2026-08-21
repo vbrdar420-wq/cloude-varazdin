@@ -1304,15 +1304,20 @@
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Traka fotografija — tap/klik na sliku pauzira/nastavlja pomicanje
+            // Traka fotografija — pritisni i drži za pauzu, otpusti za nastavak
             (function () {
                 const track = document.querySelector('.marquee-track');
                 if (!track) return;
 
-                track.addEventListener('click', (e) => {
-                    if (e.target.closest('.marquee-img')) {
-                        track.classList.toggle('is-paused');
-                    }
+                track.addEventListener('pointerdown', (e) => {
+                    track.classList.add('is-paused');
+                    track.setPointerCapture(e.pointerId);
+                });
+                track.addEventListener('pointerup', () => {
+                    track.classList.remove('is-paused');
+                });
+                track.addEventListener('pointercancel', () => {
+                    track.classList.remove('is-paused');
                 });
             })();
 
