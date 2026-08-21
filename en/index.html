@@ -1354,6 +1354,11 @@
                 const SPEED = 0.6; // px per frame, ~36px/s
                 let browsing = false;
                 let rafId = null;
+                // WebKit rounds scrollLeft to whole pixels, so a sub-1px per-frame
+                // increment written straight to scrollLeft never accumulates (it gets
+                // rounded away every frame). Track the precise position ourselves and
+                // only round when writing it out.
+                let pos = 0;
 
                 function halfWidth() {
                     return track.scrollWidth / 2;
@@ -1361,10 +1366,11 @@
 
                 function tick() {
                     if (!browsing) {
-                        track.scrollLeft += SPEED;
-                        if (track.scrollLeft >= halfWidth()) {
-                            track.scrollLeft -= halfWidth();
+                        pos += SPEED;
+                        if (pos >= halfWidth()) {
+                            pos -= halfWidth();
                         }
+                        track.scrollLeft = Math.round(pos);
                     }
                     rafId = requestAnimationFrame(tick);
                 }
@@ -1389,6 +1395,7 @@
                 function resume() {
                     if (!browsing) return;
                     browsing = false;
+                    pos = track.scrollLeft; // pick auto-scroll back up from wherever the user left it
                     section.classList.remove('is-browsing');
                 }
 
