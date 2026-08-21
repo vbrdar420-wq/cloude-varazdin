@@ -1351,7 +1351,6 @@
                 const nextBtn = document.getElementById('marquee-next');
                 if (!section || !track || !prevBtn || !nextBtn) return;
 
-                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 const SPEED = 0.6; // px per frame, ~36px/s
                 let browsing = false;
                 let rafId = null;
@@ -1411,16 +1410,14 @@
                     if (browsing && !section.contains(e.target)) resume();
                 });
 
-                if (!reduceMotion) {
-                    rafId = requestAnimationFrame(tick);
-                    document.addEventListener('visibilitychange', () => {
-                        if (document.hidden) {
-                            cancelAnimationFrame(rafId);
-                        } else {
-                            rafId = requestAnimationFrame(tick);
-                        }
-                    });
-                }
+                rafId = requestAnimationFrame(tick);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        cancelAnimationFrame(rafId);
+                    } else {
+                        rafId = requestAnimationFrame(tick);
+                    }
+                });
             })();
 
             // Videi ispod hero sekcije — lazy load + play/pause ovisno o vidljivosti
