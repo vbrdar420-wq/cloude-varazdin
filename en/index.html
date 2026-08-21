@@ -144,11 +144,19 @@
         .marquee-track {
             width: max-content;
             animation: marquee-scroll 32s linear infinite;
+            touch-action: pan-y;
         }
 
         .marquee-track:hover,
         .marquee-track.is-paused {
             animation-play-state: paused;
+        }
+
+        .marquee-img {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         @keyframes marquee-scroll {
@@ -605,20 +613,20 @@
     <!-- Proizvodi u prostoru — kontinuirana traka fotografija -->
     <section class="relative bg-white py-16 md:py-24 overflow-hidden">
         <div class="marquee-track flex gap-4 md:gap-6">
-            <img loading="lazy" decoding="async" src="/originals-backup/11.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/12.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/13.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/14.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/15.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/16.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/17.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/11.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/12.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/13.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/14.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/15.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/16.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/17.jpeg" alt="Lola Acoustix installation" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
         </div>
     </section>
 
@@ -1310,6 +1318,7 @@
                 if (!track) return;
 
                 track.addEventListener('pointerdown', (e) => {
+                    e.preventDefault();
                     track.classList.add('is-paused');
                     track.setPointerCapture(e.pointerId);
                 });
