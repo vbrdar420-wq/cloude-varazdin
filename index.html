@@ -137,28 +137,61 @@
         }
 
         .marquee-track {
-            width: max-content;
-            animation: marquee-scroll 32s linear infinite;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
 
-        .marquee-track:hover,
-        .marquee-track.is-paused {
-            animation-play-state: paused;
+        .marquee-track::-webkit-scrollbar {
+            display: none;
         }
 
-        @keyframes marquee-scroll {
-            from {
-                transform: translateX(-50%);
-            }
-            to {
-                transform: translateX(0);
-            }
+        .marquee-img {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .marquee-track {
-                animation: none;
-            }
+        .marquee-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 1px solid rgba(26, 26, 26, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        .marquee-arrow:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .marquee-arrow-left {
+            left: 12px;
+        }
+
+        .marquee-arrow-right {
+            right: 12px;
+        }
+
+        .marquee-arrow:disabled {
+            opacity: 0.3 !important;
+            pointer-events: none;
+        }
+
+        #marquee-section.is-browsing .marquee-arrow {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .reveal {
@@ -452,6 +485,16 @@
             border-color: #1a1a1a;
         }
 
+        .privacy-consent-checkbox {
+            all: revert;
+            width: 16px;
+            height: 16px;
+            margin: 4px 0 0;
+            flex-shrink: 0;
+            accent-color: #1a1a1a;
+            cursor: pointer;
+        }
+
         input::placeholder,
         textarea::placeholder {
             color: #8b8b8b;
@@ -476,9 +519,9 @@
                 <a href="kalkulator.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
                 <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
                 <a href="news.html" class="hover:opacity-70 transition-opacity">News</a>
-                <a href="#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
+                <a href="blog.html" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
                     <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
-                    Certifikati
+                    Blog
                 </a>
             </div>
 
@@ -508,9 +551,9 @@
             <a href="kalkulator.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
             <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
             <a href="news.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
-            <a href="#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
+            <a href="blog.html" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
                 <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
-                Certifikati
+                Blog
             </a>
             <a href="#kontakt"
                 class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
@@ -546,6 +589,8 @@
                 </a>
             </div>
         </div>
+        <img src="ai-modified-badge.png" alt="" aria-hidden="true" loading="lazy"
+            class="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-20 w-24 md:w-32 h-auto pointer-events-none select-none">
     </header>
 
     <script>
@@ -596,23 +641,29 @@
     </section>
 
     <!-- Proizvodi u prostoru — kontinuirana traka fotografija -->
-    <section class="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section class="relative bg-white py-16 md:py-24 overflow-hidden" id="marquee-section">
         <div class="marquee-track flex gap-4 md:gap-6">
-            <img loading="lazy" decoding="async" src="originals-backup/11.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/12.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/13.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/14.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/15.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/16.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/17.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/11.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/12.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/13.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/14.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/15.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/16.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/17.jpeg" alt="Realizacija u prostoru — Lola Acoustix" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
         </div>
+        <button type="button" id="marquee-prev" class="marquee-arrow marquee-arrow-left" aria-label="Prethodna fotografija">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" id="marquee-next" class="marquee-arrow marquee-arrow-right" aria-label="Sljedeća fotografija">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
     </section>
 
     <!-- Kratka premium izjava -->
@@ -635,6 +686,8 @@
         <div class="absolute top-6 left-6 md:top-10 md:left-10 reveal">
             <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/90">Naša proizvodnja</span>
         </div>
+        <img src="ai-modified-badge.png" alt="" aria-hidden="true" loading="lazy"
+            class="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-10 w-24 md:w-32 h-auto pointer-events-none select-none">
     </section>
 
     <!-- Product Categories -->
@@ -678,6 +731,8 @@
         <div class="absolute top-6 left-6 md:top-10 md:left-10 reveal">
             <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/90">Kako nastaje naš materijal</span>
         </div>
+        <img src="ai-modified-badge.png" alt="" aria-hidden="true" loading="lazy"
+            class="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-10 w-24 md:w-32 h-auto pointer-events-none select-none">
     </section>
 
     <!-- PET felt — eko nota -->
@@ -813,6 +868,8 @@
                     <div class="absolute top-6 left-6 md:top-10 md:left-10">
                         <span class="text-xs font-medium tracking-[0.3em] uppercase text-white/90">Paleta PET felta</span>
                     </div>
+                    <img src="ai-modified-badge.png" alt="" aria-hidden="true" loading="lazy"
+                        class="absolute bottom-4 right-4 md:bottom-6 md:right-6 z-10 w-20 md:w-28 h-auto pointer-events-none select-none">
                 </div>
                 <div class="w-full md:w-1/2 flex items-center px-6 md:px-16 py-12 md:py-0">
                     <div class="max-w-md">
@@ -1038,15 +1095,37 @@
 
     <!-- Priča o Loli -->
     <section class="reveal">
-        <div class="md:hidden w-full h-[58vw] bg-[#ECEBE9] overflow-hidden">
-            <img loading="lazy" decoding="async" src="prica-o-loli.jpeg"
-                alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
-                class="w-full h-full object-cover object-center">
-        </div>
-        <div class="hidden md:block max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-20">
+        <!-- xl i više: originalni dizajnirani kompozit, nepromijenjen -->
+        <div class="hidden xl:block max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-20">
             <img loading="lazy" decoding="async" src="prica-o-loli.jpeg"
                 alt="The Lola Story — Lola was never a business plan, she was a dog. A loyal companion who reminded us every day that the best things in life are often the simplest ones. When we started building what would later become Lola Acoustix, we chose her name as a reminder of the values we never wanted to lose — curiosity, loyalty, honesty and joy. Today, we design spaces where people feel better. And every time we see the name Lola, we remember why we started."
                 class="w-full h-auto rounded-2xl">
+        </div>
+
+        <!-- Ispod xl: prava fotografija i čitljiv tekst -->
+        <div class="xl:hidden">
+            <img loading="lazy" decoding="async" src="prica-o-loli-photo.jpg"
+                alt="Lola, pas po kojem je Lola Acoustix dobila ime, sjedi na naslonjaču"
+                class="w-full h-[85vw] max-h-[440px] object-cover object-top sm:w-auto sm:h-auto sm:max-w-md sm:mx-auto sm:mt-12 sm:rounded-2xl sm:shadow-md">
+            <div class="bg-[#ECEBE9] text-autex-dark px-6 py-12 md:px-12 md:py-16">
+                <div class="max-w-xl mx-auto md:mx-0">
+                    <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-5">Priča<br>o Loli</h2>
+                    <div class="w-10 border-t border-autex-dark/40 mb-6"></div>
+                    <div class="space-y-4 text-[15px] leading-relaxed text-autex-dark/80">
+                        <p>Lola nikad nije bila poslovni plan.</p>
+                        <p>Bila je pas.</p>
+                        <p>Vjeran pratitelj koji nas je svaki dan podsjećao da su najbolje stvari u životu često one najjednostavnije.</p>
+                        <p>Kad smo počeli graditi ono što će kasnije postati Lola Acoustix, njezino ime odabrali smo kao podsjetnik na vrijednosti koje nismo htjeli izgubiti — znatiželju, odanost, iskrenost i radost.</p>
+                        <p>Danas dizajniramo prostore u kojima se ljudi bolje osjećaju.</p>
+                        <p>I svaki put kad vidimo ime Lola, sjetimo se zašto smo krenuli.</p>
+                    </div>
+                    <p class="font-serif italic text-2xl mt-8 mb-6">Lola. 🐾</p>
+                    <span class="inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase border-b border-autex-dark pb-1">
+                        Pročitajte cijelu priču
+                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1180,7 +1259,7 @@
                     </div>
                     <div class="flex items-start gap-3">
                         <input type="checkbox" id="privacy-consent" name="privacy-consent" required
-                            class="mt-1 w-4 h-4 rounded border-gray-300 text-autex-dark focus:ring-autex-dark flex-shrink-0">
+                            class="privacy-consent-checkbox">
                         <label for="privacy-consent" class="text-sm text-gray-500 leading-snug">
                             Pročitao/la sam i prihvaćam <a href="privacy.html" class="underline hover:text-autex-dark transition-colors">Politiku privatnosti</a>.
                         </label>
@@ -1264,7 +1343,7 @@
                 <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
-                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Postavke kolačića</button>
+                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Obavijest o kolačićima</button>
             </div>
         </div>
     </footer>
@@ -1276,14 +1355,86 @@
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Traka fotografija — tap/klik na sliku pauzira/nastavlja pomicanje
+            // Traka fotografija — auto-scroll, klik zaustavlja i otkriva strelice
             (function () {
+                const section = document.getElementById('marquee-section');
                 const track = document.querySelector('.marquee-track');
-                if (!track) return;
+                const prevBtn = document.getElementById('marquee-prev');
+                const nextBtn = document.getElementById('marquee-next');
+                if (!section || !track || !prevBtn || !nextBtn) return;
 
-                track.addEventListener('click', (e) => {
-                    if (e.target.closest('.marquee-img')) {
-                        track.classList.toggle('is-paused');
+                const SPEED = 0.6; // px per frame, ~36px/s
+                let browsing = false;
+                let rafId = null;
+                // WebKit rounds scrollLeft to whole pixels, so a sub-1px per-frame
+                // increment written straight to scrollLeft never accumulates (it gets
+                // rounded away every frame). Track the precise position ourselves and
+                // only round when writing it out.
+                let pos = 0;
+
+                function halfWidth() {
+                    return track.scrollWidth / 2;
+                }
+
+                function tick() {
+                    if (!browsing) {
+                        pos += SPEED;
+                        if (pos >= halfWidth()) {
+                            pos -= halfWidth();
+                        }
+                        track.scrollLeft = Math.round(pos);
+                    }
+                    rafId = requestAnimationFrame(tick);
+                }
+
+                function step() {
+                    const first = track.querySelector('.marquee-img');
+                    return first ? first.getBoundingClientRect().width + 16 : 300;
+                }
+
+                function updateArrows() {
+                    prevBtn.disabled = track.scrollLeft <= 4;
+                    nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+                }
+
+                function browse() {
+                    if (browsing) return;
+                    browsing = true;
+                    section.classList.add('is-browsing');
+                    updateArrows();
+                }
+
+                function resume() {
+                    if (!browsing) return;
+                    browsing = false;
+                    pos = track.scrollLeft; // pick auto-scroll back up from wherever the user left it
+                    section.classList.remove('is-browsing');
+                }
+
+                track.addEventListener('click', browse);
+                track.addEventListener('scroll', () => {
+                    if (browsing) updateArrows();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    browse();
+                    track.scrollBy({ left: -step(), behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    browse();
+                    track.scrollBy({ left: step(), behavior: 'smooth' });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (browsing && !section.contains(e.target)) resume();
+                });
+
+                rafId = requestAnimationFrame(tick);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        cancelAnimationFrame(rafId);
+                    } else {
+                        rafId = requestAnimationFrame(tick);
                     }
                 });
             })();
@@ -1662,21 +1813,17 @@
                 <circle cx="10" cy="15.5" r="1" fill="currentColor" stroke="none" />
             </svg>
             <div>
-                <p class="font-semibold text-sm mb-1.5">Kolačići</p>
+                <p class="font-semibold text-sm mb-1.5">Obavijest o kolačićima</p>
                 <p class="text-xs text-white/60 leading-relaxed">
-                    Koristimo kolačiće za ispravan rad stranice i poboljšanje korisničkog iskustva. Više u
-                    <a href="cookie-policy.html" class="underline hover:text-white transition-colors">Cookie Policy</a>.
+                    Ne koristimo analitičke ni marketinške kolačiće. U pregledniku se sprema samo tehnički zapis da ste vidjeli ovu obavijest — više u
+                    <a href="cookie-policy.html" class="underline hover:text-white transition-colors">Pravila o kolačićima</a>.
                 </p>
             </div>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
-            <button id="cookie-accept-all" type="button"
+            <button id="cookie-ack" type="button"
                 class="flex-1 bg-white text-autex-dark text-xs font-medium rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity">
-                Prihvaćam sve
-            </button>
-            <button id="cookie-accept-necessary" type="button"
-                class="flex-1 border border-white/30 text-white text-xs font-medium rounded-full px-5 py-2.5 hover:bg-white hover:text-autex-dark transition-colors duration-300">
-                Samo neophodni
+                Razumijem
             </button>
         </div>
     </div>
@@ -1697,13 +1844,12 @@
                 banner.classList.add('translate-y-8', 'opacity-0');
                 setTimeout(function () { banner.classList.add('hidden'); }, 500);
             }
-            function setConsent(value) {
-                localStorage.setItem(KEY, value);
+            function setConsent() {
+                localStorage.setItem(KEY, 'acknowledged');
                 hide();
             }
 
-            document.getElementById('cookie-accept-all').addEventListener('click', function () { setConsent('all'); });
-            document.getElementById('cookie-accept-necessary').addEventListener('click', function () { setConsent('necessary'); });
+            document.getElementById('cookie-ack').addEventListener('click', setConsent);
             document.querySelectorAll('.cookie-settings-link').forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
