@@ -1,274 +1,633 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Naslovnica -->
   <url>
-    <loc>https://lolaacoustix.com/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Kategorije proizvoda -->
   <url>
-    <loc>https://lolaacoustix.com/zidne-obloge.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/hr/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/ceiling-baffles.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/pregrade-prostora.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/custom-made.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/stropni-baflesi.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/lighting.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/lampe.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/room-dividers.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/custom-made.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/wall-panels.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Materijal i proizvodnja -->
   <url>
-    <loc>https://lolaacoustix.com/pet-filc-materijal.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/hr/izrada-po-mjeri.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/lampe.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/pregrade-prostora.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/stropni-baflesi.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/zidne-obloge.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/acoustic-calculator.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/nasa-proizvodnja.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Alati / konverzija -->
-  <url>
-    <loc>https://lolaacoustix.com/kalkulator.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/downloads-ceiling-baffles.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/downloads.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Projekti -->
-  <url>
-    <loc>https://lolaacoustix.com/projekti.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/downloads-certificates.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-colours.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-bakaceva-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-furniture-elements.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-city-island-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-lighting.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-u-city-island-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-room-dividers.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-sredisce-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-technical-documents.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-poslovni-uredi-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads-wall-panels.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-ostali-poslovni-prostori-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/downloads.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-u-matrix-office-park-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/manufacturing.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-skytoll-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/pet-felt.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-salon-za-masazu-na-tresnjevci-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/en/projects.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-lola-acoustix-showroom.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/kalkulator.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-privatna-kuca-zagreb.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/nasa-proizvodnja.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-privatna-kuca-sracinec.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/pet-filc-materijal.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-mursko-sredisce.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-boje.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-hotel-panorama-prelog.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-certifikati.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-u-sarajevu-bih.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-pet-filc-elementi.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-privatni-kucni-glazbeni-studio-heidelberg.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-pregrade-prostora.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-poslovni-uredi-njemacka.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-rasvjeta.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-frankfurt.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-stropni-baflesi.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-darmstadt.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-tehnicka-dokumentacija.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-dusseldorf.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja-zidne-obloge.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-mannheim.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/preuzimanja.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-stuttgart.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://lolaacoustix.com/hr/projekti.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/projekt-stuttgart-2.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lolaacoustix.com/projekt-stuttgart-3.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lolaacoustix.com/projekt-weiden-1.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lolaacoustix.com/projekt-weiden-2.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Novosti -->
-  <url>
-    <loc>https://lolaacoustix.com/news.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/blog.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/news-showroom-lola-acoustix.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/news.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-bakaceva-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-city-island-zagreb-2.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-city-island-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-commercial-spaces-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-darmstadt.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-dusseldorf.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-frankfurt.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-home-music-studio-heidelberg.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-hotel-panorama-prelog.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-lola-acoustix-showroom.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-mannheim.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-massage-salon-tresnjevka-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-matrix-office-park-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-mursko-sredisce.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-offices-germany.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-offices-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-private-residence-sracinec.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-private-residence-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-sarajevo-bih.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-skytoll-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-sredisce-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-stuttgart-2.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-stuttgart-3.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-stuttgart.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-weiden-1.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-weiden-2.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/project-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/blog.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/novosti.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-bakaceva-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-city-island-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-darmstadt.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-dusseldorf.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-frankfurt.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-hotel-panorama-prelog.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-lola-acoustix-showroom.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-mannheim.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-mursko-sredisce.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-ostali-poslovni-prostori-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-poslovni-uredi-njemacka.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-poslovni-uredi-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-privatna-kuca-sracinec.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-privatna-kuca-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-privatni-kucni-glazbeni-studio-heidelberg.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-salon-za-masazu-na-tresnjevci-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-skytoll-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-sredisce-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-stuttgart-2.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-stuttgart-3.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-stuttgart.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-u-city-island-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-u-matrix-office-park-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-u-sarajevu-bih.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-weiden-1.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-weiden-2.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/projekt-zagreb.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/showroom-opening.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-  <!-- Pravne stranice -->
   <url>
-    <loc>https://lolaacoustix.com/privacy.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/hr/blog-sto-je-pet-felt-kako-nastaje.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/novosti-showroom-lola-acoustix.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/en/cookie-policy.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/cookie-policy.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/imprint.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://lolaacoustix.com/impressum.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <loc>https://lolaacoustix.com/en/privacy-policy.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/impressum.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/kolacici.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://lolaacoustix.com/hr/privatnost.html</loc>
+    <lastmod>2026-08-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
