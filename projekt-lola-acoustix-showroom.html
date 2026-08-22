@@ -62,9 +62,9 @@
                 <a href="kalkulator.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
                 <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
                 <a href="news.html" class="hover:opacity-70 transition-opacity">News</a>
-                <a href="index.html#certifikati" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
+                <a href="blog.html" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
                     <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
-                    Certifikati
+                    Blog
                 </a>
             </div>
 
@@ -94,9 +94,9 @@
             <a href="kalkulator.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
             <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
             <a href="news.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
-            <a href="index.html#certifikati" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
+            <a href="blog.html" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
                 <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
-                Certifikati
+                Blog
             </a>
             <a href="index.html#kontakt"
                 class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
@@ -391,7 +391,7 @@
                 <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a>
-                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Postavke kolačića</button>
+                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Obavijest o kolačićima</button>
             </div>
         </div>
     </footer>
@@ -436,21 +436,17 @@
                 <circle cx="10" cy="15.5" r="1" fill="currentColor" stroke="none" />
             </svg>
             <div>
-                <p class="font-semibold text-sm mb-1.5">Kolačići</p>
+                <p class="font-semibold text-sm mb-1.5">Obavijest o kolačićima</p>
                 <p class="text-xs text-white/60 leading-relaxed">
-                    Koristimo kolačiće za ispravan rad stranice i poboljšanje korisničkog iskustva. Više u
-                    <a href="cookie-policy.html" class="underline hover:text-white transition-colors">Cookie Policy</a>.
+                    Ne koristimo analitičke ni marketinške kolačiće. U pregledniku se sprema samo tehnički zapis da ste vidjeli ovu obavijest — više u
+                    <a href="cookie-policy.html" class="underline hover:text-white transition-colors">Pravila o kolačićima</a>.
                 </p>
             </div>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
-            <button id="cookie-accept-all" type="button"
+            <button id="cookie-ack" type="button"
                 class="flex-1 bg-white text-autex-dark text-xs font-medium rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity">
-                Prihvaćam sve
-            </button>
-            <button id="cookie-accept-necessary" type="button"
-                class="flex-1 border border-white/30 text-white text-xs font-medium rounded-full px-5 py-2.5 hover:bg-white hover:text-autex-dark transition-colors duration-300">
-                Samo neophodni
+                Razumijem
             </button>
         </div>
     </div>
@@ -471,13 +467,12 @@
                 banner.classList.add('translate-y-8', 'opacity-0');
                 setTimeout(function () { banner.classList.add('hidden'); }, 500);
             }
-            function setConsent(value) {
-                localStorage.setItem(KEY, value);
+            function setConsent() {
+                localStorage.setItem(KEY, 'acknowledged');
                 hide();
             }
 
-            document.getElementById('cookie-accept-all').addEventListener('click', function () { setConsent('all'); });
-            document.getElementById('cookie-accept-necessary').addEventListener('click', function () { setConsent('necessary'); });
+            document.getElementById('cookie-ack').addEventListener('click', setConsent);
             document.querySelectorAll('.cookie-settings-link').forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
