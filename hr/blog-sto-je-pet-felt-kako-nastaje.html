@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Što je PET felt i kako nastaje? Od PET boce do akustičnog panela — Lola Acoustix</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="description" content="Saznajte kako nastaje PET felt, koja su njegova svojstva te što laboratorijska ispitivanja potvrđuju o akustici, reakciji na požar i formaldehidu.">
+    <link rel="canonical" href="https://lolaacoustix.com/hr/blog-sto-je-pet-felt-kako-nastaje.html">
+
+    <script src="/vendor/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        autex: {
+                            dark: '#1a1a1a',
+                            light: '#f5f5f5',
+                            accent: '#8b8b8b'
+                        }
+                    },
+                    transitionTimingFunction: {
+                        'expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/vendor/fonts/inter.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo py-4 px-6 md:px-12 bg-white text-autex-dark shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="z-50 relative">
+                <img src="/lolaacoustix-logo.png" alt="Lola Acoustix"
+                    class="h-7 brightness-0" id="nav-logo">
+            </a>
+
+            <div class="hidden xl:flex items-center space-x-8 text-sm font-medium tracking-wide whitespace-nowrap">
+                <a href="index.html#modeli" class="hover:opacity-70 transition-opacity">Proizvodi</a>
+                <a href="projekti.html" class="hover:opacity-70 transition-opacity">Projekti</a>
+                <a href="preuzimanja.html" class="hover:opacity-70 transition-opacity">Downloads</a>
+                <a href="kalkulator.html" class="hover:opacity-70 transition-opacity">Kalkulator</a>
+                <a href="nasa-proizvodnja.html" class="hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+                <a href="novosti.html" class="hover:opacity-70 transition-opacity">News</a>
+                <a href="blog.html" class="inline-flex items-center gap-1.5 border border-current/40 px-3.5 py-1 rounded-full hover:opacity-80 transition-opacity">
+                    <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 flex-shrink-0"></span>
+                    Blog
+                </a>
+            </div>
+
+            <div class="hidden xl:flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html#kontakt"
+                    class="border border-current px-5 py-2 rounded-full hover:bg-autex-dark hover:text-white transition-colors duration-300">
+                    Pošalji Upit
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Otvori navigacijski izbornik" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-autex-dark text-white flex-col justify-center items-center hidden">
+        <div class="flex flex-col space-y-8 text-center text-2xl font-light">
+            <a href="index.html#modeli" class="mobile-link hover:opacity-70 transition-opacity">Proizvodi</a>
+            <a href="projekti.html" class="mobile-link hover:opacity-70 transition-opacity">Projekti</a>
+            <a href="preuzimanja.html" class="mobile-link hover:opacity-70 transition-opacity">Downloads</a>
+            <a href="kalkulator.html" class="mobile-link hover:opacity-70 transition-opacity">Kalkulator</a>
+            <a href="nasa-proizvodnja.html" class="mobile-link hover:opacity-70 transition-opacity">Naša proizvodnja</a>
+            <a href="novosti.html" class="mobile-link hover:opacity-70 transition-opacity">News</a>
+            <a href="blog.html" class="mobile-link inline-flex items-center gap-2 border border-white/40 px-5 py-1.5 rounded-full text-base hover:opacity-80 transition-opacity">
+                <span class="w-1.5 h-1.5 rounded-full bg-white opacity-70 flex-shrink-0"></span>
+                Blog
+            </a>
+            <a href="index.html#kontakt"
+                class="mobile-link border border-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-autex-dark transition-colors">Pošalji
+                Upit</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="max-w-3xl mx-auto px-6 pt-32 md:pt-40">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-900 transition-colors duration-200 mb-8">
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            Blog
+        </a>
+        <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent">Lola Acoustix / Blog 01</span>
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mt-3 leading-tight">Što je PET felt i kako nastaje? Od PET boce do akustičnog panela</h1>
+        <div class="mt-8 border-l-4 border-autex-dark bg-autex-light rounded-2xl p-6">
+            <p class="text-slate-700 leading-relaxed">
+                PET felt spaja reciklirani materijal, akustičnu funkciju i veliku slobodu oblikovanja. Donosimo pregled njegova nastanka, svojstava i rezultata ispitivanja Lola Acoustix panela.
+            </p>
+        </div>
+    </header>
+
+    <!-- Hero image -->
+    <div class="max-w-5xl mx-auto px-6 mt-10">
+        <img loading="lazy" decoding="async" src="/blog1-hero.jpeg" alt="Uzorci PET felt panela u različitim bojama"
+            class="w-full aspect-[21/9] object-cover rounded-2xl">
+    </div>
+
+    <!-- Article body -->
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        <div class="prose-content text-slate-600 leading-relaxed">
+
+            <p class="mb-5">
+                Na prvi pogled PET felt djeluje jednostavno: lagana, čvrsta ploča ugodne teksture, dostupna u velikom broju boja. Iza nje se, međutim, nalazi pažljivo kontroliran proces u kojem PET ambalaža dobiva novu namjenu, a poliesterska vlakna postaju funkcionalan materijal za arhitekturu i oblikovanje interijera.
+            </p>
+            <p class="mb-5">
+                PET felt, često nazivan i PET filc, istodobno može biti završna površina, akustični apsorber i dizajnerski element. Može prekriti čitav zid, lebdjeti ispod stropa kao stropni apsorber, podijeliti otvoreni ured ili postati dio namještaja i rasvjete. Upravo je ta kombinacija funkcije i oblikovne slobode razlog zbog kojeg se sve češće pojavljuje u suvremenim uredima, hotelima, restoranima, obrazovnim ustanovama i drugim javnim prostorima.
+            </p>
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Što je zapravo PET felt?</h2>
+            <p class="mb-5">
+                PET je kratica za polietilen-tereftalat, materijal poznat prije svega po bocama za napitke i drugoj ambalaži, ali i po uporabi u proizvodnji poliesterskih vlakana. Kod PET felta ta se vlakna ne tkaju poput klasične tkanine. Ona se slažu u više slojeva i međusobno povezuju toplinom i pritiskom, stvarajući homogenu, poroznu i dimenzijski stabilnu ploču.
+            </p>
+            <p class="mb-5">
+                Materijal koji koristi Lola Acoustix, prema specifikaciji materijala, sadrži 70&nbsp;% recikliranog PET-a. Standardni panel debljine 12&nbsp;mm ima format 1220 × 2440&nbsp;mm i površinsku masu približno 2400&nbsp;g/m². Za projekte kojima je potrebna veća debljina, izraženija forma ili drugačija akustična izvedba koristimo i 24&nbsp;mm PET felt. Paleta s više od 50 boja omogućuje da materijal ostane diskretan dio arhitekture ili postane njezin glavni vizualni akcent.
+            </p>
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Kako od PET boce nastaje panel?</h2>
+            <p class="mb-5">
+                Proces proizvodnje može se razlikovati ovisno o proizvođaču i željenim svojstvima gotovog materijala, ali osnovni put od ambalaže do panela sastoji se od nekoliko ključnih faza.
+            </p>
+
+            <ol class="space-y-5 mb-5 list-none pl-0">
+                <li>
+                    <p class="font-semibold text-slate-900 mb-1">1. Prikupljanje i razvrstavanje</p>
+                    <p>Iskorištena PET ambalaža najprije se prikuplja i razvrstava. Iz toka materijala uklanjaju se čepovi, etikete, ostaci sadržaja i druge vrste plastike koje bi mogle utjecati na kvalitetu recikliranog PET-a. Kvaliteta ulaznog materijala važna je za ujednačenu boju, čvrstoću i stabilnost kasnije proizvedenih vlakana.</p>
+                </li>
+                <li>
+                    <p class="font-semibold text-slate-900 mb-1">2. Pranje i usitnjavanje</p>
+                    <p>Razvrstane boce temeljito se peru, a zatim usitnjavaju u male PET pahuljice, odnosno flakes. One se dodatno čiste i suše kako bi se dobila sirovina pogodna za daljnju preradu.</p>
+                </li>
+                <li>
+                    <p class="font-semibold text-slate-900 mb-1">3. Pretvaranje u vlakna</p>
+                    <p>Očišćene PET pahuljice termički se obrađuju i pretvaraju u masu iz koje nastaju fina poliesterska vlakna. Ta vlakna čine osnovu buduće ploče. U ovoj se fazi kontroliraju njihova debljina i ujednačenost jer izravno utječu na izgled, gustoću i mehanička svojstva gotovog materijala.</p>
+                </li>
+                <li>
+                    <p class="font-semibold text-slate-900 mb-1">4. Formiranje slojeva</p>
+                    <p>Vlakna se ravnomjerno raspoređuju i polažu u slojeve. Time nastaje trodimenzionalna mreža s velikim brojem sitnih prostora između vlakana. Upravo je ta struktura važna za sposobnost materijala da apsorbira zvučnu energiju.</p>
+                </li>
+                <li>
+                    <p class="font-semibold text-slate-900 mb-1">5. Toplinsko povezivanje i prešanje</p>
+                    <p>Slojevi se zatim pod utjecajem temperature i pritiska povezuju u kompaktnu ploču. Preciznim podešavanjem procesa određuju se njezina debljina, gustoća, čvrstoća i završna tekstura. Nakon hlađenja ploče se kalibriraju, režu na format i kontroliraju prije daljnje obrade.</p>
+                </li>
+            </ol>
+
+            <p class="mb-10">
+                Rezultat nije samo reciklirana sirovina u novom obliku, nego materijal projektiran za dugotrajnu uporabu u interijeru.
+            </p>
+
+            <img loading="lazy" decoding="async" src="/blog1-process.jpeg" alt="Infografika: od PET boce do akustičnog panela u pet koraka"
+                class="w-full rounded-2xl mb-2">
+            <p class="text-xs text-slate-400 text-center mb-10">Kružni proces od reciklirane plastike do gotovog akustičnog panela.</p>
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Zašto PET felt apsorbira zvuk?</h2>
+            <p class="mb-5">
+                Zvuk se u prostoru širi kao val. Kada naiđe na tvrde površine poput stakla, betona, gipsa ili kamena, velik dio njegove energije reflektira se natrag u prostor. Višestruke refleksije stvaraju jeku, produljuju vrijeme odjeka i otežavaju razumijevanje govora.
+            </p>
+            <p class="mb-5">
+                PET felt djeluje drukčije. Kada zvučni val uđe u njegovu poroznu strukturu, pokreće zrak između gusto isprepletenih vlakana. Trenje i otpor unutar materijala dio zvučne energije pretvaraju u vrlo malu količinu toplinske energije. Tako se smanjuje količina zvuka koja se vraća u prostor.
+            </p>
+            <p class="mb-5">
+                Važno je razlikovati <strong class="text-slate-900">apsorpciju zvuka</strong> od <strong class="text-slate-900">zvučne izolacije</strong>. PET felt prvenstveno smanjuje refleksije, jeku i vrijeme odjeka unutar prostorije. Sam po sebi nije građevinska barijera koja zaustavlja prolazak zvuka iz jedne prostorije u drugu. Za zvučnu izolaciju potrebne su odgovarajuće konstrukcije zidova, stropova, podova, vrata i spojeva.
+            </p>
+            <p class="mb-10">
+                Na akustični rezultat ne utječe samo materijal. Važni su i njegova debljina i gustoća, ukupna postavljena površina, geometrija elementa, mjesto ugradnje te razmak između panela i zida ili stropa. Zato se podatak o apsorpciji uvijek treba promatrati zajedno s konfiguracijom u kojoj je uzorak ispitan.
+            </p>
+
+            <img loading="lazy" decoding="async" src="/blog1-absorption.jpeg" alt="Infografika: refleksija zvuka na tvrdoj površini u odnosu na apsorpciju zvuka u PET felt panelu"
+                class="w-full rounded-2xl mb-10">
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Što potvrđuju laboratorijska ispitivanja?</h2>
+            <p class="mb-8">
+                Lola Acoustix dao je PET felt panele na ispitivanje neovisnim laboratorijima. Rezultati se odnose na konkretne ispitane uzorke i načine montaže, zbog čega uz svaku vrijednost navodimo i uvjete u kojima je dobivena.
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Apsorpcija zvuka — PET felt 12&nbsp;mm</h3>
+            <p class="mb-4">
+                Panel debljine 12&nbsp;mm i površinske mase približno 2,32&nbsp;kg/m² ispitan je prema normi ISO 354:2003 u reverberacijskoj komori. Uzorak je bio postavljen prema tipu montaže E, sa zračnim prostorom od 200&nbsp;mm iza panela.
+            </p>
+            <p class="mb-3">U toj konfiguraciji izmjereni su:</p>
+            <ul class="list-disc pl-5 space-y-1.5 mb-4">
+                <li>prosječni koeficijent apsorpcije zvuka α<sub>s</sub> = 0,80 u rasponu od 100 do 5000&nbsp;Hz</li>
+                <li>koeficijent smanjenja buke NRC = 0,85</li>
+                <li>ponderirani koeficijent apsorpcije zvuka α<sub>w</sub> = 0,90</li>
+                <li>klasa apsorpcije zvuka A prema ISO 11654</li>
+            </ul>
+            <p class="mb-8">
+                To su vrlo dobre vrijednosti, ali pripadaju upravo navedenoj testnoj izvedbi. Postavljanje istog materijala izravno na zid, s manjim zračnim razmakom ili u drugoj geometriji može dati drukčiji rezultat.
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Apsorpcija zvuka — PET felt 24&nbsp;mm</h3>
+            <p class="mb-4">
+                Panel debljine 24&nbsp;mm ispitan je prema SIST EN ISO 354 u laboratoriju slovenskog Zavoda za gradbeništvo. Kod montaže E-200, sa zračnim prostorom od 200&nbsp;mm iza uzorka, postignut je ponderirani koeficijent apsorpcije α<sub>w</sub> = 0,85&nbsp;H, odnosno klasa apsorpcije B prema SIST EN ISO 11654.
+            </p>
+            <p class="mb-8">
+                Isti materijal ispitan je i kao slobodno stojeći element, što je relevantno za pregrade prostora. Rezultati pokazuju zašto je kod akustičkih proizvoda potrebno promatrati cijeli element i njegov položaj, a ne samo debljinu sirove ploče.
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Reakcija na požar</h3>
+            <p class="mb-4">
+                PET felt debljine 12&nbsp;mm, površinske mase 2400&nbsp;g/m², ispitan je prema metodama EN 13823 i EN ISO 11925-2 te klasificiran prema EN 13501-1:2018.
+            </p>
+            <p class="mb-3">Ispitani uzorak postigao je klasifikaciju <strong class="text-slate-900">B-s1,d0</strong>:</p>
+            <ul class="list-disc pl-5 space-y-1.5 mb-4">
+                <li><strong class="text-slate-900">B</strong> označava vrlo ograničen doprinos razvoju požara</li>
+                <li><strong class="text-slate-900">s1</strong> označava malu količinu nastalog dima tijekom ispitivanja</li>
+                <li><strong class="text-slate-900">d0</strong> znači da tijekom ispitivanja nisu zabilježene goruće kapljice ili čestice</li>
+            </ul>
+            <p class="mb-8">
+                Klasifikacija vrijedi unutar područja primjene navedenog u izvještaju: za testirani 12&nbsp;mm proizvod, mehanički pričvršćen bez spojeva na podlogu klase A1 ili A2. Kod lijepljenih, laminiranih ili višekomponentnih proizvoda potrebno je provjeriti odnosi li se postojeća klasifikacija na čitavu izvedbu.
+            </p>
+
+            <img loading="lazy" decoding="async" src="/blog1-fire.jpeg" alt="Protupožarna klasifikacija B-s1,d0 za PET felt"
+                class="w-full rounded-2xl mb-10">
+
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Emisija formaldehida</h3>
+            <p class="mb-4">
+                Emisija formaldehida ispitana je metodom koja se poziva na EN 717-1:2004. Na ispitanom uzorku formaldehid nije detektiran iznad laboratorijske granice detekcije od 0,050&nbsp;mg/m³.
+            </p>
+            <div class="border-l-4 border-autex-dark bg-autex-light rounded-2xl p-5 mb-10">
+                <p class="text-slate-700">
+                    Precizno je stoga reći <strong class="text-slate-900">„nije detektiran pri granici detekcije od 0,050&nbsp;mg/m³"</strong>, a ne tvrditi apsolutnih 0&nbsp;%. Takvo navođenje daje projektantima stvarnu, provjerljivu informaciju bez pojednostavljivanja rezultata laboratorija.
+                </p>
+            </div>
+
+            <p class="mb-10">
+                Svi navedeni izvještaji dostupni su u odjeljku <a href="preuzimanja.html" class="text-slate-900 underline hover:no-underline">Downloads</a>.
+            </p>
+
+            <img loading="lazy" decoding="async" src="/blog1-texture.jpeg" alt="Detalj presjeka PET felt panela"
+                class="w-full aspect-[21/9] object-cover rounded-2xl mb-10">
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Materijal koji arhitektima ostavlja slobodu</h2>
+            <p class="mb-5">
+                Akustička svojstva samo su jedan dio mogućnosti PET felta. Ploča je lagana, jednostavna za rukovanje i pogodna za preciznu obradu. Može se ravno rezati, glodati, gravirati, perforirati, V-cut obradom savijati u prostorne forme, međusobno spajati u deblje elemente ili oblikovati u vakuumskim prešama.
+            </p>
+            <p class="mb-5">
+                Zbog toga isti osnovni materijal može postati <a href="zidne-obloge.html" class="text-slate-900 underline hover:no-underline">zidna obloga</a>, <a href="stropni-baflesi.html" class="text-slate-900 underline hover:no-underline">stropni apsorber</a>, <a href="pregrade-prostora.html" class="text-slate-900 underline hover:no-underline">pregrada prostora</a>, dekorativni element, dio namještaja ili akustična rasvjeta. Kod standardne palete boja nijansa nije naknadni površinski premaz, nego sastavni dio vizualnog karaktera panela, pa rezani rubovi i obrađena površina mogu ostati vidljivi kao dio dizajna.
+            </p>
+            <p class="mb-10">
+                Materijal arhitektu ne nameće gotov oblik. On pruža platformu iz koje se mogu razviti modularna, parametarska ili potpuno individualna rješenja prilagođena prostoru, identitetu tvrtke i potrebnom akustičnom učinku.
+            </p>
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Nisu svi PET felt paneli jednaki</h2>
+            <p class="mb-5">
+                Naziv materijala sam po sebi nije dovoljan za usporedbu proizvoda. Dva PET felt panela jednake debljine mogu imati različitu gustoću, strukturu vlakana, krutost i akustično ponašanje. Završni rezultat dodatno mijenjaju način obrade i montaže.
+            </p>
+            <p class="mb-3">Zato je pri odabiru važno provjeriti:</p>
+            <ul class="list-disc pl-5 space-y-1.5 mb-5">
+                <li>debljinu, format i površinsku masu materijala</li>
+                <li>udio recikliranog sadržaja i dokument na kojem se tvrdnja temelji</li>
+                <li>normu prema kojoj je obavljeno akustičko ispitivanje</li>
+                <li>testnu konfiguraciju, osobito veličinu zračnog prostora iza panela</li>
+                <li>protupožarnu klasifikaciju i njezino područje primjene</li>
+                <li>odnosi li se rezultat na sirovi materijal ili na kompletan gotovi proizvod</li>
+            </ul>
+            <p class="mb-10">
+                Takav pristup štiti i projektanta i investitora. Istodobno omogućuje da se PET felt ne bira samo prema boji i uzorku, nego prema stvarnoj funkciji koju treba ispuniti u prostoru.
+            </p>
+
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 mt-12 mb-4">Od materijala do rješenja</h2>
+            <p class="mb-5">
+                U Lola Acoustixu PET felt promatramo kao početak, a ne kao gotov proizvod. Kombiniramo njegovu akustičnu funkciju s dizajnom, digitalnom pripremom, preciznom CNC obradom, oblikovanjem i iskustvom montaže u stvarnim interijerima.
+            </p>
+            <p class="mb-5">
+                Prije definiranja rješenja analiziramo namjenu i volumen prostora, njegove tvrde površine, postojeći namještaj i očekivanu razinu zvučne ugode. Tek tada određujemo vrstu elemenata, potrebnu količinu i način ugradnje. Za početnu procjenu moguće je koristiti naš <a href="kalkulator.html" class="text-slate-900 underline hover:no-underline">akustički kalkulator</a>, dok se za složenije prostore izrađuje individualni koncept.
+            </p>
+            <p class="mb-10">
+                PET boca tako ne završava svoj put kao otpad. Postaje vlakno, vlakno postaje panel, a panel dio arhitekture koji prostor čini mirnijim, ugodnijim i vizualno prepoznatljivim.
+            </p>
+
+            <div class="border-t border-slate-200 pt-8">
+                <p class="text-slate-700">
+                    Želite li upoznati materijal uživo, pregledati paletu boja ili dobiti tehničku dokumentaciju za projekt, <a href="index.html#kontakt" class="text-slate-900 underline hover:no-underline">pošaljite nam upit</a>. Zajedno možemo odabrati rješenje koje će odgovarati i prostoru i ljudima koji u njemu borave.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-autex-dark text-white py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <img loading="lazy" decoding="async" src="/lolaacoustix-logo.png" alt="Lola Acoustix"
+                    class="h-6 brightness-0 invert mb-6">
+                <p class="text-sm text-gray-400 leading-relaxed mb-6">Redefiniramo akustični prostor kroz besprijekoran
+                    dizajn i visoke performanse.</p>
+                <div class="space-y-2 text-sm text-gray-400">
+                    <p><a href="mailto:office@cloudpro.hr"
+                            class="hover:text-white transition-colors">office@cloudpro.hr</a></p>
+                    <p>Ulica Dragutina Rakovca 3, 42000 Varaždin</p>
+                    <p>Buzinski krči 5, 10000 Zagreb</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Proizvodi</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="zidne-obloge.html" class="hover:text-white transition-colors">Obloge zida</a></li>
+                    <li><a href="pregrade-prostora.html" class="hover:text-white transition-colors">Pregrade prostora</a></li>
+                    <li><a href="stropni-baflesi.html" class="hover:text-white transition-colors">Stropni apsorberi</a></li>
+                    <li><a href="lampe.html" class="hover:text-white transition-colors">Rasvjeta</a></li>
+                    <li><a href="izrada-po-mjeri.html" class="hover:text-white transition-colors">PET felt elementi u namještaju</a></li>
+                    <li><a href="kalkulator.html" class="hover:text-white transition-colors">Akustički kalkulator</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Tvrtka</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="nasa-proizvodnja.html" class="hover:text-white transition-colors">Naša proizvodnja</a>
+                    </li>
+                    <li><a href="pet-filc-materijal.html" class="hover:text-white transition-colors">PET felt materijal</a></li>
+                    <li><a href="index.html#boje" class="hover:text-white transition-colors">Boje</a></li>
+                    <li><a href="index.html#certifikati" class="hover:text-white transition-colors">Certifikati</a></li>
+                    <li><a href="novosti.html" class="hover:text-white transition-colors">News</a></li>
+                    <li><a href="index.html#kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-4">Projekti i resursi</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="index.html#galerija-projekata" class="hover:text-white transition-colors">Galerija projekata</a>
+                    </li>
+                    <li><a href="projekti.html" class="hover:text-white transition-colors">Svi projekti</a></li>
+                    <li><a href="index.html#galerija" class="hover:text-white transition-colors">Naše lokacije</a></li>
+                    <li><a href="preuzimanja.html" class="hover:text-white transition-colors">Downloads</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2026 Lolaacoustix. All Rights Reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                <a href="privatnost.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="kolacici.html" class="hover:text-white transition-colors">Cookie Policy</a>
+                <button type="button" class="cookie-settings-link hover:text-white transition-colors" style="background:none;border:none;padding:0;font:inherit;cursor:pointer;">Obavijest o kolačićima</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navLogo = document.getElementById('nav-logo');
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Mobile menu toggle
+            let menuOpen = false;
+            menuToggle.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                mobileMenu.classList.toggle('hidden', !menuOpen);
+                mobileMenu.classList.toggle('flex', menuOpen);
+                menuToggle.setAttribute('aria-expanded', String(menuOpen));
+                menuToggle.setAttribute('aria-label', menuOpen ? 'Zatvori navigacijski izbornik' : 'Otvori navigacijski izbornik');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOpen = false;
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Otvori navigacijski izbornik');
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        });
+    </script>
+
+    <!-- Cookie consent -->
+    <div id="cookie-banner"
+        class="hidden fixed z-[60] bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-sm bg-autex-dark text-white rounded-2xl shadow-[0_24px_48px_-20px_rgba(0,0,0,0.55)] p-6 transition-all duration-700 ease-expo translate-y-8 opacity-0">
+        <div class="flex items-start gap-3 mb-5">
+            <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="9" cy="10" r="1" fill="currentColor" stroke="none" />
+                <circle cx="14.5" cy="8.5" r="1" fill="currentColor" stroke="none" />
+                <circle cx="15" cy="14" r="1" fill="currentColor" stroke="none" />
+                <circle cx="10" cy="15.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            <div>
+                <p class="font-semibold text-sm mb-1.5">Obavijest o kolačićima</p>
+                <p class="text-xs text-white/60 leading-relaxed">
+                    Ne koristimo analitičke ni marketinške kolačiće. U pregledniku se sprema samo tehnički zapis da ste vidjeli ovu obavijest — više u
+                    <a href="kolacici.html" class="underline hover:text-white transition-colors">Pravila o kolačićima</a>.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <button id="cookie-ack" type="button"
+                class="flex-1 bg-white text-autex-dark text-xs font-medium rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity">
+                Razumijem
+            </button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var KEY = 'lolaCookieConsent';
+            var banner = document.getElementById('cookie-banner');
+            if (!banner) return;
+
+            function show() {
+                banner.classList.remove('hidden');
+                requestAnimationFrame(function () {
+                    banner.classList.remove('translate-y-8', 'opacity-0');
+                });
+            }
+            function hide() {
+                banner.classList.add('translate-y-8', 'opacity-0');
+                setTimeout(function () { banner.classList.add('hidden'); }, 500);
+            }
+            function setConsent() {
+                localStorage.setItem(KEY, 'acknowledged');
+                hide();
+            }
+
+            document.getElementById('cookie-ack').addEventListener('click', setConsent);
+            document.querySelectorAll('.cookie-settings-link').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    show();
+                });
+            });
+
+            if (!localStorage.getItem(KEY)) {
+                setTimeout(show, 600);
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
