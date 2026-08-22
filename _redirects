@@ -1,29 +1,90 @@
 # Netlify Redirects za Lola Acoustix
-# Format: /stara-putanja  /nova-putanja  301
+# Format: /stara-putanja  /nova-putanja  301/302
 
-/products/ / 301
-/color/ / 301
-/gallery/ /projekti.html 301
-/zagreb/ /projekt-zagreb.html 301
-/hr/ / 301
-/impressum/ /impressum.html 301
-/downloads/ /downloads.html 301
-/de/ / 301
-/pet-felt/ /pet-filc-materijal.html 301
-/about-us/ / 301
-/privacy-policy/ /privacy.html 301
-/cookie-policy/ /cookie-policy.html 301
-/products/product-01/ /stropni-baflesi.html 301
-/projekt-stuttgart-2/ /projekt-stuttgart-2.html 301
-/projekt-bakaceva-zagreb/ /projekt-bakaceva-zagreb.html 301
-/poslovni-uredi-zagreb/ /projekt-poslovni-uredi-zagreb.html 301
-/privatna-kuca-zagreb/ /projekt-privatna-kuca-zagreb.html 301
-/privatna-kuca-sracinec/ /projekt-privatna-kuca-sracinec.html 301
-/projekt-u-sarajevu-bih/ /projekt-u-sarajevu-bih.html 301
-/projekt-u-city-island-zagreb/ /projekt-city-island-zagreb.html 301
-/projekt-u-matrix-office-park-zagreb/ /projekt-u-matrix-office-park-zagreb.html 301
-/projekt-privatni-kucni-glazbeni-studio-heidelberg/ /projekt-privatni-kucni-glazbeni-studio-heidelberg.html 301
-/projekt-salon-za-masazu-na-tresnjevci-zagreb/ /projekt-salon-za-masazu-na-tresnjevci-zagreb.html 301
+# Root vise ne servira sadrzaj - engleska verzija je zadana
+/ /en/index.html 302
+/index.html /en/index.html 302
+
+# Stare hrvatske adrese s roota -> /hr/ ekvivalenti (301)
+/blog-sto-je-pet-felt-kako-nastaje.html /hr/blog-sto-je-pet-felt-kako-nastaje.html 301
+/blog.html /hr/blog.html 301
+/cookie-policy.html /hr/kolacici.html 301
+/custom-made.html /hr/izrada-po-mjeri.html 301
+/downloads-boje.html /hr/preuzimanja-boje.html 301
+/downloads-certifikati.html /hr/preuzimanja-certifikati.html 301
+/downloads-pet-filc-elementi.html /hr/preuzimanja-pet-filc-elementi.html 301
+/downloads-pregrade-prostora.html /hr/preuzimanja-pregrade-prostora.html 301
+/downloads-rasvjeta.html /hr/preuzimanja-rasvjeta.html 301
+/downloads-stropni-baflesi.html /hr/preuzimanja-stropni-baflesi.html 301
+/downloads-tehnicka-dokumentacija.html /hr/preuzimanja-tehnicka-dokumentacija.html 301
+/downloads-zidne-obloge.html /hr/preuzimanja-zidne-obloge.html 301
+/downloads.html /hr/preuzimanja.html 301
+/impressum.html /hr/impressum.html 301
+/kalkulator.html /hr/kalkulator.html 301
+/lampe.html /hr/lampe.html 301
+/nasa-proizvodnja.html /hr/nasa-proizvodnja.html 301
+/news-showroom-lola-acoustix.html /hr/novosti-showroom-lola-acoustix.html 301
+/news.html /hr/novosti.html 301
+/pet-filc-materijal.html /hr/pet-filc-materijal.html 301
+/pregrade-prostora.html /hr/pregrade-prostora.html 301
+/privacy.html /hr/privatnost.html 301
+/projekt-bakaceva-zagreb.html /hr/projekt-bakaceva-zagreb.html 301
+/projekt-city-island-zagreb.html /hr/projekt-city-island-zagreb.html 301
+/projekt-darmstadt.html /hr/projekt-darmstadt.html 301
+/projekt-dusseldorf.html /hr/projekt-dusseldorf.html 301
+/projekt-frankfurt.html /hr/projekt-frankfurt.html 301
+/projekt-hotel-panorama-prelog.html /hr/projekt-hotel-panorama-prelog.html 301
+/projekt-lola-acoustix-showroom.html /hr/projekt-lola-acoustix-showroom.html 301
+/projekt-mannheim.html /hr/projekt-mannheim.html 301
+/projekt-mursko-sredisce.html /hr/projekt-mursko-sredisce.html 301
+/projekt-ostali-poslovni-prostori-zagreb.html /hr/projekt-ostali-poslovni-prostori-zagreb.html 301
+/projekt-poslovni-uredi-njemacka.html /hr/projekt-poslovni-uredi-njemacka.html 301
+/projekt-poslovni-uredi-zagreb.html /hr/projekt-poslovni-uredi-zagreb.html 301
+/projekt-privatna-kuca-sracinec.html /hr/projekt-privatna-kuca-sracinec.html 301
+/projekt-privatna-kuca-zagreb.html /hr/projekt-privatna-kuca-zagreb.html 301
+/projekt-privatni-kucni-glazbeni-studio-heidelberg.html /hr/projekt-privatni-kucni-glazbeni-studio-heidelberg.html 301
+/projekt-salon-za-masazu-na-tresnjevci-zagreb.html /hr/projekt-salon-za-masazu-na-tresnjevci-zagreb.html 301
+/projekt-skytoll-zagreb.html /hr/projekt-skytoll-zagreb.html 301
+/projekt-sredisce-zagreb.html /hr/projekt-sredisce-zagreb.html 301
+/projekt-stuttgart-2.html /hr/projekt-stuttgart-2.html 301
+/projekt-stuttgart-3.html /hr/projekt-stuttgart-3.html 301
+/projekt-stuttgart.html /hr/projekt-stuttgart.html 301
+/projekt-u-city-island-zagreb.html /hr/projekt-u-city-island-zagreb.html 301
+/projekt-u-matrix-office-park-zagreb.html /hr/projekt-u-matrix-office-park-zagreb.html 301
+/projekt-u-sarajevu-bih.html /hr/projekt-u-sarajevu-bih.html 301
+/projekt-weiden-1.html /hr/projekt-weiden-1.html 301
+/projekt-weiden-2.html /hr/projekt-weiden-2.html 301
+/projekt-zagreb.html /hr/projekt-zagreb.html 301
+/projekti.html /hr/projekti.html 301
+/stropni-baflesi.html /hr/stropni-baflesi.html 301
+/zidne-obloge.html /hr/zidne-obloge.html 301
+
+# WP-era kratki URL-ovi sa specificnom metom -> /hr/ ekvivalenti (301)
+/gallery/ /hr/projekti.html 301
+/zagreb/ /hr/projekt-zagreb.html 301
+/impressum/ /hr/impressum.html 301
+/downloads/ /hr/preuzimanja.html 301
+/pet-felt/ /hr/pet-filc-materijal.html 301
+/privacy-policy/ /hr/privatnost.html 301
+/cookie-policy/ /hr/kolacici.html 301
+/products/product-01/ /hr/stropni-baflesi.html 301
+/projekt-stuttgart-2/ /hr/projekt-stuttgart-2.html 301
+/projekt-bakaceva-zagreb/ /hr/projekt-bakaceva-zagreb.html 301
+/poslovni-uredi-zagreb/ /hr/projekt-poslovni-uredi-zagreb.html 301
+/privatna-kuca-zagreb/ /hr/projekt-privatna-kuca-zagreb.html 301
+/privatna-kuca-sracinec/ /hr/projekt-privatna-kuca-sracinec.html 301
+/projekt-u-sarajevu-bih/ /hr/projekt-u-sarajevu-bih.html 301
+/projekt-u-city-island-zagreb/ /hr/projekt-city-island-zagreb.html 301
+/projekt-u-matrix-office-park-zagreb/ /hr/projekt-u-matrix-office-park-zagreb.html 301
+/projekt-privatni-kucni-glazbeni-studio-heidelberg/ /hr/projekt-privatni-kucni-glazbeni-studio-heidelberg.html 301
+/projekt-salon-za-masazu-na-tresnjevci-zagreb/ /hr/projekt-salon-za-masazu-na-tresnjevci-zagreb.html 301
+
+# WP-era generic kratki URL-ovi (bez specificne mete) -> /en/ (301)
+/products/ /en/index.html 301
+/color/ /en/index.html 301
+/about-us/ /en/index.html 301
+
+# PDF-ovi iz starog WP medija (nepromijenjeno)
 /wp-content/uploads/2025/05/Sound-absorption-classification.pdf /downloads/Sound-absorption-classification-12mm.pdf 301
 /wp-content/uploads/2025/05/Formaldehyde-Emmission-classification.pdf /downloads/Formaldehyde-Emmission-classification.pdf 301
 /wp-content/uploads/2025/05/FIRE-CLASSIFICATION-12-mm.pdf /downloads/Fire-classification-12mm.pdf 301
