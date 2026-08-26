@@ -140,28 +140,61 @@
         }
 
         .marquee-track {
-            width: max-content;
-            animation: marquee-scroll 32s linear infinite;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
 
-        .marquee-track:hover,
-        .marquee-track.is-paused {
-            animation-play-state: paused;
+        .marquee-track::-webkit-scrollbar {
+            display: none;
         }
 
-        @keyframes marquee-scroll {
-            from {
-                transform: translateX(-50%);
-            }
-            to {
-                transform: translateX(0);
-            }
+        .marquee-img {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            .marquee-track {
-                animation: none;
-            }
+        .marquee-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            background: #ffffff;
+            border: 1px solid rgba(26, 26, 26, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        .marquee-arrow:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .marquee-arrow-left {
+            left: 12px;
+        }
+
+        .marquee-arrow-right {
+            right: 12px;
+        }
+
+        .marquee-arrow:disabled {
+            opacity: 0.3 !important;
+            pointer-events: none;
+        }
+
+        #marquee-section.is-browsing .marquee-arrow {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .reveal {
@@ -619,23 +652,29 @@
     </section>
 
     <!-- Proizvodi u prostoru — kontinuirana traka fotografija -->
-    <section class="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section class="relative bg-white py-16 md:py-24 overflow-hidden" id="marquee-section">
         <div class="marquee-track flex gap-4 md:gap-6">
-            <img loading="lazy" decoding="async" src="/originals-backup/11.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/12.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/13.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/14.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/15.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/16.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/17.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
-            <img loading="lazy" decoding="async" src="/originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/11.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/12.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/13.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/14.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/15.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/16.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/17.jpeg" alt="Lola Acoustix Umsetzung im Raum" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/11.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/12.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/13.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/14.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/15.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/16.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
+            <img loading="lazy" decoding="async" draggable="false" src="/originals-backup/17.jpeg" alt="" aria-hidden="true" class="marquee-img w-[320px] h-[235px] md:w-[500px] md:h-[360px] object-cover rounded-2xl shadow-xl flex-shrink-0">
         </div>
+        <button type="button" id="marquee-prev" class="marquee-arrow marquee-arrow-left" aria-label="Vorheriges Foto">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" id="marquee-next" class="marquee-arrow marquee-arrow-right" aria-label="Nächstes Foto">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
     </section>
 
     <!-- Kratka premium izjava -->
@@ -1327,14 +1366,86 @@
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Traka fotografija — tap/klik na sliku pauzira/nastavlja pomicanje
+            // Fotostrecke — Auto-Scroll, Klick stoppt und zeigt Pfeile
             (function () {
+                const section = document.getElementById('marquee-section');
                 const track = document.querySelector('.marquee-track');
-                if (!track) return;
+                const prevBtn = document.getElementById('marquee-prev');
+                const nextBtn = document.getElementById('marquee-next');
+                if (!section || !track || !prevBtn || !nextBtn) return;
 
-                track.addEventListener('click', (e) => {
-                    if (e.target.closest('.marquee-img')) {
-                        track.classList.toggle('is-paused');
+                const SPEED = 0.6; // px per frame, ~36px/s
+                let browsing = false;
+                let rafId = null;
+                // WebKit rounds scrollLeft to whole pixels, so a sub-1px per-frame
+                // increment written straight to scrollLeft never accumulates (it gets
+                // rounded away every frame). Track the precise position ourselves and
+                // only round when writing it out.
+                let pos = 0;
+
+                function halfWidth() {
+                    return track.scrollWidth / 2;
+                }
+
+                function tick() {
+                    if (!browsing) {
+                        pos += SPEED;
+                        if (pos >= halfWidth()) {
+                            pos -= halfWidth();
+                        }
+                        track.scrollLeft = Math.round(pos);
+                    }
+                    rafId = requestAnimationFrame(tick);
+                }
+
+                function step() {
+                    const first = track.querySelector('.marquee-img');
+                    return first ? first.getBoundingClientRect().width + 16 : 300;
+                }
+
+                function updateArrows() {
+                    prevBtn.disabled = track.scrollLeft <= 4;
+                    nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+                }
+
+                function browse() {
+                    if (browsing) return;
+                    browsing = true;
+                    section.classList.add('is-browsing');
+                    updateArrows();
+                }
+
+                function resume() {
+                    if (!browsing) return;
+                    browsing = false;
+                    pos = track.scrollLeft; // pick auto-scroll back up from wherever the user left it
+                    section.classList.remove('is-browsing');
+                }
+
+                track.addEventListener('click', browse);
+                track.addEventListener('scroll', () => {
+                    if (browsing) updateArrows();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    browse();
+                    track.scrollBy({ left: -step(), behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    browse();
+                    track.scrollBy({ left: step(), behavior: 'smooth' });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (browsing && !section.contains(e.target)) resume();
+                });
+
+                rafId = requestAnimationFrame(tick);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        cancelAnimationFrame(rafId);
+                    } else {
+                        rafId = requestAnimationFrame(tick);
                     }
                 });
             })();
