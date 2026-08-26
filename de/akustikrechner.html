@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow">
     <title>Akustikrechner — Lola Acoustix</title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -12,6 +11,10 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="description" content="Berechnen Sie die ungefähre Menge an PET-Filz-Akustikpaneelen, die Sie für Ihren Raum benötigen — basierend auf Abmessungen, Boden, Wänden und Möbeln.">
     <link rel="canonical" href="https://lolaacoustix.com/de/akustikrechner.html">
+    <link rel="alternate" hreflang="hr" href="https://lolaacoustix.com/hr/kalkulator.html">
+    <link rel="alternate" hreflang="en" href="https://lolaacoustix.com/en/acoustic-calculator.html">
+    <link rel="alternate" hreflang="de" href="https://lolaacoustix.com/de/akustikrechner.html">
+    <link rel="alternate" hreflang="x-default" href="https://lolaacoustix.com/en/acoustic-calculator.html">
 
     <script src="/vendor/tailwind.js"></script>
     <script>
@@ -45,7 +48,7 @@
         }
 
         /* ==========================================================================
-           AKUSTIČKI KALKULATOR — izračun identičan originalu, redizajnirana skin
+           AKUSTIKRECHNER — Berechnung identisch mit dem Original, neu gestaltete Optik
            ========================================================================== */
         .acalc {
             padding: 40px;
@@ -415,6 +418,14 @@
                 </a>
             </div>
 
+            <div class="flex items-center gap-1.5 text-sm font-medium" aria-label="Language switcher">
+                <a href="/hr/kalkulator.html" class="text-current/60 hover:text-current transition-colors">HR</a>
+                <span class="text-current/30">/</span>
+                <a href="/en/acoustic-calculator.html" class="text-current/60 hover:text-current transition-colors">EN</a>
+                <span class="text-current/30">/</span>
+                <span class="text-current" aria-current="page">DE</span>
+            </div>
+
             <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
@@ -595,19 +606,21 @@
             "use strict";
 
             /* ======================================================================
-               PREKIDAČ
+               SCHALTER
 
-               true  = 1:1 s originalnim kodom. Tip zida NE utječe na m², samo na
-                       postotak poboljšanja. Brojke se poklapaju sa starom stranicom.
-               false = tip zida utječe i na m² (ono što je kod očito namjeravao).
+               true  = 1:1 identisch mit dem Original-Code. Der Wandtyp wirkt sich
+                       NICHT auf m² aus, nur auf den Verbesserungsprozentsatz. Die
+                       Werte stimmen mit der alten Seite überein.
+               false = der Wandtyp wirkt sich auch auf m² aus (was der Code offenbar
+                       ursprünglich beabsichtigte).
                ====================================================================== */
             var LEGACY_MODE = true;
 
             /* ---------------------------------------------------------------------
-               Faktori — točno onako kako ih je original imao.
-               Tipovi kojih nema u originalnom kodu ostaju 1.00 (bez utjecaja):
-               pod keramika/parket/laminat/vinil, zid gipskarton/cigla,
-               prostorija dnevni boravak, namještaj srednje.
+               Faktoren — genau so wie im Original.
+               Typen, die im Original-Code nicht vorkommen, bleiben bei 1,00 (ohne
+               Auswirkung): Boden Keramik/Parkett/Laminat/Vinyl, Wand Gipskarton/
+               Ziegel, Raum Wohnzimmer, Möblierung mittel.
                --------------------------------------------------------------------- */
             var CONFIG = {
                 baseRatio: 0.20,
@@ -629,9 +642,9 @@
             };
 
             /* ======================================================================
-               IZRAČUN — čista funkcija. Redoslijed primjene faktora je isti kao u
-               originalu (pod -> staklo -> namještaj -> prostorija -> zid) da se i
-               popis u "Detalji" poklapa red po red.
+               BERECHNUNG — reine Funktion. Die Reihenfolge der Faktoren entspricht
+               dem Original (Boden -> Glas -> Möblierung -> Raum -> Wand), damit auch
+               die Liste unter "Details" zeilengenau übereinstimmt.
                ====================================================================== */
             function calculate(input) {
                 var volume = input.length * input.width * input.height;
@@ -652,7 +665,7 @@
                 var wallFactor = CONFIG.factors.wall[input.wall];
                 var wallKey = "wall." + input.wall;
 
-                // U novom načinu zid ulazi PRIJE podjele, pa mijenja i kvadrate.
+                // Im neuen Modus wirkt die Wand VOR der Aufteilung, verändert also auch die m².
                 if (!LEGACY_MODE) apply(wallFactor, wallKey);
 
                 var panels = {
@@ -661,8 +674,8 @@
                     ceiling: Math.round(area * CONFIG.split.ceiling)
                 };
 
-                // U legacy načinu zid ulazi POSLIJE podjele — kvadrati su već fiksirani,
-                // pa utječe samo na postotak. Ovo je ponašanje stare stranice.
+                // Im Legacy-Modus wirkt die Wand NACH der Aufteilung - die m² stehen
+                // bereits fest, sie wirkt sich nur auf den Prozentsatz aus. Verhalten der alten Seite.
                 if (LEGACY_MODE) apply(wallFactor, wallKey);
 
                 var improvement = Math.min(
