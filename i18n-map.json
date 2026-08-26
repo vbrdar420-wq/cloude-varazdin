@@ -1,224 +1,279 @@
 {
   "languages": [
     "hr",
-    "en"
+    "en",
+    "de"
   ],
   "labels": {
     "hr": "HR",
-    "en": "EN"
+    "en": "EN",
+    "de": "DE"
   },
   "pages": {
     "home": {
       "hr": "/hr/index.html",
-      "en": "/en/index.html"
+      "en": "/en/index.html",
+      "de": "/de/index.html"
     },
     "wall-panels": {
       "hr": "/hr/zidne-obloge.html",
-      "en": "/en/wall-panels.html"
+      "en": "/en/wall-panels.html",
+      "de": "/de/wandpaneele.html"
     },
     "room-dividers": {
       "hr": "/hr/pregrade-prostora.html",
-      "en": "/en/room-dividers.html"
+      "en": "/en/room-dividers.html",
+      "de": "/de/raumteiler.html"
     },
     "ceiling-baffles": {
       "hr": "/hr/stropni-baflesi.html",
-      "en": "/en/ceiling-baffles.html"
+      "en": "/en/ceiling-baffles.html",
+      "de": "/de/deckenbaffeln.html"
     },
     "lighting": {
       "hr": "/hr/lampe.html",
-      "en": "/en/lighting.html"
+      "en": "/en/lighting.html",
+      "de": "/de/akustikleuchten.html"
     },
     "custom-made": {
       "hr": "/hr/izrada-po-mjeri.html",
-      "en": "/en/custom-made.html"
+      "en": "/en/custom-made.html",
+      "de": "/de/sonderanfertigung.html"
     },
     "pet-felt-material": {
       "hr": "/hr/pet-filc-materijal.html",
-      "en": "/en/pet-felt.html"
+      "en": "/en/pet-felt.html",
+      "de": "/de/pet-filz.html"
     },
     "manufacturing": {
       "hr": "/hr/nasa-proizvodnja.html",
-      "en": "/en/manufacturing.html"
+      "en": "/en/manufacturing.html",
+      "de": "/de/fertigung.html"
     },
     "acoustic-calculator": {
       "hr": "/hr/kalkulator.html",
-      "en": "/en/acoustic-calculator.html"
+      "en": "/en/acoustic-calculator.html",
+      "de": "/de/akustikrechner.html"
     },
     "downloads": {
       "hr": "/hr/preuzimanja.html",
-      "en": "/en/downloads.html"
+      "en": "/en/downloads.html",
+      "de": "/de/downloads.html"
     },
     "downloads-colours": {
       "hr": "/hr/preuzimanja-boje.html",
-      "en": "/en/downloads-colours.html"
+      "en": "/en/downloads-colours.html",
+      "de": "/de/downloads-farben.html"
     },
     "downloads-certificates": {
       "hr": "/hr/preuzimanja-certifikati.html",
-      "en": "/en/downloads-certificates.html"
+      "en": "/en/downloads-certificates.html",
+      "de": "/de/downloads-zertifikate.html"
     },
     "downloads-furniture-elements": {
       "hr": "/hr/preuzimanja-pet-filc-elementi.html",
-      "en": "/en/downloads-furniture-elements.html"
+      "en": "/en/downloads-furniture-elements.html",
+      "de": "/de/downloads-moebelelemente.html"
     },
     "downloads-room-dividers": {
       "hr": "/hr/preuzimanja-pregrade-prostora.html",
-      "en": "/en/downloads-room-dividers.html"
+      "en": "/en/downloads-room-dividers.html",
+      "de": "/de/downloads-raumteiler.html"
     },
     "downloads-lighting": {
       "hr": "/hr/preuzimanja-rasvjeta.html",
-      "en": "/en/downloads-lighting.html"
+      "en": "/en/downloads-lighting.html",
+      "de": "/de/downloads-beleuchtung.html"
     },
     "downloads-ceiling-baffles": {
       "hr": "/hr/preuzimanja-stropni-baflesi.html",
-      "en": "/en/downloads-ceiling-baffles.html"
+      "en": "/en/downloads-ceiling-baffles.html",
+      "de": "/de/downloads-deckenbaffeln.html"
     },
     "downloads-technical-documents": {
       "hr": "/hr/preuzimanja-tehnicka-dokumentacija.html",
-      "en": "/en/downloads-technical-documents.html"
+      "en": "/en/downloads-technical-documents.html",
+      "de": "/de/downloads-technische-dokumente.html"
     },
     "downloads-wall-panels": {
       "hr": "/hr/preuzimanja-zidne-obloge.html",
-      "en": "/en/downloads-wall-panels.html"
+      "en": "/en/downloads-wall-panels.html",
+      "de": "/de/downloads-wandpaneele.html"
     },
     "projects": {
       "hr": "/hr/projekti.html",
-      "en": "/en/projects.html"
+      "en": "/en/projects.html",
+      "de": "/de/projekte.html"
     },
     "news": {
       "hr": "/hr/novosti.html",
-      "en": "/en/news.html"
+      "en": "/en/news.html",
+      "de": "/de/aktuelles.html"
     },
     "news-showroom-opening": {
       "hr": "/hr/novosti-showroom-lola-acoustix.html",
-      "en": "/en/showroom-opening.html"
+      "en": "/en/showroom-opening.html",
+      "de": "/de/showroom-eroeffnung.html"
     },
     "privacy-policy": {
       "hr": "/hr/privatnost.html",
-      "en": "/en/privacy-policy.html"
+      "en": "/en/privacy-policy.html",
+      "de": "/de/datenschutzerklaerung.html"
     },
     "cookie-policy": {
       "hr": "/hr/kolacici.html",
-      "en": "/en/cookie-policy.html"
+      "en": "/en/cookie-policy.html",
+      "de": "/de/cookie-richtlinie.html"
     },
     "imprint": {
       "hr": "/hr/impressum.html",
-      "en": "/en/imprint.html"
+      "en": "/en/imprint.html",
+      "de": "/de/impressum.html"
     },
     "blog": {
       "hr": "/hr/blog.html",
-      "en": "/en/blog.html"
+      "en": "/en/blog.html",
+      "de": "/de/blog.html"
     },
     "blog-pet-felt-article": {
       "hr": "/hr/blog-sto-je-pet-felt-kako-nastaje.html",
-      "en": "/en/blog-what-is-pet-felt.html"
+      "en": "/en/blog-what-is-pet-felt.html",
+      "de": "/de/blog-was-ist-pet-filz.html"
     },
     "project-zagreb": {
       "hr": "/hr/projekt-zagreb.html",
-      "en": "/en/project-zagreb.html"
+      "en": "/en/project-zagreb.html",
+      "de": "/de/projekt-zagreb.html"
     },
     "project-bakaceva-zagreb": {
       "hr": "/hr/projekt-bakaceva-zagreb.html",
-      "en": "/en/project-bakaceva-zagreb.html"
+      "en": "/en/project-bakaceva-zagreb.html",
+      "de": "/de/projekt-bakaceva-zagreb.html"
     },
     "project-city-island-zagreb": {
       "hr": "/hr/projekt-city-island-zagreb.html",
-      "en": "/en/project-city-island-zagreb.html"
+      "en": "/en/project-city-island-zagreb.html",
+      "de": "/de/projekt-city-island-zagreb.html"
     },
     "project-city-island-zagreb-2": {
       "hr": "/hr/projekt-u-city-island-zagreb.html",
-      "en": "/en/project-city-island-zagreb-2.html"
+      "en": "/en/project-city-island-zagreb-2.html",
+      "de": "/de/projekt-city-island-zagreb-2.html"
     },
     "project-sredisce-zagreb": {
       "hr": "/hr/projekt-sredisce-zagreb.html",
-      "en": "/en/project-sredisce-zagreb.html"
+      "en": "/en/project-sredisce-zagreb.html",
+      "de": "/de/projekt-sredisce-zagreb.html"
     },
     "project-commercial-spaces-zagreb": {
       "hr": "/hr/projekt-ostali-poslovni-prostori-zagreb.html",
-      "en": "/en/project-commercial-spaces-zagreb.html"
+      "en": "/en/project-commercial-spaces-zagreb.html",
+      "de": "/de/projekt-gewerberaeume-zagreb.html"
     },
     "project-offices-zagreb": {
       "hr": "/hr/projekt-poslovni-uredi-zagreb.html",
-      "en": "/en/project-offices-zagreb.html"
+      "en": "/en/project-offices-zagreb.html",
+      "de": "/de/projekt-bueroraeume-zagreb.html"
     },
     "project-matrix-office-park-zagreb": {
       "hr": "/hr/projekt-u-matrix-office-park-zagreb.html",
-      "en": "/en/project-matrix-office-park-zagreb.html"
+      "en": "/en/project-matrix-office-park-zagreb.html",
+      "de": "/de/projekt-matrix-office-park-zagreb.html"
     },
     "project-skytoll-zagreb": {
       "hr": "/hr/projekt-skytoll-zagreb.html",
-      "en": "/en/project-skytoll-zagreb.html"
+      "en": "/en/project-skytoll-zagreb.html",
+      "de": "/de/projekt-skytoll-zagreb.html"
     },
     "project-massage-salon-tresnjevka-zagreb": {
       "hr": "/hr/projekt-salon-za-masazu-na-tresnjevci-zagreb.html",
-      "en": "/en/project-massage-salon-tresnjevka-zagreb.html"
+      "en": "/en/project-massage-salon-tresnjevka-zagreb.html",
+      "de": "/de/projekt-massagestudio-tresnjevka-zagreb.html"
     },
     "project-lola-acoustix-showroom": {
       "hr": "/hr/projekt-lola-acoustix-showroom.html",
-      "en": "/en/project-lola-acoustix-showroom.html"
+      "en": "/en/project-lola-acoustix-showroom.html",
+      "de": "/de/projekt-lola-acoustix-showroom.html"
     },
     "project-private-residence-zagreb": {
       "hr": "/hr/projekt-privatna-kuca-zagreb.html",
-      "en": "/en/project-private-residence-zagreb.html"
+      "en": "/en/project-private-residence-zagreb.html",
+      "de": "/de/projekt-privathaus-zagreb.html"
     },
     "project-private-residence-sracinec": {
       "hr": "/hr/projekt-privatna-kuca-sracinec.html",
-      "en": "/en/project-private-residence-sracinec.html"
+      "en": "/en/project-private-residence-sracinec.html",
+      "de": "/de/projekt-privathaus-sracinec.html"
     },
     "project-mursko-sredisce": {
       "hr": "/hr/projekt-mursko-sredisce.html",
-      "en": "/en/project-mursko-sredisce.html"
+      "en": "/en/project-mursko-sredisce.html",
+      "de": "/de/projekt-mursko-sredisce.html"
     },
     "project-hotel-panorama-prelog": {
       "hr": "/hr/projekt-hotel-panorama-prelog.html",
-      "en": "/en/project-hotel-panorama-prelog.html"
+      "en": "/en/project-hotel-panorama-prelog.html",
+      "de": "/de/projekt-hotel-panorama-prelog.html"
     },
     "project-sarajevo-bih": {
       "hr": "/hr/projekt-u-sarajevu-bih.html",
-      "en": "/en/project-sarajevo-bih.html"
+      "en": "/en/project-sarajevo-bih.html",
+      "de": "/de/projekt-sarajevo-bih.html"
     },
     "project-home-music-studio-heidelberg": {
       "hr": "/hr/projekt-privatni-kucni-glazbeni-studio-heidelberg.html",
-      "en": "/en/project-home-music-studio-heidelberg.html"
+      "en": "/en/project-home-music-studio-heidelberg.html",
+      "de": "/de/projekt-tonstudio-heidelberg.html"
     },
     "project-offices-germany": {
       "hr": "/hr/projekt-poslovni-uredi-njemacka.html",
-      "en": "/en/project-offices-germany.html"
+      "en": "/en/project-offices-germany.html",
+      "de": "/de/projekt-buero-deutschland.html"
     },
     "project-frankfurt": {
       "hr": "/hr/projekt-frankfurt.html",
-      "en": "/en/project-frankfurt.html"
+      "en": "/en/project-frankfurt.html",
+      "de": "/de/projekt-frankfurt.html"
     },
     "project-darmstadt": {
       "hr": "/hr/projekt-darmstadt.html",
-      "en": "/en/project-darmstadt.html"
+      "en": "/en/project-darmstadt.html",
+      "de": "/de/projekt-darmstadt.html"
     },
     "project-dusseldorf": {
       "hr": "/hr/projekt-dusseldorf.html",
-      "en": "/en/project-dusseldorf.html"
+      "en": "/en/project-dusseldorf.html",
+      "de": "/de/projekt-duesseldorf.html"
     },
     "project-mannheim": {
       "hr": "/hr/projekt-mannheim.html",
-      "en": "/en/project-mannheim.html"
+      "en": "/en/project-mannheim.html",
+      "de": "/de/projekt-mannheim.html"
     },
     "project-stuttgart": {
       "hr": "/hr/projekt-stuttgart.html",
-      "en": "/en/project-stuttgart.html"
+      "en": "/en/project-stuttgart.html",
+      "de": "/de/projekt-stuttgart.html"
     },
     "project-stuttgart-2": {
       "hr": "/hr/projekt-stuttgart-2.html",
-      "en": "/en/project-stuttgart-2.html"
+      "en": "/en/project-stuttgart-2.html",
+      "de": "/de/projekt-stuttgart-2.html"
     },
     "project-stuttgart-3": {
       "hr": "/hr/projekt-stuttgart-3.html",
-      "en": "/en/project-stuttgart-3.html"
+      "en": "/en/project-stuttgart-3.html",
+      "de": "/de/projekt-stuttgart-3.html"
     },
     "project-weiden-1": {
       "hr": "/hr/projekt-weiden-1.html",
-      "en": "/en/project-weiden-1.html"
+      "en": "/en/project-weiden-1.html",
+      "de": "/de/projekt-weiden-1.html"
     },
     "project-weiden-2": {
       "hr": "/hr/projekt-weiden-2.html",
-      "en": "/en/project-weiden-2.html"
+      "en": "/en/project-weiden-2.html",
+      "de": "/de/projekt-weiden-2.html"
     }
   }
 }

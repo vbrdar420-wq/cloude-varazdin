@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, follow">
-    <title>Blog — Lola Acoustix</title>
+    <title>Blog - Lola Acoustix</title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="description" content="Notizen zu Akustik, Materialien und Projekten von Lola Acoustix.">
     <link rel="canonical" href="https://lolaacoustix.com/de/blog.html">
+    <link rel="alternate" hreflang="hr" href="https://lolaacoustix.com/hr/blog.html">
+    <link rel="alternate" hreflang="en" href="https://lolaacoustix.com/en/blog.html">
+    <link rel="alternate" hreflang="de" href="https://lolaacoustix.com/de/blog.html">
+    <link rel="alternate" hreflang="x-default" href="https://lolaacoustix.com/en/blog.html">
 
     <script src="/vendor/tailwind.js"></script>
     <script>
@@ -76,6 +79,14 @@
                 </a>
             </div>
 
+            <div class="flex items-center gap-1.5 text-sm font-medium" aria-label="Language switcher">
+                <a href="/hr/blog.html" class="text-current/60 hover:text-current transition-colors">HR</a>
+                <span class="text-current/30">/</span>
+                <a href="/en/blog.html" class="text-current/60 hover:text-current transition-colors">EN</a>
+                <span class="text-current/30">/</span>
+                <span class="text-current" aria-current="page">DE</span>
+            </div>
+
             <button id="menu-toggle" class="xl:hidden z-50 relative focus:outline-none" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
@@ -113,7 +124,7 @@
         </a>
         <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Blog</h1>
         <p class="mt-4 text-slate-500 text-lg max-w-2xl">
-            Notizen zu Akustik, Materialien und Projekten — Einblicke aus unserem Arbeitsalltag bei der Gestaltung und Herstellung akustischer Lösungen.
+            Notizen zu Akustik, Materialien und Projekten - Einblicke aus unserem Arbeitsalltag bei der Gestaltung und Herstellung akustischer Lösungen.
         </p>
     </header>
 
@@ -121,37 +132,22 @@
     <main class="max-w-6xl mx-auto px-6 py-12 md:py-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
 
-            <article>
-                <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-autex-light to-slate-200 mb-5 flex items-center justify-center">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="text-slate-400">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12-2a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                </div>
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent">Akustik</span>
-                <h2 class="text-xl font-bold tracking-tight mt-2 mb-2 leading-snug">Wie Akustik das Raumgefühl verändert</h2>
-                <p class="text-slate-500 text-sm leading-relaxed mb-3">
-                    Durchdachtes akustisches Design verbessert nicht nur den Klang — es verändert, wie sich Menschen in einem Raum fühlen. Warum das nie nur eine technische Frage ist.
-                </p>
-                <span class="text-xs font-medium text-slate-400 uppercase tracking-wide">Demnächst</span>
-            </article>
-
-            <article>
-                <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-autex-light to-slate-200 mb-5 flex items-center justify-center">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="text-slate-400">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                    </svg>
-                </div>
-                <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent">Materialien</span>
-                <h2 class="text-xl font-bold tracking-tight mt-2 mb-2 leading-snug">Warum PET-Filz? Nachhaltigkeit, die gut klingt</h2>
-                <p class="text-slate-500 text-sm leading-relaxed mb-3">
-                    Von der Plastikflasche zum Akustikpaneel — der Weg des PET-Filzes, und warum er das Material der Wahl für die akustischen Lösungen von morgen ist.
-                </p>
-                <span class="text-xs font-medium text-slate-400 uppercase tracking-wide">Demnächst</span>
-            </article>
+            <a href="blog-was-ist-pet-filz.html" class="group block">
+                <article>
+                    <div class="aspect-[4/3] rounded-2xl mb-5 overflow-hidden">
+                        <img loading="lazy" decoding="async" src="/blog1-hero.jpeg" alt="PET-Filz-Paneelmuster in verschiedenen Farben"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-expo">
+                    </div>
+                    <span class="text-xs font-medium tracking-[0.3em] uppercase text-autex-accent">Materialien</span>
+                    <h2 class="text-xl font-bold tracking-tight mt-2 mb-2 leading-snug group-hover:opacity-70 transition-opacity">Was ist PET-Filz und wie entsteht er? Von der Flasche zum Akustikpaneel</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-3">
+                        PET-Filz vereint recyceltes Material, echte akustische Leistung und gestalterische Freiheit. Wie er hergestellt wird, was er leistet, und was unsere Labortests zeigen.
+                    </p>
+                    <span class="text-xs font-medium text-slate-900 uppercase tracking-wide">Artikel lesen &rarr;</span>
+                </article>
+            </a>
 
         </div>
-
-        <p class="mt-16 text-center text-slate-400 text-sm">Weitere Beiträge folgen in Kürze.</p>
     </main>
 
     <!-- Footer -->
