@@ -1,7 +1,9 @@
 # Netlify Redirects za Lola Acoustix
 # Format: /stara-putanja  /nova-putanja  301/302
 
-# Root vise ne servira sadrzaj - engleska verzija je zadana
+# Root vise ne servira sadrzaj - jezik browsera odlucuje, EN je zadano ako nema podudaranja
+/ /de/index.html 302 Language=de
+/ /hr/index.html 302 Language=hr
 / /en/index.html 302
 /index.html /en/index.html 302
 
