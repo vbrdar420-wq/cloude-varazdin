@@ -18,7 +18,7 @@ const PRODUCTS_TREE = [
         image: '/rasvjeta-hero-1.webp'
     },
     {
-        id: 'custom-made', slug: 'custom-made', title: 'PET felt elementi u namještaju',
+        id: 'custom-made', slug: 'izrada-po-mjeri', title: 'PET felt elementi u namještaju',
         image: '/pet-felt-namjestaj-hero-1.webp'
     },
 ];
