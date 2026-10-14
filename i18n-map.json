@@ -115,6 +115,21 @@
       "en": "/en/showroom-opening.html",
       "de": "/de/showroom-eroeffnung.html"
     },
+    "news-oris-days": {
+      "hr": "/hr/novosti-dani-orisa-2026.html",
+      "en": "/en/oris-days-2026.html",
+      "de": "/de/tage-des-oris-2026.html"
+    },
+    "news-indizajn-fair": {
+      "hr": "/hr/novosti-sajam-indizajn-2026.html",
+      "en": "/en/indizajn-fair-2026.html",
+      "de": "/de/indizajn-messe-2026.html"
+    },
+    "news-ambienta-fair": {
+      "hr": "/hr/novosti-sajam-ambienta-2026.html",
+      "en": "/en/ambienta-fair-2026.html",
+      "de": "/de/ambienta-messe-2026.html"
+    },
     "privacy-policy": {
       "hr": "/hr/privatnost.html",
       "en": "/en/privacy-policy.html",
